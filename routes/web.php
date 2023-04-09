@@ -1,18 +1,26 @@
 <?php
 
+use App\Http\Controllers\Finance\BillController;
+use App\Http\Controllers\Finance\FundController;
+use App\Http\Controllers\Finance\MaintenanceController;
+use App\Http\Controllers\Finance\UtilityController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * -----------------------All Finance Related Route-------------
+*/
+//Bill
+Route::resource('bill', BillController::class);
+//Fund
+Route::resource('fund', FundController::class);
+//Utility
+Route::resource('Utility', UtilityController::class);
+//Maintenance
+Route::resource('maintenance', MaintenanceController::class);
+/* -------------------------------------------------------------- */
+
