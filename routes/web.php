@@ -11,6 +11,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 /**
  * -----------------------All Finance Related Route-------------
 */
@@ -23,4 +24,9 @@ Route::resource('Utility', UtilityController::class);
 //Maintenance
 Route::resource('maintenance', MaintenanceController::class);
 /* -------------------------------------------------------------- */
+
+
+Route::get('/test', function () {
+    return view('user_dashboard/user_home');
+});
 
