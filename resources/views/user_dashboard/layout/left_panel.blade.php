@@ -47,6 +47,15 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('maintenance/create') }}"><span class="nav-icon"></span>Add New Maintenance Cost</a></li>
             </ul>
         </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Rent Collection</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('rent') }}"><span class="nav-icon"></span>Rent List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('rent/create') }}"><span class="nav-icon"></span>Add New Rent</a></li>
+            </ul>
+        </li>
         
         {{-- Account & Finance nav item end here --}}
     </ul>
