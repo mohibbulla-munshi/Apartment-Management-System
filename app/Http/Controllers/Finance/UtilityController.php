@@ -12,7 +12,7 @@ class UtilityController extends Controller
      */
     public function index()
     {
-        return view('finance.utility.index');
+        return view('finance.utilities.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class UtilityController extends Controller
      */
     public function create()
     {
-        return view('finance.utility.create');
+        return view('finance.utilities.create');
     }
 
     /**
