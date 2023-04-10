@@ -3,11 +3,11 @@
         <img style="width:50%" src="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}" alt="">
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-        <li class="nav-item"><a class="nav-link" href="index.html">
+        <li class="nav-item"><a class="nav-link" href="/">
                 <svg class="nav-icon">
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-speedometer') }}">
                     </use>
-                </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
+                </svg>Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
         </li>
         {{-- Account & Finance nav item start here --}}
         <li class="nav-title">Account & Finance</li>
