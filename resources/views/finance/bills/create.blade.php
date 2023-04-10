@@ -5,7 +5,7 @@
     <!-- Bill entry form -->
     <div class="card">
         <div class="card-header">
-          Add New Bill 
+          <h3>Add New Bill</h3>
         </div>
         <div class="card-body">
           <form class="row g-3 needs-validation" novalidate>
@@ -92,7 +92,7 @@
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Submit form</button>
+              <button class="btn btn-primary" type="submit">Submit</button>
             </div>
           </form>
         </div>
