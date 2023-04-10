@@ -7,10 +7,8 @@ use App\Http\Controllers\Finance\UtilityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Deshboard\DashboardController;
 
-
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
 
 
