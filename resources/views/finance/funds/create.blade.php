@@ -2,35 +2,28 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
-    <!-- Bill entry form -->
+    <!--  Fund Entry Form  -->
     <div class="card">
         <div class="card-header">
-          Add New Bill 
+          Add New Fund
         </div>
         <div class="card-body">
           <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-6">
-              <label for="selectBillType" class="form-label">Select Bill Type :</label>
-              <select class="form-select" id="selectBillType" required>
-                <option selected disabled value="">--Select Type--</option>
-                <option>Gas</option>
-                <option>Water</option>
-                <option>Electricity</option>
+              <label for="selectOwnerName" class="form-label">Owner Name :</label>
+              <select class="form-select" id="selectOwnerName" required>
+                <option selected disabled value="">--Select Owner--</option>
+                <option>Jon Do</option>
+                <option>MR. Helal</option>
+                <option>Mr. Belal</option>
               </select>
               <div class="invalid-feedback">
-                Please select a valid type.
+                Please select a valid Owner.
               </div>
             </div>
             <div class="col-md-6">
-              <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-              <input type="date" class="form-control" id="bilDepositDate" required>
-              <div class="invalid-feedback">
-                Please provide a valid Month.
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="billMonth" class="form-label">Bill Month :</label>
-              <select class="form-select" id="billMonth" required>
+              <label for="selectMonth" class="form-label">Select Month :</label>
+              <select class="form-select" id="selectMonth" required>
                 <option selected disabled value="">--Select Month--</option>
                 <option>January</option>
                 <option>February</option>
@@ -50,8 +43,8 @@
               </div>
             </div>
             <div class="col-md-6">
-              <label for="billMonth" class="form-label">Bill Year :</label>
-              <select class="form-select" id="billMonth" required>
+              <label for="selectYear" class="form-label">Select Year :</label>
+              <select class="form-select" id="selectYear" required>
                 <option selected disabled value="">--Select Year--</option>
                 <option>2023</option>
                 <option>2022</option>
@@ -71,28 +64,28 @@
               </div>
             </div>
             <div class="col-md-6">
+              <label for="issueDate" class="form-label">Issue Date :</label>
+              <input type="date" class="form-control" id="issueDate" required>
+              <div class="invalid-feedback">
+                Please provide a valid Month.
+              </div>
+            </div>
+            <div class="col-md-6">
               <label for="totalMonth" class="form-label">Total Amount :</label>
               <input type="text" class="form-control" id="totalMonth" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
-            <div class="col-md-6">
-              <label for="depositBankName" class="form-label">Deposit Bank Name :</label>
-              <input type="text" class="form-control" id="depositBankName" value="" required>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-            </div>
             <div class="col-md-12">
-              <label for="details">Details</label>
-              <textarea class="form-control" placeholder="Leave a comment here" id="details"></textarea>
+              <label for="purpose">Purpose :</label>
+              <textarea class="form-control" placeholder="Leave a comment here" id="purpose"></textarea>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Submit form</button>
+              <button class="btn btn-primary" type="submit">Submit</button>
             </div>
           </form>
         </div>

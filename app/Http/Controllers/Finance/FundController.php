@@ -12,7 +12,7 @@ class FundController extends Controller
      */
     public function index()
     {
-        //
+        return view('finance.funds.create');
     }
 
     /**
