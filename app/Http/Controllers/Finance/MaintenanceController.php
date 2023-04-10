@@ -12,7 +12,7 @@ class MaintenanceController extends Controller
      */
     public function index()
     {
-        //
+        return view('finance.maintenance.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class MaintenanceController extends Controller
      */
     public function create()
     {
-        //
+        return view('finance.maintenance.create');
     }
 
     /**

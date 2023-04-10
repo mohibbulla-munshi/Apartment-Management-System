@@ -34,8 +34,8 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Owner Utility</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span>Owner Utility List</a></li>
-                <li class="nav-item"><a class="nav-link" href="base/breadcrumb.html"><span class="nav-icon"></span>Add New Owner Utility</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('Utility') }}"><span class="nav-icon"></span>Owner Utility List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('Utility/create') }}"><span class="nav-icon"></span>Add New Owner Utility</a></li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -43,8 +43,8 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Maintenance Cost</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span>Maintenance Cost List</a></li>
-                <li class="nav-item"><a class="nav-link" href="base/breadcrumb.html"><span class="nav-icon"></span>Add New Maintenance Cost</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance') }}"><span class="nav-icon"></span>Maintenance Cost List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance/create') }}"><span class="nav-icon"></span>Add New Maintenance Cost</a></li>
             </ul>
         </li>
         
