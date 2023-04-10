@@ -12,7 +12,7 @@ class billController extends Controller
      */
     public function index()
     {
-        //
+        return view('finance.bills.create');
     }
 
     /**
