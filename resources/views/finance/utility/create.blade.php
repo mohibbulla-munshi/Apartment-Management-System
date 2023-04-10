@@ -5,33 +5,49 @@
     <!-- Bill entry form -->
     <div class="card">
         <div class="card-header">
-          Add New Owner Utility
+          <h3>Add New Owner Utility</h3>
         </div>
         <div class="card-body">
           <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-6">
-              <label for="selectBillType" class="form-label">Select Bill Type :</label>
-              <select class="form-select" id="selectBillType" required>
-                <option selected disabled value="">--Select Type--</option>
-                <option>Gas</option>
-                <option>Water</option>
-                <option>Electricity</option>
+              <label for="floorNo" class="form-label">Floor No :</label>
+              <select class="form-select" id="floorNo" required>
+                <option selected disabled value="">--Select Floor--</option>
+                <option>First</option>
+                <option>Second</option>
+                <option>Third</option>
+                <option>fourth</option>
+                <option>fifth</option>
               </select>
               <div class="invalid-feedback">
-                Please select a valid type.
+                Please select a valid Floor no.
               </div>
             </div>
             <div class="col-md-6">
-              <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-              <input type="date" class="form-control" id="bilDepositDate" required>
+              <label for="unitNo" class="form-label">Unit No :</label>
+              <select class="form-select" id="unitNo" required>
+                <option selected disabled value="">--Select Unit--</option>
+                <option>A1</option>
+                <option>B1</option>
+                <option>C1</option>
+                <option>C2</option>
+                <option>D1</option>
+              </select>
               <div class="invalid-feedback">
-                Please provide a valid Month.
+                Please select a valid Unit no.
               </div>
             </div>
             <div class="col-md-6">
-              <label for="billMonth" class="form-label">Bill Month :</label>
-              <select class="form-select" id="billMonth" required>
-                <option selected disabled value="">--Select Month--</option>
+              <label for="ownerName" class="form-label">Owner Name :</label>
+              <input type="text" class="form-control" id="ownerName" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="utilityMonth" class="form-label">Utility Month :</label>
+              <select class="form-select" id="utilityMonth" required>
+                <option selected disabled value="">--Select Utility Month--</option>
                 <option>January</option>
                 <option>February</option>
                 <option>March</option>
@@ -50,9 +66,9 @@
               </div>
             </div>
             <div class="col-md-6">
-              <label for="billMonth" class="form-label">Bill Year :</label>
-              <select class="form-select" id="billMonth" required>
-                <option selected disabled value="">--Select Year--</option>
+              <label for="utilityYear" class="form-label">Utility Year :</label>
+              <select class="form-select" id="utilityYear" required>
+                <option selected disabled value="">--Select Utility Year--</option>
                 <option>2023</option>
                 <option>2022</option>
                 <option>2021</option>
@@ -67,32 +83,67 @@
                 <option>2012</option>
               </select>
               <div class="invalid-feedback">
-                Please select a valid type.
+                Please select a valid Year.
               </div>
             </div>
             <div class="col-md-6">
-              <label for="totalMonth" class="form-label">Total Amount :</label>
-              <input type="text" class="form-control" id="totalMonth" value="" required>
+              <label for="waterBill" class="form-label">Water Bill :</label>
+              <input type="text" class="form-control" id="waterBill" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6">
-              <label for="depositBankName" class="form-label">Deposit Bank Name :</label>
-              <input type="text" class="form-control" id="depositBankName" value="" required>
+              <label for="electricBill" class="form-label">Electric Bill :</label>
+              <input type="text" class="form-control" id="electricBill" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
-            <div class="col-md-12">
-              <label for="details">Details</label>
-              <textarea class="form-control" placeholder="Leave a comment here" id="details"></textarea>
+            <div class="col-md-6">
+              <label for="gasBill" class="form-label">Gas Bill :</label>
+              <input type="text" class="form-control" id="gasBill" value="" required>
               <div class="valid-feedback">
                 Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="SecurityBill" class="form-label">Security Bill :</label>
+              <input type="text" class="form-control" id="SecurityBill" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="utilityBill" class="form-label">Utility Bill :</label>
+              <input type="text" class="form-control" id="utilityBill" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="otherBill" class="form-label">Other Bill :</label>
+              <input type="text" class="form-control" id="otherBill" value="" >
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="totalRent" class="form-label">Total Rent :</label>
+              <input type="text" class="form-control" id="totalRent" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="issueDate" class="form-label">Issue Date :</label>
+              <input type="date" class="form-control" id="issueDate" required>
+              <div class="invalid-feedback">
+                Please provide a valid Date.
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Submit form</button>
+              <button class="btn btn-primary" type="submit">Submit</button>
             </div>
           </form>
         </div>

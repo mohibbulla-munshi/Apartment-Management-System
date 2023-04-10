@@ -5,32 +5,21 @@
     <!-- Bill entry form -->
     <div class="card">
         <div class="card-header">
-          Add New Maintenance Cost 
+          <h3>Add New Maintenance Cost</h3> 
         </div>
         <div class="card-body">
           <form class="row g-3 needs-validation" novalidate>
+            
             <div class="col-md-6">
-              <label for="selectBillType" class="form-label">Select Bill Type :</label>
-              <select class="form-select" id="selectBillType" required>
-                <option selected disabled value="">--Select Type--</option>
-                <option>Gas</option>
-                <option>Water</option>
-                <option>Electricity</option>
-              </select>
+              <label for="date" class="form-label">Date :</label>
+              <input type="date" class="form-control" id="date" required>
               <div class="invalid-feedback">
-                Please select a valid type.
+                Please provide a valid date.
               </div>
             </div>
             <div class="col-md-6">
-              <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-              <input type="date" class="form-control" id="bilDepositDate" required>
-              <div class="invalid-feedback">
-                Please provide a valid Month.
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="billMonth" class="form-label">Bill Month :</label>
-              <select class="form-select" id="billMonth" required>
+              <label for="month" class="form-label">Month :</label>
+              <select class="form-select" id="month" required>
                 <option selected disabled value="">--Select Month--</option>
                 <option>January</option>
                 <option>February</option>
@@ -50,8 +39,8 @@
               </div>
             </div>
             <div class="col-md-6">
-              <label for="billMonth" class="form-label">Bill Year :</label>
-              <select class="form-select" id="billMonth" required>
+              <label for="year" class="form-label">Year :</label>
+              <select class="form-select" id="year" required>
                 <option selected disabled value="">--Select Year--</option>
                 <option>2023</option>
                 <option>2022</option>
@@ -71,15 +60,15 @@
               </div>
             </div>
             <div class="col-md-6">
-              <label for="totalMonth" class="form-label">Total Amount :</label>
-              <input type="text" class="form-control" id="totalMonth" value="" required>
+              <label for="maintentanceTitle" class="form-label">Maintenance Title :</label>
+              <input type="text" class="form-control" id="maintentanceTitle" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6">
-              <label for="depositBankName" class="form-label">Deposit Bank Name :</label>
-              <input type="text" class="form-control" id="depositBankName" value="" required>
+              <label for="amount" class="form-label">Amount :</label>
+              <input type="text" class="form-control" id="amount" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -92,7 +81,7 @@
               </div>
             </div>
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Submit form</button>
+              <button class="btn btn-primary" type="submit">Submit</button>
             </div>
           </form>
         </div>

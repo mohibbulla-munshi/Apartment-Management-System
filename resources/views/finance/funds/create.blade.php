@@ -5,7 +5,7 @@
     <!--  Fund Entry Form  -->
     <div class="card">
         <div class="card-header">
-          Add New Fund
+          <h3>Add New Fund</h3>
         </div>
         <div class="card-body">
           <form class="row g-3 needs-validation" novalidate>
