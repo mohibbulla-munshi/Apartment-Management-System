@@ -4,6 +4,7 @@ use App\Http\Controllers\Finance\BillController;
 use App\Http\Controllers\Finance\FundController;
 use App\Http\Controllers\Finance\MaintenanceController;
 use App\Http\Controllers\Finance\UtilityController;
+use App\Http\Controllers\Finance\RentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Deshboard\DashboardController;
 
@@ -23,6 +24,9 @@ Route::resource('fund', FundController::class);
 Route::resource('Utility', UtilityController::class);
 //Maintenance
 Route::resource('maintenance', MaintenanceController::class);
+//Rent
+Route::resource('rent', RentController::class);
+
 /* ------------------------------------------------------------ */
 
 
