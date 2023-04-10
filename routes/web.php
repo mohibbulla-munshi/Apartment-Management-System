@@ -22,5 +22,5 @@ Route::resource('fund', FundController::class);
 Route::resource('Utility', UtilityController::class);
 //Maintenance
 Route::resource('maintenance', MaintenanceController::class);
-/* -------------------------------------------------------------- */
+/* ------------------------------------------------------------ */
 
