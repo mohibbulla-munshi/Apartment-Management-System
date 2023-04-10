@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Finance;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class billController extends Controller
+class BillController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('finance.bills.create');
+        return view('finance.bills.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class billController extends Controller
      */
     public function create()
     {
-        //
+        return view('finance.bills.create');
     }
 
     /**
