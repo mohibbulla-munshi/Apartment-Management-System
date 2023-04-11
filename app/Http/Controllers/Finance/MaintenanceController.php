@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Finance\MaintenanceCost;
 
 class MaintenanceController extends Controller
 {
@@ -12,7 +13,8 @@ class MaintenanceController extends Controller
      */
     public function index()
     {
-        return view('finance.maintenance.index');
+        $MaintenanceCosts = MaintenanceCost::all();
+        return view('finance.maintenance.index', compact('MaintenanceCosts'));
     }
 
     /**
@@ -28,7 +30,18 @@ class MaintenanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $MaintenanceCost = new MaintenanceCost;
+
+        $MaintenanceCost->date = $request->date;
+        $MaintenanceCost->month = $request->month;
+        $MaintenanceCost->year = $request->year;
+        $MaintenanceCost->maintenance_title = $request->maintenance_title;
+        $MaintenanceCost->amount = $request->amount;
+        $MaintenanceCost->details = $request->details;
+        
+        $MaintenanceCost->save();
+        return redirect('maintenance');
+
     }
 
     /**
@@ -44,7 +57,9 @@ class MaintenanceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $MaintenanceCost = MaintenanceCost::find($id);
+        return view('finance.maintenance.edit', compact('MaintenanceCost'));
+
     }
 
     /**
@@ -52,7 +67,19 @@ class MaintenanceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $MaintenanceCost = MaintenanceCost::find($id);
+
+        $MaintenanceCost->date = $request->date;
+        $MaintenanceCost->month = $request->month;
+        $MaintenanceCost->year = $request->year;
+        $MaintenanceCost->maintenance_title = $request->maintenance_title;
+        $MaintenanceCost->amount = $request->amount;
+        // $MaintenanceCost->details = $request->details;
+        
+        $MaintenanceCost->save();
+        return redirect('maintenance');
+
+
     }
 
     /**
@@ -60,6 +87,10 @@ class MaintenanceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $MaintenanceCost = MaintenanceCost::find($id);
+        $MaintenanceCost->delete();
+        return redirect('maintenance');
+
+
     }
 }

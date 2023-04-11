@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -18,7 +17,7 @@ return new class extends Migration
             $table->string('year')->nullable(false);
             $table->string('maintenance_title', 100)->nullable(false);
             $table->decimal('amount')->nullable(false);
-            $table->text('details');
+            $table->text('details')->nullable(true);
             $table->timestamps();
         });
     }

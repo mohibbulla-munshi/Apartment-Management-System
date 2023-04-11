@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class MaintenanceCost extends Model
 {
     use HasFactory;
+    protected $fillable = ['date', 'month', 'year','maintenance_title','amount'];
 }
