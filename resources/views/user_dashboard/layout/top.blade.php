@@ -30,7 +30,14 @@
 <link href="{{ asset('themes/css/style.css') }}" rel="stylesheet">
 <!-- We use those styles to show code examples, you should remove them in your application.-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@0.23.0/themes/prism.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+<script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script defer src="{{ asset('themes/js/datatable.js') }}"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 <link href="{{ asset('themes/css/examples.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Global site tag (gtag.js) - Google Analytics-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965718-3"></script>
 <script>
