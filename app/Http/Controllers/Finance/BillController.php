@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Finance\Bill;
 
 class BillController extends Controller
 {
@@ -12,7 +13,8 @@ class BillController extends Controller
      */
     public function index()
     {
-        return view('finance.bills.index');
+        $bills = Bill::all();
+        return view('finance.bills.index', compact('bills'));
     }
 
     /**
@@ -28,7 +30,18 @@ class BillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bill = new Bill;
+
+        $bill->bill_type = $request->bill_type;
+        $bill->bill_deposit_date = $request->bill_deposit_date;
+        $bill->bill_month = $request->bill_month;
+        $bill->bill_year = $request->bill_year;
+        $bill->total_amount = $request->total_amount;
+        $bill->deposit_bank_name = $request->deposit_bank_name;
+        $bill->details = $request->details;
+
+        $bill->save();
+        return redirect('bill');
     }
 
     /**
@@ -36,7 +49,7 @@ class BillController extends Controller
      */
     public function show(string $id)
     {
-        //
+        dd('show');
     }
 
     /**
@@ -44,7 +57,8 @@ class BillController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $bill = Bill::find($id);
+        return view('finance.bills.edit', compact('bill'));
     }
 
     /**
@@ -52,7 +66,19 @@ class BillController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $bill = Bill::find($id);
+
+        $bill->bill_type = $request->bill_type;
+        $bill->bill_deposit_date = $request->bill_deposit_date;
+        $bill->bill_month = $request->bill_month;
+        $bill->bill_year = $request->bill_year;
+        $bill->total_amount = $request->total_amount;
+        $bill->deposit_bank_name = $request->deposit_bank_name;
+        $bill->details = $request->details;
+
+        $bill->save();
+        return redirect('bill');
+
     }
 
     /**
@@ -60,6 +86,8 @@ class BillController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $bill = Bill::find($id);
+        $bill->delete();
+        return redirect('bill');
     }
 }
