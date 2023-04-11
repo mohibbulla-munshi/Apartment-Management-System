@@ -8,14 +8,15 @@
           <h3>Add New Bill</h3>
         </div>
         <div class="card-body">
-          <form class="row g-3 needs-validation" novalidate>
+          <form method="POST" action="{{ route('bill.store') }}" class="row g-3 needs-validation" novalidate>
+            @csrf
             <div class="col-md-6">
               <label for="selectBillType" class="form-label">Select Bill Type :</label>
-              <select class="form-select" id="selectBillType" required>
+              <select name="bill_type" class="form-select" id="selectBillType" required>
                 <option selected disabled value="">--Select Type--</option>
-                <option>Gas</option>
-                <option>Water</option>
-                <option>Electricity</option>
+                <option value="gas">Gas</option>
+                <option value="water">Water</option>
+                <option value="electricity">Electricity</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid type.
@@ -23,48 +24,48 @@
             </div>
             <div class="col-md-6">
               <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-              <input type="date" class="form-control" id="bilDepositDate" required>
+              <input name="bill_deposit_date" type="date" class="form-control" id="bilDepositDate" required>
               <div class="invalid-feedback">
                 Please provide a valid Month.
               </div>
             </div>
             <div class="col-md-6">
               <label for="billMonth" class="form-label">Bill Month :</label>
-              <select class="form-select" id="billMonth" required>
+              <select name="bill_month" class="form-select" id="billMonth" required>
                 <option selected disabled value="">--Select Month--</option>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="august">August</option>
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+                <option value="december">December</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid type.
               </div>
             </div>
             <div class="col-md-6">
-              <label for="billMonth" class="form-label">Bill Year :</label>
-              <select class="form-select" id="billMonth" required>
+              <label for="billYear" class="form-label">Bill Year :</label>
+              <select name="bill_year" class="form-select" id="billYear" required>
                 <option selected disabled value="">--Select Year--</option>
-                <option>2023</option>
-                <option>2022</option>
-                <option>2021</option>
-                <option>2020</option>
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                <option>2016</option>
-                <option>2015</option>
-                <option>2014</option>
-                <option>2013</option>
-                <option>2012</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid type.
@@ -72,21 +73,21 @@
             </div>
             <div class="col-md-6">
               <label for="totalMonth" class="form-label">Total Amount :</label>
-              <input type="text" class="form-control" id="totalMonth" value="" required>
+              <input name="total_amount" type="text" class="form-control" id="totalMonth" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6">
               <label for="depositBankName" class="form-label">Deposit Bank Name :</label>
-              <input type="text" class="form-control" id="depositBankName" value="" required>
+              <input name="deposit_bank_name" type="text" class="form-control" id="depositBankName" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-12">
               <label for="details">Details</label>
-              <textarea class="form-control" placeholder="Leave a comment here" id="details"></textarea>
+              <textarea name="details" class="form-control" placeholder="Leave a comment here" id="details"></textarea>
               <div class="valid-feedback">
                 Looks good!
               </div>
