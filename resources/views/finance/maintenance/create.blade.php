@@ -8,31 +8,31 @@
           <h3>Add New Maintenance Cost</h3> 
         </div>
         <div class="card-body">
-          <form class="row g-3 needs-validation" novalidate>
-            
+          <form method="POST" action="{{ route('maintenance.store') }}" class="row g-3 needs-validation" novalidate>
+            @csrf
             <div class="col-md-6">
               <label for="date" class="form-label">Date :</label>
-              <input type="date" class="form-control" id="date" required>
+              <input name="date" type="date" class="form-control" id="date" required>
               <div class="invalid-feedback">
                 Please provide a valid date.
               </div>
             </div>
             <div class="col-md-6">
               <label for="month" class="form-label">Month :</label>
-              <select class="form-select" id="month" required>
+              <select name="month" class="form-select" id="month" required>
                 <option selected disabled value="">--Select Month--</option>
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="august">August</option>
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+                <option value="december">December</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid type.
@@ -40,20 +40,20 @@
             </div>
             <div class="col-md-6">
               <label for="year" class="form-label">Year :</label>
-              <select class="form-select" id="year" required>
+              <select name="year" class="form-select" id="year" required>
                 <option selected disabled value="">--Select Year--</option>
-                <option>2023</option>
-                <option>2022</option>
-                <option>2021</option>
-                <option>2020</option>
-                <option>2019</option>
-                <option>2018</option>
-                <option>2017</option>
-                <option>2016</option>
-                <option>2015</option>
-                <option>2014</option>
-                <option>2013</option>
-                <option>2012</option>
+               <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid type.
@@ -61,21 +61,21 @@
             </div>
             <div class="col-md-6">
               <label for="maintentanceTitle" class="form-label">Maintenance Title :</label>
-              <input type="text" class="form-control" id="maintentanceTitle" value="" required>
+              <input name="maintenance_title" type="text" class="form-control" id="maintentanceTitle" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6">
               <label for="amount" class="form-label">Amount :</label>
-              <input type="text" class="form-control" id="amount" value="" required>
+              <input name="amount" type="number" class="form-control" id="amount" value="" required>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-12">
               <label for="details">Details</label>
-              <textarea class="form-control" placeholder="Leave a comment here" id="details"></textarea>
+              <textarea name="details" class="form-control" placeholder="Leave a comment here" id="details"></textarea>
               <div class="valid-feedback">
                 Looks good!
               </div>
