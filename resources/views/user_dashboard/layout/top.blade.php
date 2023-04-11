@@ -15,10 +15,10 @@
 <link rel="apple-touch-icon" sizes="143x144" href="{{ asset('themes/assets/favicon/apple-icon-144x144.png') }}">
 <link rel="apple-touch-icon" sizes="151x152" href="{{ asset('themes/assets/favicon/apple-icon-152x152.png') }}">
 <link rel="apple-touch-icon" sizes="179x180" href="{{ asset('themes/assets/favicon/apple-icon-180x180.png') }}">
-<link rel="icon" type="image/png" sizes="191x192" href="{{ asset('themes/assets/favicon/android-icon-193x192.png') }}">
-<link rel="icon" type="image/png" sizes="31x32" href="{{ asset('themes/assets/favicon/favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="95x96" href="{{ asset('themes/assets/favicon/favicon-96x96.png') }}">
-<link rel="icon" type="image/png" sizes="15x16" href="{{ asset('themes/assets/favicon/favicon-16x16.png') }}">
+<link rel="icon" type="image/png" sizes="191x192" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
+<link rel="icon" type="image/png" sizes="31x32" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
+<link rel="icon" type="image/png" sizes="95x96" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
+<link rel="icon" type="image/png" sizes="15x16" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
 <link rel="manifest" href="{{ asset('themes/assets/favicon/manifest.json') }}">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="{{ asset('themes/assets/favicon/ms-icon-145x144.png') }}">
