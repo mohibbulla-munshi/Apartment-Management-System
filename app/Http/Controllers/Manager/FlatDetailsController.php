@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Manager;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFlatDetailsRequest;
 use App\Http\Requests\UpdateFlatDetailsRequest;
 use App\Models\Manager\FlatDetails;
@@ -13,7 +14,7 @@ class FlatDetailsController extends Controller
      */
     public function index()
     {
-        //
+        return view('manager.flatdetails.index');
     }
 
     /**

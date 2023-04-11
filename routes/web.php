@@ -7,6 +7,7 @@ use App\Http\Controllers\Finance\UtilityController;
 use App\Http\Controllers\Finance\RentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Deshboard\DashboardController;
+use App\Http\Controllers\Manager\ProfileController;
 
 Route::get('/', function () {
     return view('Home');
@@ -37,3 +38,14 @@ Route::resource('rent', RentController::class);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 /* -------------------------------------------------------------- */
+
+
+/**
+ * -----------------------Manager Route-------------
+ */
+
+ Route::get('/profile_list', [ProfileController::class, 'index']);
+ Route::get('/flat_list', [FlatDetailsController::class, 'index']);
+ Route::get('/building_info', [BuildingDetailsController::class, 'index']);
+
+ /* -------------------------------------------------------------- */
