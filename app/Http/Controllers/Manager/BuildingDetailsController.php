@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreBuildingDetailsRequest;
+use App\Http\Requests\UpdateBuildingDetailsRequest;
+use App\Models\Manager\BuildingDetails;
 
-class ManagerController extends Controller
+class BuildingDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +27,7 @@ class ManagerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBuildingDetailsRequest $request)
     {
         //
     }
@@ -33,7 +35,7 @@ class ManagerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(BuildingDetails $buildingDetails)
     {
         //
     }
@@ -41,7 +43,7 @@ class ManagerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(BuildingDetails $buildingDetails)
     {
         //
     }
@@ -49,7 +51,7 @@ class ManagerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateBuildingDetailsRequest $request, BuildingDetails $buildingDetails)
     {
         //
     }
@@ -57,7 +59,7 @@ class ManagerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(BuildingDetails $buildingDetails)
     {
         //
     }
