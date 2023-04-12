@@ -3,7 +3,7 @@
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
         <!-- Own Working Space -->
-       <table id="example" class="table table-striped" style="width:98%">
+        <table id="example" class="table table-striped" style="width:98%">
             <thead>
                 <tr>
                     <th>#Invoice</th>
@@ -37,7 +37,7 @@
                 </tr>
             </tbody>
             <tfoot>
-              <tr>
+                <tr>
                     <th>#Invoice</th>
                     <th>Renter Name</th>
                     <th>Type</th>
