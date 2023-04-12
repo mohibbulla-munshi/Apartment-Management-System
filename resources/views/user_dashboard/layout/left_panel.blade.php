@@ -1,6 +1,6 @@
 <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
     <div class="sidebar-brand d-none d-md-flex">
-        <img style="width:50%" src="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}" alt="">
+        <a style="text-align:center" href="/"><img style="width:50%;" src="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}" alt=""></a>
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
         <li class="nav-item"><a class="nav-link" href="/dashboard">
