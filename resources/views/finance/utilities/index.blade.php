@@ -19,7 +19,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -34,7 +36,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -49,7 +53,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -64,7 +70,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -79,7 +87,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -94,7 +104,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -109,7 +121,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -124,7 +138,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>02</td>
                     <td>A1</td>
@@ -140,7 +156,7 @@
                 </tr>
             </tbody>
             <tfoot>
-              <tr>
+                <tr>
                     <th>Image</th>
                     <th>Owner Name</th>
                     <th>Floor No</th>

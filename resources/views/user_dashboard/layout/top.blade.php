@@ -15,10 +15,14 @@
 <link rel="apple-touch-icon" sizes="143x144" href="{{ asset('themes/assets/favicon/apple-icon-144x144.png') }}">
 <link rel="apple-touch-icon" sizes="151x152" href="{{ asset('themes/assets/favicon/apple-icon-152x152.png') }}">
 <link rel="apple-touch-icon" sizes="179x180" href="{{ asset('themes/assets/favicon/apple-icon-180x180.png') }}">
-<link rel="icon" type="image/png" sizes="191x192" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
-<link rel="icon" type="image/png" sizes="31x32" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
-<link rel="icon" type="image/png" sizes="95x96" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
-<link rel="icon" type="image/png" sizes="15x16" href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
+<link rel="icon" type="image/png" sizes="191x192"
+    href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
+<link rel="icon" type="image/png" sizes="31x32"
+    href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
+<link rel="icon" type="image/png" sizes="95x96"
+    href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
+<link rel="icon" type="image/png" sizes="15x16"
+    href="{{ asset('themes/assets/img/apartment-management-system-removebg-preview.png') }}">
 <link rel="manifest" href="{{ asset('themes/assets/favicon/manifest.json') }}">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="{{ asset('themes/assets/favicon/ms-icon-145x144.png') }}">
@@ -40,7 +44,9 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 <link href="{{ asset('themes/css/examples.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Global site tag (gtag.js) - Google Analytics-->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965718-3"></script>
 <script>

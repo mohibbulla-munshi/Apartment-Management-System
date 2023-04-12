@@ -17,7 +17,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img style="width:20%" src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png" alt=""></td>
+                    <td><img style="width:20%"
+                            src="https://babysuperstorebd.com/envato/apartment-management-system/img/upload/B616EE89-C1D1-8984-3C2F-2D192CC5699E.png"
+                            alt=""></td>
                     <td>John Peterson</td>
                     <td>February</td>
                     <td>2022</td>
@@ -29,10 +31,10 @@
                         <a href="#"><i class="fa-sharp fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
-                
+
             </tbody>
             <tfoot>
-               <tr>
+                <tr>
                     <th>Bill Type</th>
                     <th>Issue Date</th>
                     <th>Bill Month</th>
