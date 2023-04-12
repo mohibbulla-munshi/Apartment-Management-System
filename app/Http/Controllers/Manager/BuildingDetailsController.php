@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Manager;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBuildingDetailsRequest;
 use App\Http\Requests\UpdateBuildingDetailsRequest;
 use App\Models\Manager\BuildingDetails;
@@ -13,7 +14,7 @@ class BuildingDetailsController extends Controller
      */
     public function index()
     {
-        //
+        return view('manager.building.index');
     }
 
     /**

@@ -56,7 +56,44 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('rent/create') }}"><span class="nav-icon"></span>Add New Rent</a></li>
             </ul>
         </li>
-        
+
         {{-- Account & Finance nav item end here --}}
+
+
+
+
+        {{-- Manager nav item start here --}}
+        
+        <li class="nav-title">Manager</li>
+        
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Profile</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="#"><span class="nav-icon"></span>Profile List</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><span class="nav-icon"></span>Add Profile</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Building Profile</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('fund') }}"><span class="nav-icon"></span>Building Information</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fund/create') }}"><span class="nav-icon"></span>Add Building Information</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Flat Detalis</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('Utility') }}"><span class="nav-icon"></span>Flat List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('Utility/create') }}"><span class="nav-icon"></span>Add Flat</a></li>
+            </ul>
+        </li>
+
+        {{-- Manager nav item end here --}}
     </ul>
 </div>
