@@ -40,6 +40,7 @@ class MaintenanceController extends Controller
         $MaintenanceCost->details = $request->details;
         
         $MaintenanceCost->save();
+        $request->session()->flash('alert-success', 'Maintenance Cost Successfully Added');
         return redirect('maintenance');
 
     }
@@ -77,6 +78,7 @@ class MaintenanceController extends Controller
         // $MaintenanceCost->details = $request->details;
         
         $MaintenanceCost->save();
+        $request->session()->flash('alert-success', 'Maintenance Cost Successfully Updated');
         return redirect('maintenance');
 
 
@@ -85,10 +87,11 @@ class MaintenanceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
         $MaintenanceCost = MaintenanceCost::find($id);
         $MaintenanceCost->delete();
+        $request->session()->flash('alert-danger', 'Maintenance Cost Successfully Deleted');
         return redirect('maintenance');
 
 

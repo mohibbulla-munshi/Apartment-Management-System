@@ -41,6 +41,7 @@ class BillController extends Controller
         $bill->details = $request->details;
 
         $bill->save();
+        $request->session()->flash('alert-success', 'Bill Successfully added');
         return redirect('bill');
     }
 
@@ -77,6 +78,7 @@ class BillController extends Controller
         $bill->details = $request->details;
 
         $bill->save();
+        $request->session()->flash('alert-success', 'Bill Successfully updated');
         return redirect('bill');
 
     }
@@ -84,10 +86,11 @@ class BillController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
         $bill = Bill::find($id);
         $bill->delete();
+        $request->session()->flash('alert-danger', 'Bill Successfully Deleted');
         return redirect('bill');
     }
 }

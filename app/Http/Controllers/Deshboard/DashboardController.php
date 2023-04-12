@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    function index()
+    public function index(Request $req)
     {
         return view('user_dashboard.dashboard');
+        $req->session()->flash('alert-success', 'Welcome to Dashboard');
     }
 }
