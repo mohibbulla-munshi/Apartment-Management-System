@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Finance;
 
 use App\Http\Controllers\Controller;
+use App\Models\Finance\Fund;
 use Illuminate\Http\Request;
 
 class FundController extends Controller
@@ -12,7 +13,8 @@ class FundController extends Controller
      */
     public function index()
     {
-        return view('finance.funds.index');
+        $funds = Fund::all();
+        return view('finance.funds.index', compact('funds'));
     }
 
     /**
@@ -20,6 +22,7 @@ class FundController extends Controller
      */
     public function create()
     {
+
         return view('finance.funds.create');
     }
 
@@ -28,7 +31,19 @@ class FundController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fund = new Fund;
+
+        $fund->owner_name = $request->owner_name;
+        $fund->month = $request->month;
+        $fund->year = $request->year;
+        $fund->date = $request->date;
+        $fund->total_amount = $request->total_amount;
+        $fund->purpose = $request->purpose;
+
+        $fund->save();
+        $request->session()->flash('alert-success', 'Fund Successfully added');
+        return redirect('fund');
+
     }
 
     /**
@@ -44,7 +59,9 @@ class FundController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $fund = Fund::find($id);
+        return view('finance.funds.edit', compact('fund'));
+
     }
 
     /**
@@ -52,14 +69,29 @@ class FundController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $fund = Fund::find($id);
+
+        $fund->owner_name = $request->owner_name;
+        $fund->month = $request->month;
+        $fund->year = $request->year;
+        $fund->date = $request->date;
+        $fund->total_amount = $request->total_amount;
+        $fund->purpose = $request->purpose;
+
+        $fund->save();
+        $request->session()->flash('alert-success', 'Fund Successfully Updated');
+        return redirect('fund');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
-        //
+        $fund = Fund::find($id);
+        $fund->delete();
+        $request->session()->flash('alert-danger', 'Fund Successfully Deleted');
+        return redirect('fund');
     }
 }
