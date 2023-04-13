@@ -44,8 +44,14 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
  * -----------------------Manager Route-------------
  */
 
- Route::get('/profile_list', [ProfileController::class, 'index']);
- Route::get('/flat_list', [FlatDetailsController::class, 'index']);
- Route::get('/building_info', [BuildingDetailsController::class, 'index']);
+Route::get('/profile_list', [ProfileController::class, 'index']);
+Route::get('/flat_list', [FlatDetailsController::class, 'index']);
+Route::get('/building_info', [BuildingDetailsController::class, 'index']);
+
+//User Profile
+Route::resource('profile', ProfileController::class);
+//User Profile
+Route::resource('profile', ProfileController::class);
+
 
  /* -------------------------------------------------------------- */
