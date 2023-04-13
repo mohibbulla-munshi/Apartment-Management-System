@@ -10,6 +10,77 @@
                     </use>
                 </svg>Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
         </li>
+
+        {{-- Informations nav item start here --}}
+        <li class="nav-title">Informations</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-building') }}"></use>
+                </svg>Floor Information</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('bill') }}"><span class="nav-icon"></span>Floor
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('bill/create') }}"><span
+                            class="nav-icon"></span>Add
+                        Floor</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-building') }}"></use>
+                </svg>Unit Information</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('fund') }}"><span class="nav-icon"></span>Unit
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fund/create') }}"><span
+                            class="nav-icon"></span>Add
+                        Unit</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-people') }}"></use>
+                </svg>Owner Information</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('Utility') }}"><span class="nav-icon"></span>Owner
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('Utility/create') }}"><span
+                            class="nav-icon"></span>Add Owner</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-people') }}"></use>
+                </svg>Tenant Information</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance') }}"><span
+                            class="nav-icon"></span>Tenant List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance/create') }}"><span
+                            class="nav-icon"></span>Add Tenant</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-people') }}"></use>
+                </svg>Employee Information</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('rent') }}"><span class="nav-icon"></span>Employee
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('rent/create') }}"><span
+                            class="nav-icon"></span>Add Employee</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('rent/create') }}"><span
+                            class="nav-icon"></span>Employee Salary</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('rent/create') }}"><span
+                            class="nav-icon"></span>Employee Leave Request</a>
+                </li>
+            </ul>
+        </li>
+
+        {{-- Informations nav item end here --}}
+
+
         {{-- Account & Finance nav item start here --}}
         <li class="nav-title">Account & Finance</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
