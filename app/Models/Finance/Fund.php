@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Fund extends Model
 {
     use HasFactory;
+    protected $fillable = ['owner_name', 'month', 'year', 'date', 'total_amount', 'purpose'];
 }
