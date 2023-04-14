@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('flat_floor_no')->nullable(false);
             $table->string('flat_rent')->nullable(false);
             $table->string('flat_size')->nullable(true);
-            $table->string('flat_status')->nullable(false);
+            $table->string('flat_details')->nullable(true);
             $table->text('additional_info')->nullable(true);
             $table->timestamps();
         });

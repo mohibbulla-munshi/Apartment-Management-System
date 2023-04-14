@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('user_id')->nullable(false);
             $table->string('building_name')->nullable(false);
-            $table->string('divisions')->nullable(false);
-            $table->string('sub_districts')->nullable(false);
-            $table->string('union_corporations')->nullable(false);
+            $table->string('division')->nullable(false);
+            $table->string('district')->nullable(false);
+            $table->string('city_corporation')->nullable(true);
+            $table->string('upazilla')->nullable(true);
             $table->string('post_code')->nullable(false);
-            $table->string('villages')->nullable(false);
+            $table->string('area')->nullable(false);
             $table->string('building_no')->nullable(false);
             $table->string('building_type')->nullable(false);
             $table->string('buliding_floors')->nullable(true);

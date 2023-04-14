@@ -42,10 +42,12 @@ class ProfileController extends Controller
         $address = $request->post('address');
         $additional_info = $request->post('additional_info');
 
+        // return dd($user_id);
+
 
         if (Profile::whereEmail($email)->count() == 0) {
             
-            $profile = new Profile();
+            $profile= new Profile();
             $profile->user_id =$user_id;
             $profile->name = $name;
             $profile->email = $email;
@@ -59,7 +61,9 @@ class ProfileController extends Controller
             $profile->additional_info = $additional_info;
             $profile->save();
         }
-        return redirect('profile');
+        // dd($profile);
+        return redirect('/profile_list');
+        // return redirect()->back()->with('message','create successfully');
     }
 
     /**
