@@ -129,9 +129,6 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('fund/create') }}"><span
                             class="nav-icon"></span>Tenant Report</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fund') }}"><span class="nav-icon"></span>Rental
-                        Report</a>
-                </li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('fund') }}"><span class="nav-icon"></span>Visitors
                         Report</a>
                 </li>
