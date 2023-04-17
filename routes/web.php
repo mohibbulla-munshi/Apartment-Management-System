@@ -10,8 +10,7 @@ use App\Http\Controllers\Deshboard\DashboardController;
 use App\Http\Controllers\Manager\ProfileController;
 use App\Http\Controllers\Manager\FlatDetailsController;
 use App\Http\Controllers\Manager\BuildingDetailsController;
-
-
+use App\Http\Controllers\Reports\BillController as ReportsBillController;
 
 Route::get('/', function () {
     return view('Home');
@@ -31,6 +30,11 @@ Route::resource('Utility', UtilityController::class);
 Route::resource('maintenance', MaintenanceController::class);
 //Rent
 Route::resource('rent', RentController::class);
+
+//All Reports
+Route::group(['prefix' => 'report'], function () {
+    Route::resource('bill_report', ReportsBillController::class);
+});
 
 /* ------------------------------------------------------------ */
 
@@ -61,7 +65,7 @@ Route::get('/building_info', [BuildingDetailsController::class, 'index']);
 
 Route::group(['prefix' => "manager" ], function () {
     
-    Route::group(['prefix' => "profile" ], function (){
+    Route::group(['prefix' => "profile" ], function () {
 
         Route::get('/', [ProfileController::class, 'index']);
         Route::get('/create', [ProfileController::class, 'create'])->name("profile.create");
@@ -70,4 +74,4 @@ Route::group(['prefix' => "manager" ], function () {
     });
 
 });
- /* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
