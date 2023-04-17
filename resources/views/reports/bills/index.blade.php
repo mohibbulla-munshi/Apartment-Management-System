@@ -5,33 +5,36 @@
     <!-- Bill entry form -->
     <div class="card">
       <div class="card-header">
-        <h3>Add New Bill</h3>
+        <h3>Rent Collection Report</h3>
       </div>
       <div class="card-body">
         <form method="POST" action="{{ route('bill.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
           <div class="col-md-6">
-            <label for="selectBillType" class="form-label">Select Bill Type :</label>
-            <select name="bill_type" class="form-select" id="selectBillType" required>
-              <option selected disabled value="">--Select Type--</option>
-              <option value="gas">Gas</option>
-              <option value="water">Water</option>
-              <option value="electricity">Electricity</option>
+            <label for="selectFloor" class="form-label">Select Floor :</label>
+            <select name="floor" class="form-select" id="selectFloor" required>
+              <option selected disabled value="">--Select Floor--</option>
+              <option value="1st Floor">1st Floor</option>
+              <option value="2nd Floor">2nd Floor</option>
             </select>
             <div class="invalid-feedback">
               Please select a valid type.
             </div>
           </div>
           <div class="col-md-6">
-            <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-            <input name="bill_deposit_date" type="date" class="form-control" id="bilDepositDate" required>
+            <label for="selectUnit" class="form-label">Select Unit :</label>
+            <select name="unit" class="form-select" id="selectUnit" required>
+              <option selected disabled value="">--Select Year--</option>
+              <option value="A1">A1</option>
+              <option value="B1">B1</option>
+            </select>
             <div class="invalid-feedback">
-              Please provide a valid Month.
+              Please select a valid type.
             </div>
           </div>
           <div class="col-md-6">
-            <label for="billMonth" class="form-label">Bill Month :</label>
-            <select name="bill_month" class="form-select" id="billMonth" required>
+            <label for="selectMonth" class="form-label">Select Month :</label>
+            <select name="bill_month" class="form-select" id="selectMonth" required>
               <option selected disabled value="">--Select Month--</option>
               <option value="january">January</option>
               <option value="february">February</option>
@@ -51,8 +54,8 @@
             </div>
           </div>
           <div class="col-md-6">
-            <label for="billYear" class="form-label">Bill Year :</label>
-            <select name="bill_year" class="form-select" id="billYear" required>
+            <label for="selectMonth" class="form-label">Select Year :</label>
+            <select name="bill_year" class="form-select" id="selectMonth" required>
               <option selected disabled value="">--Select Year--</option>
               <option value="2023">2023</option>
               <option value="2022">2022</option>
@@ -72,26 +75,17 @@
             </div>
           </div>
           <div class="col-md-6">
-            <label for="totalMonth" class="form-label">Total Amount :</label>
-            <input name="total_amount" type="text" class="form-control" id="totalMonth" value="" required>
-            <div class="valid-feedback">
-              Looks good!
+            <label for="paymentStatus" class="form-label">Payment Status :</label>
+            <select name="payment_status" class="form-select" id="paymentStatus" required>
+              <option selected disabled value="">--Select --</option>
+              <option value="paid">Paid</option>
+              <option value="due">due</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid type.
             </div>
           </div>
-          <div class="col-md-6">
-            <label for="depositBankName" class="form-label">Deposit Bank Name :</label>
-            <input name="deposit_bank_name" type="text" class="form-control" id="depositBankName" value="" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-12">
-            <label for="details">Details</label>
-            <textarea name="details" class="form-control" placeholder="Leave a comment here" id="details"></textarea>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
+
           <div class="col-12">
             <button class="btn btn-primary" type="submit">Submit</button>
           </div>

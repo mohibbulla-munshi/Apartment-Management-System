@@ -120,7 +120,7 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-bar-chart ') }}"></use>
                 </svg>Full Reports</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('fund') }}">
+                <li class="nav-item"><a class="nav-link" href="{{ url('report/bill_report') }}">
                         <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-bar-chart ') }}"></use>
                         <span class="nav-icon"></span>Rental
                         Report

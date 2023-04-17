@@ -12,7 +12,7 @@ class BillController extends Controller
      */
     public function index()
     {
-        dd('index');
+        return view('reports.bills.index');
     }
 
     /**
