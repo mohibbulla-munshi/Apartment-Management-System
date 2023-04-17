@@ -91,6 +91,6 @@ class BillController extends Controller
         $bill = Bill::find($id);
         $bill->delete();
         $request->session()->flash('alert-danger', 'Bill Successfully Deleted');
-        return redirect('bill');
+        return redirect('finance/bill');
     }
 }
