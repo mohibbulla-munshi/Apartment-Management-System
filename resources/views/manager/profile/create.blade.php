@@ -8,7 +8,7 @@
         <h3>Add New Profile</h3>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ route('profile.store') }}" class="row g-3 needs-validation" novalidate>
+        <form method="POST" action="{{ url('profile') }}" class="row g-3 needs-validation" novalidate>
           @csrf
 
           <div class="col-md-6">
@@ -58,12 +58,30 @@
           </div>
 
           <div class="col-md-6">
-            <label for="nid_or_passport_no" class="form-label">NID/Passport no :</label>
-            <input name="nid_or_passport_no" type="text" class="form-control" id="nid_or_passport_no" value="" required>
+            <label for="additional_mobile_number" class="form-label"> Additional mobilenumber :</label>
+            <input name="additional_mobile_number" type="text" class="form-control" id="additional_mobile_number" value="" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
+
+          <div class="col-md-6">
+            <label for="passport" class="form-label">Passport no :</label>
+            <input name="passport" type="text" class="form-control" id="passport" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="nid" class="form-label">NID no :</label>
+            <input name="nid" type="text" class="form-control" id="nid" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+
           <div class="col-md-6">
             <label for="nationality" class="form-label">Nationality :</label>
             <input name="nationality" type="text" class="form-control" id="nationality" value="" required>
@@ -80,12 +98,29 @@
             </div>
           </div>
           <div class="col-md-6">
-            <label for="address" class="form-label">Address :</label>
-            <input name="address" type="text" class="form-control" id="address" value="" required>
+            <label for="permanent_address" class="form-label">Permanent address :</label>
+            <input name="permanent_address" type="text" class="form-control" id="permanent_address" value="" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
+
+          <div class="col-md-6">
+            <label for="status" class="form-label">status :</label>
+            <input name="status" type="text" class="form-control" id="status" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="image_path" class="form-label">image :</label>
+            <input name="image_path" type="text" class="form-control" id="image_path" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
           <div class="col-md-12">
             <label for="additional_info">Additional Info</label>
             <textarea name="additional_info" class="form-control" placeholder="comment here" id="additional_info"></textarea>

@@ -63,15 +63,18 @@ Route::get('/building_info', [BuildingDetailsController::class, 'index']);
 
 
 
-Route::group(['prefix' => "manager" ], function () {
+// Route::group(['prefix' => "manager" ], function () {
     
-    Route::group(['prefix' => "profile" ], function () {
+//     Route::group(['prefix' => "profile" ], function () {
 
-        Route::get('/', [ProfileController::class, 'index']);
-        Route::get('/create', [ProfileController::class, 'create'])->name("profile.create");
-        Route::post('/', [ProfileController::class, 'store'])->name("profile.store");
+//         Route::get('/', [ProfileController::class, 'index']);
+//         Route::get('/create', [ProfileController::class, 'create'])->name("profile.create");
+//         Route::post('/', [ProfileController::class, 'store'])->name("profile.store");
 
-    });
+//     });
 
-});
+// });
+
+Route::resource('profile', ProfileController::class);
+
 /* -------------------------------------------------------------- */
