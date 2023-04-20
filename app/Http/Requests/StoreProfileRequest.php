@@ -25,12 +25,12 @@ class StoreProfileRequest extends FormRequest
             'user_id' => [
                 'required',
                 'string',
-                'max:191',
+                'max:100',
             ],
             'name' => [
                 'required',
                 'string',
-                'max:191',
+                'max:50',
             ],
             'email' => [
                 'required',
@@ -97,4 +97,19 @@ class StoreProfileRequest extends FormRequest
             ],
         ];
     }
+
+
+    public function messages()
+    {
+        return [
+            'user_id.required' => 'Please enter user_id',
+            'name.required' => 'Please enter  fullname',
+            'email.required' => 'Please enter  email id',
+            'email.email' => 'Please enter valid email id',
+            'mobile_number.required' => 'Please enter  phone no',
+            'dob.required' => 'Please enter  Date of Birth',
+            'nationality.required' => 'Please enter  nationality',
+        ];
+    }
 }
+

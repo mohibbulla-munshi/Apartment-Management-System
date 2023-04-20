@@ -14,8 +14,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('manager.profile.index');
-        //return "hello";
+        $profiles = Profile::all();
+        return view('manager.profile.index', compact('profiles'));
     }
 
     /**
@@ -35,7 +35,7 @@ class ProfileController extends Controller
             $data = $request->validated();
             Profile::create($data);
             return redirect('/profile')->with('massage', 'Data added successfully');
-        } catch (\Exception $ex) {
+        }catch (\Exception $ex) {
             return redirect('/profile')->with('massage', 'Someting want wrong' . $ex);
         }
     }
