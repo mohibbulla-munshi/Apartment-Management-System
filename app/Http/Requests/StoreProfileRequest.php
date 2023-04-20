@@ -38,16 +38,59 @@ class StoreProfileRequest extends FormRequest
                 'max:191',
                 'unique:profiles,email',
             ],
-            'dob' => [
+            'mobile_number' => [
                 'required',
                 'string',
                 'max:191',
             ],
-            'phone' => [
-                'required',
-                'digits:10',
+            'additional_mobile_number' => [
+                
+                'string',
+                'max:30',
             ],
-            'course' => [
+            'dob' => [
+                'required',
+            ],
+            'designation' => [
+                'required',
+                'string',
+                'max:191',
+            ],
+            'nid' => [
+                'required',
+                'string',
+                'max:191',
+            ],
+            'passport' => [
+                'required',
+                'string',
+                'max:191',
+            ],
+            'nationality' => [
+                'required',
+                'string',
+                'max:50',
+            ],
+            'gender' => [
+                'required',
+                'string',
+                'max:10',
+            ],
+            'permanent_address' => [
+                'required',
+                'string',
+                'max:191',
+            ],
+            'status' => [
+                'required',
+                'string',
+                'max:191',
+            ],
+            'image_path' => [
+                'string',
+            ],
+
+            'additional_info' => [
                 'required',
                 'string',
                 'max:191',

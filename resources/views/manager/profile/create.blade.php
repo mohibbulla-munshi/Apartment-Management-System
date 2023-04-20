@@ -4,6 +4,17 @@
   <div class="container-lg">
     <!-- User Profile info entry form -->
     <div class="card">
+      @if ($errors->any())
+
+      <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+
+        @endforeach
+
+      </ul>
+
+      @endif
       <div class="card-header">
         <h3>Add New Profile</h3>
       </div>
