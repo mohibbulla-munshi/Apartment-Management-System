@@ -34,7 +34,7 @@
                     <td>
                         <div style="width:65%" class="row">
                             <div class="col-md-6">
-                                <a href="#" class="btn btn btn-success rounded-0" type="submit">Edit</a>
+                                <a href="{{'profile/'.$profile->id.'/edit'}}" class="btn btn btn-success rounded-0" type="submit">Edit</a>
                             </div>
                             <div class="col-md-6">
                                 <form action="#" method="POST">
