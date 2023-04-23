@@ -75,6 +75,7 @@ class ProfileController extends Controller
      */
     public function destroy(Profile $profile)
     {
-        //
+        $profile->delete();
+        return redirect()->back()->with('massage','Delete successfully');
     }
 }

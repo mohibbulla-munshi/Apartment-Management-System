@@ -37,11 +37,13 @@
                                 <a href="{{'profile/'.$profile->id.'/edit'}}" class="btn btn btn-success rounded-0" type="submit">Edit</a>
                             </div>
                             <div class="col-md-6">
-                                <form action="#" method="POST">
-                                    <!-- @csrf
-                                        @method('DELETE') -->
+                                <a href="{{ url('profile/'.$profile->id) }}">
+                                <form method="POST" action="{{ url('profile/'.$profile->id) }}">
+                                    @csrf
+                                    @method('DELETE')
                                     <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
                                 </form>
+                                </a>
                             </div>
                         </div>
                     </td>
