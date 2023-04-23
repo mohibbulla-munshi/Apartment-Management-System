@@ -19,8 +19,9 @@
         <h3>Update Profile</h3>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ url('profile') }}" class="row g-3 needs-validation" novalidate>
+        <form method="POST" action="{{ url('profile/'.$profile->id) }}" class="row g-3 needs-validation" novalidate>
           @csrf
+          @method('PUT')
 
           <div class="col-md-6">
             <label for="user_id" class="form-label">User ID</label>
@@ -70,7 +71,7 @@
 
           <div class="col-md-6">
             <label for="additional_mobile_number" class="form-label"> Additional mobilenumber :</label>
-            <input name="additional_mobile_number" type="text" class="form-control" id="additional_mobile_number" value="{{ $profile->additional_mobile_numbe }}" required>
+            <input name="additional_mobile_number" type="text" class="form-control" id="additional_mobile_number" value="{{ $profile->additional_mobile_number }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>

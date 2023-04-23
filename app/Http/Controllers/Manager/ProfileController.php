@@ -35,7 +35,7 @@ class ProfileController extends Controller
             $data = $request->validated();
             Profile::create($data);
             return redirect('/profile')->with('massage', 'Data added successfully');
-        }catch (\Exception $ex) {
+        } catch (\Exception $ex) {
             return redirect('/profile')->with('massage', 'Someting want wrong' . $ex);
         }
     }
@@ -53,7 +53,7 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-        return view('manager.profile.edit',compact('profile'));
+        return view('manager.profile.edit', compact('profile'));
     }
 
     /**
@@ -61,7 +61,13 @@ class ProfileController extends Controller
      */
     public function update(UpdateProfileRequest $request, Profile $profile)
     {
-        //
+
+        $data = $request->validated();
+        $profile->fill($data);
+        $profile->save();
+        return redirect('/profile')->with('massage', 'Data Update successfully');
+    
+        // return $profile;
     }
 
     /**
