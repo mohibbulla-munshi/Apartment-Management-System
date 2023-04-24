@@ -14,7 +14,7 @@ class BuildingDetailsController extends Controller
      */
     public function index()
     {
-        return view('manager.building.index');
+        return view('manager.buildingdetails.index');
     }
 
     /**

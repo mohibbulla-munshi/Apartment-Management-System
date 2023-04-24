@@ -54,7 +54,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 Route::get('/flat_list', [FlatDetailsController::class, 'index']);
-Route::get('/building_info', [BuildingDetailsController::class, 'index']);
+// Route::get('/building_info', [BuildingDetailsController::class, 'index']);
 
 //User Profile
 // Route::resource('profile', ProfileController::class);
@@ -76,10 +76,13 @@ Route::get('/building_info', [BuildingDetailsController::class, 'index']);
 // });
 
 Route::resource('profile', ProfileController::class);
+Route::resource('building', BuildingDetailsController::class);
 
 /* -------------------------------------------------------------- */
 
-/* ------------------------- */
+
+
+/* ------------Employee Route------------- */
 Route::get('employee', function () {
     return view('employee.index');
 });
