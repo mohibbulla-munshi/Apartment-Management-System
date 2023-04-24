@@ -78,3 +78,9 @@ Route::get('/building_info', [BuildingDetailsController::class, 'index']);
 Route::resource('profile', ProfileController::class);
 
 /* -------------------------------------------------------------- */
+
+/* ------------------------- */
+Route::get('employee', function () {
+    return view('employee.index');
+});
+/* ------------------------- */
