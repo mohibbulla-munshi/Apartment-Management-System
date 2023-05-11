@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Finance;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Finance\MaintenanceCost;
+use App\Events\MaintenanceCostNotification;
 
 class MaintenanceController extends Controller
 {
@@ -40,6 +41,7 @@ class MaintenanceController extends Controller
         $MaintenanceCost->details = $request->details;
         
         $MaintenanceCost->save();
+        event(new MaintenanceCostNotification($request->amount));
         $request->session()->flash('alert-success', 'Maintenance Cost Successfully Added');
         return redirect('maintenance');
 
