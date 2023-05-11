@@ -10,7 +10,6 @@ use App\Http\Controllers\Deshboard\DashboardController;
 use App\Http\Controllers\Manager\ProfileController;
 use App\Http\Controllers\Manager\FlatDetailsController;
 use App\Http\Controllers\Manager\BuildingDetailsController;
-use App\Http\Controllers\Reports\BillController as ReportsBillController;
 
 Route::get('/', function () {
     return view('Home');
@@ -64,7 +63,7 @@ Route::get('/flat_list', [FlatDetailsController::class, 'index']);
 
 
 // Route::group(['prefix' => "manager" ], function () {
-    
+
 //     Route::group(['prefix' => "profile" ], function () {
 
 //         Route::get('/', [ProfileController::class, 'index']);
