@@ -19,13 +19,13 @@ class UsersTableSeeder extends Seeder
 
         // Create a default admin user
         DB::table('users')->insert([
-            'name' => 'Test',
-            'email' => 'test@example.com',
+            'name' => 'ramjan',
+            'email' => 'ramjan@example.com',
             'password' => Hash::make('password'),
         ]);
 
         // Generate fake users
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
