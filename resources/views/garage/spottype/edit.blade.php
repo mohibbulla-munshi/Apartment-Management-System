@@ -5,10 +5,10 @@
     <!-- Bill entry form -->
     <div class="card">
       <div class="card-header">
-        <h3>Update Paring Spot</h3>
+        <h3>Update Spot Type</h3>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ route('parkingspot.update', ['parkingspot' => $parkingspot->id]) }}"
+        <form method="POST" action="{{ route('spottype.update', ['spottype' => $parkingspot->id]) }}"
           class="row g-3 needs-validation" novalidate>
           @csrf
           @method('PUT')
