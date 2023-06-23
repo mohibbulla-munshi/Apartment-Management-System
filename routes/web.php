@@ -10,6 +10,9 @@ use App\Http\Controllers\Deshboard\DashboardController;
 use App\Http\Controllers\Manager\ProfileController;
 use App\Http\Controllers\Manager\FlatDetailsController;
 use App\Http\Controllers\Manager\BuildingDetailsController;
+use App\Http\Controllers\Fontdesk\PurposerController;
+use App\Http\Controllers\Fontdesk\VisitorController;
+use App\Http\Controllers\Garage\ParkingspotController;
 
 Route::get('/', function () {
     return view('Home');
@@ -29,6 +32,22 @@ Route::resource('Utility', UtilityController::class);
 Route::resource('maintenance', MaintenanceController::class);
 //Rent
 Route::resource('rent', RentController::class);
+
+//All Fontdesk
+Route::group(['prefix' => 'fontdesk'], function () {
+    Route::resource('purpose', PurposerController::class);
+});
+
+Route::group(['prefix' => 'fontdesk'], function () {
+    Route::resource('visitor', VisitorController::class);
+});
+
+//All Garage
+Route::group(['prefix' => 'garage'], function () {
+    Route::resource('parkingspot', ParkingspotController::class);
+});
+
+
 
 //All Reports
 Route::group(['prefix' => 'report'], function () {

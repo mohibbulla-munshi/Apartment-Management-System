@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('utilities', function (Blueprint $table) {
             $table->id();
-            $table->integer('floor_no')->nullable(false);
-            $table->integer('unit_no')->nullable(false);
+            $table->string('floor_no')->nullable(false);
+            $table->string('unit_no')->nullable(false);
             $table->string('owner_name', 100)->nullable(false);
             $table->string('utility_month')->nullable(false);
             $table->string('utility_year')->nullable(false);
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->decimal('security_bill')->nullable(false);
             $table->decimal('utility_bill')->nullable(false);
             $table->decimal('total_rent')->nullable(false);
+            $table->date('issue_date')->nullable(false);
             $table->decimal('other_bill');
             $table->timestamps();
         });

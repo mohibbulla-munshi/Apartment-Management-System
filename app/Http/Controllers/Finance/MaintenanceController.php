@@ -33,7 +33,8 @@ class MaintenanceController extends Controller
     {
         $MaintenanceCost = new MaintenanceCost;
 
-        $MaintenanceCost->date = $request->date;
+        $date = str_replace('/', '-', $request->date);
+        $MaintenanceCost->date = date("Y-m-d", strtotime($date));
         $MaintenanceCost->month = $request->month;
         $MaintenanceCost->year = $request->year;
         $MaintenanceCost->maintenance_title = $request->maintenance_title;
@@ -72,12 +73,13 @@ class MaintenanceController extends Controller
     {
         $MaintenanceCost = MaintenanceCost::find($id);
 
-        $MaintenanceCost->date = $request->date;
+        $date = str_replace('/', '-', $request->date);
+        $MaintenanceCost->date = date("Y-m-d", strtotime($date));
         $MaintenanceCost->month = $request->month;
         $MaintenanceCost->year = $request->year;
         $MaintenanceCost->maintenance_title = $request->maintenance_title;
         $MaintenanceCost->amount = $request->amount;
-        // $MaintenanceCost->details = $request->details;
+        $MaintenanceCost->details = $request->details;
         
         $MaintenanceCost->save();
         $request->session()->flash('alert-success', 'Maintenance Cost Successfully Updated');

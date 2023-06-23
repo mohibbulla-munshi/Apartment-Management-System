@@ -6,30 +6,30 @@
         <table id="example" class="table table-striped" style="width:98%">
             <thead>
                 <tr>
-                    <th>#Invoice</th>
-                    <th>Renter Name</th>
-                    <th>Floor No</th>
-                    <th>Unit No</th>
-                    <th>Total Rent</th>
+                    <th>#SL</th>
+                    <th>Name</th>
+                    <th>Visitor Purpose</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($rents as $rent)
+                @foreach ($visitors as $visitor)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $rent->renter_name }}</td>
-                    <td>{{ $rent->floor_no }}</td>
-                    <td>{{ $rent->unit_no }}</td>
-                    <td>{{ $rent->total_rent }}</td>    
+                    <td>{{ $visitor->name }}</td>
+                    <td>{{ $visitor->visitor_id }}</td>
+                    <td>{{ $visitor->check_in }}</td>
+                    <td>{{ $visitor->check_out }}</td>
                     <td>
                         <div style="width:65%" class="row">
                             <div class="col-md-6">
-                                <a href="{{ url('rent/'.$rent->id.'/edit') }}" class="btn btn btn-success rounded-0"
+                                <a href="{{ url('fontdesk/visitor/'.$visitor->id.'/edit') }}" class="btn btn btn-success rounded-0"
                                     type="submit">Edit</a>
                             </div>
                             <div class="col-md-6">
-                                <form action="{{ route('rent.destroy',  $rent->id) }}" method="POST">
+                                <form action="{{ route('visitor.destroy',  $visitor->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
@@ -42,11 +42,11 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>#Invoice</th>
-                    <th>Renter Name</th>
-                    <th>Floor No</th>
-                    <th>Unit No</th>
-                    <th>Total Rent</th>
+                    <th>#SL</th>
+                    <th>Name</th>
+                    <th>Visitor Purpose</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
                     <th>Action</th>
                 </tr>
             </tfoot>

@@ -6,30 +6,24 @@
         <table id="example" class="table table-striped" style="width:98%">
             <thead>
                 <tr>
-                    <th>#Invoice</th>
-                    <th>Renter Name</th>
-                    <th>Floor No</th>
-                    <th>Unit No</th>
-                    <th>Total Rent</th>
+                    <th>#SL</th>
+                    <th>Visitor Purpose</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($rents as $rent)
+                @foreach ($purposes as $purpose)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $rent->renter_name }}</td>
-                    <td>{{ $rent->floor_no }}</td>
-                    <td>{{ $rent->unit_no }}</td>
-                    <td>{{ $rent->total_rent }}</td>    
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$purpose->purpose}}</td>
                     <td>
                         <div style="width:65%" class="row">
                             <div class="col-md-6">
-                                <a href="{{ url('rent/'.$rent->id.'/edit') }}" class="btn btn btn-success rounded-0"
-                                    type="submit">Edit</a>
+                                <a href="{{ url('fontdesk/purpose/'.$purpose->id.'/edit') }}"
+                                    class="btn btn btn-success rounded-0" type="submit">Edit</a>
                             </div>
                             <div class="col-md-6">
-                                <form action="{{ route('rent.destroy',  $rent->id) }}" method="POST">
+                                <form action="{{ route('purpose.destroy',  $purpose->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
@@ -42,11 +36,8 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>#Invoice</th>
-                    <th>Renter Name</th>
-                    <th>Floor No</th>
-                    <th>Unit No</th>
-                    <th>Total Rent</th>
+                    <th>#SL</th>
+                    <th>Visitor Purpose</th>
                     <th>Action</th>
                 </tr>
             </tfoot>

@@ -11,6 +11,45 @@
                 </svg>Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
         </li>
 
+        {{-- Garage --}}
+        <li class="nav-title">Garage</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Parking Spot</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/parkingspot') }}"><span class="nav-icon"></span>Parking Spot
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/parkingspot/create') }}"><span
+                        class="nav-icon"></span>Add Parking Spot</a></li>
+            </ul>
+        </li>
+        
+        {{-- Font Desk --}}
+        <li class="nav-title">Font Desk</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Visitor Purpose</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/purpose') }}"><span class="nav-icon"></span>Purpose
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/purpose/create') }}"><span
+                            class="nav-icon"></span>Add Purpose</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Visitor</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span class="nav-icon"></span>Visitor
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}"><span
+                            class="nav-icon"></span>Add Visitor</a></li>
+            </ul>
+        </li>
+
         {{-- Account & Finance nav item start here --}}
         <li class="nav-title">Account & Finance</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">

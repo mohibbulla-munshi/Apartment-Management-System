@@ -5,19 +5,19 @@
     <!-- Bill entry form -->
     <div class="card">
       <div class="card-header">
-        <h3>Add New Rent</h3>
+        <h3>Update Bill</h3>
       </div>
       <div class="card-body">
-      <form method="POST" action="{{ route('rent.store') }}" class="row g-3 needs-validation" novalidate>
+      <form method="POST" action="{{ route('rent.update', ['rent' => $rent->id]) }}" class="row g-3 needs-validation" novalidate>
           @csrf
+          @method('PUT')
           <div class="col-md-6">
             <label for="floorNo" class="form-label">Floor No :</label>
             <select class="form-select" name = "floor_no" id ="floorNo" type = "text" required>
-              <option selected disabled value="">--Select Floor--</option> 
-              @php $floors = get_floor(); @endphp
-              @php foreach($floors as $key=>$value){ @endphp
-                      <option value="@php echo $key; @endphp" > @php echo $value; @endphp </option>
-              @php } @endphp   
+                @php $floors = get_floor(); @endphp
+                @php foreach($floors as $key=>$value){ @endphp
+                  <option value="@php echo $key; @endphp" @php if($rent->floor_no == $key){ echo 'selected="selected"';} @endphp > @php echo $value; @endphp</option>
+                @php } @endphp 
             </select>
             <div class="invalid-feedback">
               Please select a valid Floor no.
@@ -26,11 +26,10 @@
           <div class="col-md-6">
             <label for="unitNo" class="form-label">Unit No :</label>
             <select class="form-select" type = "text" name = "unit_no" id="unitNo" required>
-              <option selected disabled value="">--Select Unit--</option>
               @php $units = get_unit(); @endphp
               @php foreach($units as $key=>$value){ @endphp
-                      <option value="@php echo $key; @endphp" > @php echo $value; @endphp </option>
-              @php } @endphp
+                  <option value="@php echo $key; @endphp" @php if($rent->unit_no == $key){ echo 'selected="selected"';} @endphp > @php echo $value; @endphp</option>
+              @php } @endphp 
             </select>
             <div class="invalid-feedback">
               Please select a valid Unit no.
@@ -39,11 +38,10 @@
           <div class="col-md-6">
             <label for="rentMonth" class="form-label">Rent Month :</label>
             <select class="form-select" type ="text" name = "rent_month" id="utilityMonth" required>
-            <option selected disabled value="">--Select Utility Month--</option>
-            @php $months = get_month(); @endphp
-            @php foreach($months as $key=>$value){ @endphp
-                    <option value="@php echo $key; @endphp" > @php echo $value; @endphp </option>
-            @php } @endphp
+              @php $months = get_month(); @endphp
+              @php foreach($months as $key=>$value){ @endphp
+                  <option value="@php echo $key; @endphp" @php if($rent->rent_month == $key){ echo 'selected="selected"';} @endphp > @php echo $value; @endphp</option>
+              @php } @endphp 
             </select>
             <div class="invalid-feedback">
               Please select a valid type.
@@ -52,11 +50,10 @@
           <div class="col-md-6">
             <label for="rentYear" class="form-label">Rent Year :</label>
             <select class="form-select" type ="text" name = "rent_year" id="utilityYear" required>
-              <option selected disabled value="">--Select Utility Year--</option>
               @php $years = get_year(); @endphp
               @php foreach($years as $key=>$value){ @endphp
-                      <option value="@php echo $key; @endphp" > @php echo $value; @endphp </option>
-              @php } @endphp
+                  <option value="@php echo $key; @endphp" @php if($rent->rent_year == $key){ echo 'selected="selected"';} @endphp > @php echo $value; @endphp</option>
+              @php } @endphp 
             </select>
             <div class="invalid-feedback">
               Please select a valid Year.
@@ -64,94 +61,94 @@
           </div>
           <div class="col-md-6">
             <label for="renterName" class="form-label">Renter Name :</label>
-            <input type="text" class="form-control" name = "renter_name" id="renterName" value="" required>
+            <input type="text" class="form-control" name = "renter_name" id="renterName" value="{{ $rent->renter_name }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="rent" class="form-label">Rent :</label>
-            <input type="text" class="form-control" name = "rent" id="rent" value="" required>
+            <input type="text" class="form-control" name = "rent" id="rent" value="{{ $rent->rent }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="waterBill" class="form-label">Water Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name = "water_bill" id="waterBill" value="" required>
+            <input type="text" class="form-control fn_add_claculate" name = "water_bill" id="waterBill" value="{{ $rent->water_bill }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="electricBill" class="form-label">Electric Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name = "electric_bill" id="electricBill" value="" required>
+            <input type="text" class="form-control fn_add_claculate" name = "electric_bill" id="electricBill" value="{{ $rent->electric_bill }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="gasBill" class="form-label">Gas Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name = "gas_bill" id="gasBill" value="" required>
+            <input type="text" class="form-control fn_add_claculate" name = "gas_bill" id="gasBill" value="{{ $rent->gas_bill }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="SecurityBill" class="form-label">Security Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name = "security_bill" id="SecurityBill" value="" required>
+            <input type="text" class="form-control fn_add_claculate" name = "security_bill" id="SecurityBill" value="{{ $rent->security_bill }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="utilityBill" class="form-label">Utility Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name = "utility_bill" id="utilityBill" value="" required>
+            <input type="text" class="form-control fn_add_claculate" name = "utility_bill" id="utilityBill" value="{{ $rent->utility_bill }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="otherBill" class="form-label">Other Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name = "other_bill" id="otherBill" value="">
+            <input type="text" class="form-control fn_add_claculate" name = "other_bill" id="otherBill" value="{{ $rent->other_bill }}">
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="totalRent" class="form-label">Total Rent :</label>
-            <input type="text" class="form-control fn_add_claculate total_rent" name = "total_rent" id="totalRent" value="" required>
+            <input type="text" class="form-control fn_add_claculate total_rent" name = "total_rent" id="totalRent" value="{{ $rent->total_rent }}" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="issueDate" class="form-label">Issue Date :</label>
-            <input type="text" class="form-control" name = "issue_date" id="add_issueDate" placeholder = "Select Date" required>
+            <input type="text" class="form-control" name = "issue_date" id="add_issueDate" value ="{{ $rent->issue_date }}" required>
             <div class="invalid-feedback">
               Please provide a valid Date.
             </div>
           </div>
           <div class="col-md-6">
             <label for="billPainDate" class="form-label">Bill Paid Date :</label>
-            <input type="text" class="form-control" name = "bill_paid_date" id="add_billPainDate" placeholder = "Select Date" required>
+            <input type="text" class="form-control" name = "bill_paid_date" id="add_billPainDate" value ="{{ $rent->bill_paid_date }}" required>
             <div class="invalid-feedback">
               Please provide a valid Date.
             </div>
           </div>
           <div class="col-md-6">
             <label for="billStatus" class="form-label">Bill Status :</label>
-            <select class="form-select" name = "bill_status" id="billStatus" required>
-              <option selected disabled value="">--Select Status--</option>
-              <option>Due</option>
-              <option>Paid</option>
+            <select class="form-select" name = "bill_status" id="billStatus" value = "{{ $rent->bill_status }}" required>
+            <option value="Due" {{ $rent->bill_status == 'Due' ? 'selected' : '' }}>Due</option>
+              <option value="Paid" {{ $rent->bill_status == 'Paid' ? 'selected' : '' }}>Paid</option>
             </select>
             <div class="invalid-feedback">
               Please select a valid option.
             </div>
           </div>
           <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit</button>
+          <input type="hidden"  name = "id" id="id" value ="{{ $rent->id }}">
+            <button class="btn btn-primary" type="submit">Update</button>
           </div>
         </form>
       </div>
@@ -185,7 +182,6 @@
     });
 
   </script>
-
 
 <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields

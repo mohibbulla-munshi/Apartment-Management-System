@@ -1,5 +1,9 @@
 @extends('user_dashboard.layout.master')
 @section('content')
+
+<!-- Bootstrap Select Css -->
+<link href="assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- Bill entry form -->
@@ -24,32 +28,24 @@
           </div>
           <div class="col-md-6">
             <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-            <input name="bill_deposit_date" type="date" class="form-control" id="bilDepositDate" required>
+            <input name="bill_deposit_date" type="text"  class="form-control" id="add_bilDepositDate" placeholder ="Select Date" required>
             <div class="invalid-feedback">
               Please provide a valid Month.
             </div>
           </div>
           <div class="col-md-6">
             <label for="billMonth" class="form-label">Bill Month :</label>
-            <select name="bill_month" class="form-select" id="billMonth" required>
-              <option selected disabled value="">--Select Month--</option>
-              <option value="january">January</option>
-              <option value="february">February</option>
-              <option value="march">March</option>
-              <option value="april">April</option>
-              <option value="may">May</option>
-              <option value="june">June</option>
-              <option value="july">July</option>
-              <option value="august">August</option>
-              <option value="september">September</option>
-              <option value="october">October</option>
-              <option value="november">November</option>
-              <option value="december">December</option>
+            <select name="bill_month" class="form-select" id="bill_month" required>
+            @php $months = get_month(); @endphp
+            @php foreach($months as $key=>$value){ @endphp
+                    <option value="@php echo $key; @endphp" > @php echo $value; @endphp </option>
+              @php } @endphp
             </select>
             <div class="invalid-feedback">
               Please select a valid type.
             </div>
           </div>
+          
           <div class="col-md-6">
             <label for="billYear" class="form-label">Bill Year :</label>
             <select name="bill_year" class="form-select" id="billYear" required>
@@ -100,6 +96,16 @@
     </div>
   </div>
 </div>
+
+<!-- ===date picker== -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+    $('#add_bilDepositDate').datepicker();
+</script>
+
 <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function () {

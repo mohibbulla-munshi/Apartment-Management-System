@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         Schema::create('rents', function (Blueprint $table) {
             $table->id();
-            $table->integer('floor_no')->nullable(false);
-            $table->integer('unit_no')->nullable(false);
+            $table->string('floor_no')->nullable(false);
+            $table->string('unit_no')->nullable(false);
             $table->string('rent_month')->nullable(false);
             $table->string('rent_year')->nullable(false);
             $table->string('renter_name', 100)->nullable(false);

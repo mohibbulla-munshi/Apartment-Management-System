@@ -13,7 +13,7 @@ class BillController extends Controller
      */
     public function index()
     {
-        $bills = Bill::all();
+        $bills = Bill::orderBy('id', 'DESC')->get();
         return view('finance.bills.index', compact('bills'));
     }
 
@@ -33,7 +33,9 @@ class BillController extends Controller
         $bill = new Bill;
 
         $bill->bill_type = $request->bill_type;
-        $bill->bill_deposit_date = $request->bill_deposit_date;
+
+        $date = str_replace('/', '-', $request->bill_deposit_date);
+        $bill->bill_deposit_date = date("Y-m-d", strtotime($date));
         $bill->bill_month = $request->bill_month;
         $bill->bill_year = $request->bill_year;
         $bill->total_amount = $request->total_amount;
@@ -67,8 +69,9 @@ class BillController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $id  =  $request->id;
         $bill = Bill::find($id);
-
+       
         $bill->bill_type = $request->bill_type;
         $bill->bill_deposit_date = $request->bill_deposit_date;
         $bill->bill_month = $request->bill_month;
@@ -91,6 +94,7 @@ class BillController extends Controller
         $bill = Bill::find($id);
         $bill->delete();
         $request->session()->flash('alert-danger', 'Bill Successfully Deleted');
-        return redirect('finance/bill');
+        return redirect('bill');
     }
 }
+

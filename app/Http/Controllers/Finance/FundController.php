@@ -13,7 +13,7 @@ class FundController extends Controller
      */
     public function index()
     {
-        $funds = Fund::all();
+        $funds = Fund::orderBy('id' , 'DESC')->get();
         return view('finance.funds.index', compact('funds'));
     }
 
@@ -36,9 +36,10 @@ class FundController extends Controller
         $fund->owner_name = $request->owner_name;
         $fund->month = $request->month;
         $fund->year = $request->year;
-        $fund->date = $request->date;
+        $date = str_replace('/', '-', $request->date);
+        $fund->date = date("Y-m-d", strtotime($date));
         $fund->total_amount = $request->total_amount;
-        $fund->purpose = $request->purpose;
+        $fund->purpose = $request->purpose ? $request->purpose : '';
 
         $fund->save();
         $request->session()->flash('alert-success', 'Fund Successfully added');
@@ -74,7 +75,8 @@ class FundController extends Controller
         $fund->owner_name = $request->owner_name;
         $fund->month = $request->month;
         $fund->year = $request->year;
-        $fund->date = $request->date;
+        $date = str_replace('/', '-', $request->date);
+        $fund->date = date("Y-m-d", strtotime($date));
         $fund->total_amount = $request->total_amount;
         $fund->purpose = $request->purpose;
 

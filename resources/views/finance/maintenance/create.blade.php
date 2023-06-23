@@ -12,7 +12,7 @@
           @csrf
           <div class="col-md-6">
             <label for="date" class="form-label">Date :</label>
-            <input name="date" type="date" class="form-control" id="date" required>
+            <input name="date" type="text" class="form-control" id="add_date" placeholder ="Select Date" required>
             <div class="invalid-feedback">
               Please provide a valid date.
             </div>
@@ -88,6 +88,16 @@
     </div>
   </div>
 </div>
+
+<!-- ===date picker== -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+    $('#add_date').datepicker();
+</script>
+
 <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function () {

@@ -26,7 +26,7 @@
           </div>
           <div class="col-md-6">
             <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-            <input name="bill_deposit_date" type="date" class="form-control" id="bilDepositDate"
+            <input name="bill_deposit_date" type="date" class="form-control" id="edit_bilDepositDate"
               value="{{ $bill->bill_deposit_date }}" required>
             <div class="invalid-feedback">
               Please provide a valid Month.
@@ -34,20 +34,11 @@
           </div>
           <div class="col-md-6">
             <label for="billMonth" class="form-label">Bill Month :</label>
-            <select name="bill_month" class="form-select" id="billMonth" required>
-              <option selected disabled value="">--Select Month--</option>
-              <option value="january" {{ $bill->bill_month == 'january' ? 'selected' : '' }}>January</option>
-              <option value="february" {{ $bill->bill_month == 'february' ? 'selected' : '' }}>February</option>
-              <option value="march" {{ $bill->bill_month == 'march' ? 'selected' : '' }}>March</option>
-              <option value="april" {{ $bill->bill_month == 'april' ? 'selected' : '' }}>April</option>
-              <option value="may" {{ $bill->bill_month == 'may' ? 'selected' : '' }}>May</option>
-              <option value="june" {{ $bill->bill_month == 'june' ? 'selected' : '' }}>June</option>
-              <option value="july" {{ $bill->bill_month == 'july' ? 'selected' : '' }}>July</option>
-              <option value="august" {{ $bill->bill_month == 'august' ? 'selected' : '' }}>August</option>
-              <option value="september" {{ $bill->bill_month == 'september' ? 'selected' : '' }}>September</option>
-              <option value="october" {{ $bill->bill_month == 'october' ? 'selected' : '' }}>October</option>
-              <option value="november" {{ $bill->bill_month == 'november' ? 'selected' : '' }}>November</option>
-              <option value="december" {{ $bill->bill_month == 'december' ? 'selected' : '' }}>December</option>
+            <select name="bill_month" class="form-select" id="bill_month" required>
+            @php $months = get_month(); @endphp
+            @php foreach($months as $key=>$value){ @endphp
+              <option value="@php echo $key; @endphp" @php if($bill->bill_month == $key){ echo 'selected="selected"';} @endphp > @php echo $value; @endphp</option>
+              @php } @endphp
             </select>
             <div class="invalid-feedback">
               Please select a valid type.
@@ -57,18 +48,18 @@
             <label for="billYear" class="form-label">Bill Year :</label>
             <select name="bill_year" class="form-select" id="billYear" required>
               <option selected disabled value="">--Select Year--</option>
-              <option value="2023" {{ $bill->bill_year == '2023' ? 'selected' : '' }}>2023</option>
-              <option value="2022" {{ $bill->bill_year == '2022' ? 'selected' : '' }}>2022</option>
-              <option value="2021" {{ $bill->bill_year == '2021' ? 'selected' : '' }}>2021</option>
-              <option value="2020" {{ $bill->bill_year == '2023' ? 'selected' : '' }}>2020</option>
-              <option value="2019" {{ $bill->bill_year == '2019' ? 'selected' : '' }}>2019</option>
-              <option value="2018" {{ $bill->bill_year == '2018' ? 'selected' : '' }}>2018</option>
-              <option value="2017" {{ $bill->bill_year == '2017' ? 'selected' : '' }}>2017</option>
-              <option value="2016" {{ $bill->bill_year == '2016' ? 'selected' : '' }}>2016</option>
-              <option value="2015" {{ $bill->bill_year == '2015' ? 'selected' : '' }}>2015</option>
-              <option value="2014" {{ $bill->bill_year == '2014' ? 'selected' : '' }}>2014</option>
-              <option value="2013" {{ $bill->bill_year == '2013' ? 'selected' : '' }}>2013</option>
-              <option value="2012" {{ $bill->bill_year == '2012' ? 'selected' : '' }}>2012</option>
+              <option value="2023" {{ $bill->bill_year == 2023 ? 'selected' : '' }}>2023</option>
+              <option value="2022" {{ $bill->bill_year == 2022 ? 'selected' : '' }}>2022</option>
+              <option value="2021" {{ $bill->bill_year == 2021 ? 'selected' : '' }}>2021</option>
+              <option value="2020" {{ $bill->bill_year == 2023 ? 'selected' : '' }}>2020</option>
+              <option value="2019" {{ $bill->bill_year == 2019 ? 'selected' : '' }}>2019</option>
+              <option value="2018" {{ $bill->bill_year == 2018 ? 'selected' : '' }}>2018</option>
+              <option value="2017" {{ $bill->bill_year == 2017 ? 'selected' : '' }}>2017</option>
+              <option value="2016" {{ $bill->bill_year == 2016 ? 'selected' : '' }}>2016</option>
+              <option value="2015" {{ $bill->bill_year == 2015 ? 'selected' : '' }}>2015</option>
+              <option value="2014" {{ $bill->bill_year == 2014 ? 'selected' : '' }}>2014</option>
+              <option value="2013" {{ $bill->bill_year == 2013 ? 'selected' : '' }}>2013</option>
+              <option value="2012" {{ $bill->bill_year == 2012 ? 'selected' : '' }}>2012</option>
             </select>
             <div class="invalid-feedback">
               Please select a valid type.
@@ -99,6 +90,7 @@
             </div>
           </div>
           <div class="col-12">
+          <input name="id" type="hidden" class="form-control" id="id" value="{{ $bill->id }}">
             <button class="btn btn-primary" type="submit">Update</button>
           </div>
         </form>
@@ -106,6 +98,16 @@
     </div>
   </div>
 </div>
+
+<!-- ===date picker== -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+    $('#edit_bilDepositDate').datepicker();
+</script>
+
 <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function () {
