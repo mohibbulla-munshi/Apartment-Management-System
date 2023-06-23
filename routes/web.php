@@ -13,10 +13,11 @@ use App\Http\Controllers\Manager\BuildingDetailsController;
 use App\Http\Controllers\Fontdesk\PurposerController;
 use App\Http\Controllers\Fontdesk\VisitorController;
 use App\Http\Controllers\Garage\ParkingspotController;
+use App\Http\Controllers\BuldingdetailsController;
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('Home');
-});
+}); */
 
 
 /**
@@ -50,9 +51,9 @@ Route::group(['prefix' => 'garage'], function () {
 
 
 //All Reports
-Route::group(['prefix' => 'report'], function () {
-    Route::resource('bill_report', ReportsBillController::class);
-});
+// Route::group(['prefix' => 'report'], function () {
+//     Route::resource('bill_report', ReportsBillController::class);
+// });
 
 /* ------------------------------------------------------------ */
 
@@ -61,7 +62,7 @@ Route::group(['prefix' => 'report'], function () {
  * -----------------------Deahboard Route-------------
  */
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index']);
 
 /* -------------------------------------------------------------- */
 
@@ -71,7 +72,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
  */
 
 
-Route::get('/flat_list', [FlatDetailsController::class, 'index']);
+//Route::get('/flat_list', [FlatDetailsController::class, 'index']);
 // Route::get('/building_info', [BuildingDetailsController::class, 'index']);
 
 //User Profile
@@ -94,7 +95,11 @@ Route::get('/flat_list', [FlatDetailsController::class, 'index']);
 // });
 
 Route::resource('profile', ProfileController::class);
-Route::resource('building', BuildingDetailsController::class);
+// Route::resource('building',BuldingdetailsController::class);
+Route::resource('building',BuldingdetailsController::class);
+//Route::resource('building', 'App\Http\Controllers\BuldingdetailsController');
+
+Route::resource('flat', FlatDetailsController::class);
 
 /* -------------------------------------------------------------- */
 
