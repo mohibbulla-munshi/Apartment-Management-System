@@ -14,6 +14,9 @@ use App\Http\Controllers\Fontdesk\PurposerController;
 use App\Http\Controllers\Fontdesk\VisitorController;
 use App\Http\Controllers\Garage\ParkingspotController;
 use App\Http\Controllers\BuldingdetailsController;
+use App\Http\Controllers\MeetingController;
+use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\DesignationController;
 
 /* Route::get('/', function () {
     return view('Home');
@@ -100,6 +103,9 @@ Route::resource('building',BuldingdetailsController::class);
 //Route::resource('building', 'App\Http\Controllers\BuldingdetailsController');
 
 Route::resource('flat', FlatDetailsController::class);
+Route::resource('meeting', MeetingController::class);
+Route::resource('complaint', ComplaintController::class);
+Route::resource('designation', DesignationController::class);
 
 /* -------------------------------------------------------------- */
 

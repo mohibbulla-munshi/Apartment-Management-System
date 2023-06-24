@@ -67,7 +67,6 @@ class BuldingdetailsController extends Controller
         $buldingdetail->save();
 
 
-
         return redirect('building');
     }
 
