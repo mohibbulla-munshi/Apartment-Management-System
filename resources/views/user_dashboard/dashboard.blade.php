@@ -7,12 +7,12 @@
             <div class="row">
 
 
-                <div class="card text-white bg-secondary mb-4 " style="max-width: 18rem;">
+                <div class="card text-white bg-secondary mb-4 " style="max-width:18rem; ">
 
                     <a href="{{ url('profile') }}">
                         <div class="card-body">
                             <h5 class="card-title">Profile</h5>
-                            <p class="card-text">All users info</p>
+                            <p class="card-text">(Owner,Tenant,Employee,Manager)</p>
                         </div>
                     </a>
 
@@ -36,7 +36,7 @@
                 </div>
                 <div class="card text-white bg-secondary mb-4" style="max-width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Tenents profile</h5>
+                        <h5 class="card-title">....</h5>
                         <p class="card-text">.</p>
                     </div>
                 </div>
