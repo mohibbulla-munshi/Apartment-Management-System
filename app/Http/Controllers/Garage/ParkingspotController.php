@@ -19,7 +19,7 @@ class ParkingspotController extends Controller
      */
     public function create()
     {
-     
+
         return view('garage.parkingspot.create');
     }
 
@@ -49,7 +49,7 @@ class ParkingspotController extends Controller
      */
     public function edit(string $id)
     {
-        $parkingspot = Parkingspot::find($id);
+        $parkingspot = Parkingspot::orderBy('id', 'ASC')->get();
         return view('garage.parkingspot.edit', compact('parkingspot'));
     }
 
@@ -79,4 +79,5 @@ class ParkingspotController extends Controller
         $request->session()->flash('alert-danger', 'Parking Spot Successfully Deleted');
         return redirect('garage/parkingspot');
     }
+
 }

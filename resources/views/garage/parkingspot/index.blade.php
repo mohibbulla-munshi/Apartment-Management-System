@@ -1,5 +1,6 @@
 @extends('user_dashboard.layout.master')
 @section('content')
+
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
         <!-- Own Working Space -->
@@ -7,7 +8,7 @@
             <thead>
                 <tr>
                     <th>#SL</th>
-                    <th>Spot Type</th>
+                    <th>Parking Spot</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -28,7 +29,7 @@
                                 <form action="{{ route('parkingspot.destroy',  $parkingspot->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
+                                    <button class="btn btn btn-danger rounded-0" onclick="return confirm ('Are you sure?')" type="submit">Delete</button>
                                 </form>
                             </div>
                         </div>

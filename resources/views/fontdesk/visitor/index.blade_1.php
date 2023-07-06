@@ -21,7 +21,7 @@
                     <td>{{ $visitor->name }}</td>
                     <td>{{ $visitor->visitor_id }}</td>
                     <td>{{ $visitor->check_in }}</td>
-                    <td>{{ $visitor->check_out ? $visitor->check_out : '<a style="color:red;" href="javascript:void(0);" onclick="check_out('.$visitor->id.');">'.'check_out'.'</a>';  }} </td>
+                    <td>{{ $visitor->check_out }}</td>
                     <td>
                         <div style="width:65%" class="row">
                             <div class="col-md-4">
@@ -104,25 +104,4 @@
     });
  }
  
- function check_out(visitor_id){      
-           
-        $.ajax({       
-            type   : "POST",
-             url: "{{url('fontdesk/visitor/check-out')}}",
-             type: "POST",           
-                data: {
-                visitor_id: visitor_id,
-                _token: '{{csrf_token()}}'
-            }, 
-            success: function(response){  
-                if(response){
-                     toastr.success('update_success');  
-                      location.reload();
-                }else{
-                     toastr.error('update_failed');  
-                }                               
-            }
-        });  
-   }
-   
 </script>

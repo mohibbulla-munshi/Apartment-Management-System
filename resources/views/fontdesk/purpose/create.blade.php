@@ -1,22 +1,27 @@
 @extends('user_dashboard.layout.master')
 @section('content')
+
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
-    <!-- Bill entry form -->
+    <!-- Visitor Purpose entry form -->
     <div class="card">
       <div class="card-header">
         <h3>Add New Visitor Purpose</h3>
       </div>
-      <div class="card-body">
+        
+        <div class="card-body">
         <form method="POST" action="{{ route('purpose.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
+          
           <div class="col-md-6">
             <label for="date" class="form-label">Visitor Purpose :</label>
             <input type="text" name = "purpose" class="form-control" id="purpose" placeholder ="Visitor Purpose" required>
             <div class="invalid-feedback">
             </div>
           </div>
-          </div>
+          
+        </div>
+        
           <div class="col-12">
             <button class="btn btn-primary" type="submit">Submit</button>
           </div>
@@ -24,7 +29,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <!-- ===date picker== -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">

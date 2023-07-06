@@ -62,7 +62,7 @@ class PurposerController extends Controller
         $type = Purpose::find($id);
       
         $type->purpose = $request->purpose;
-        //$type->status = $request->status;
+        $type->status = $request->status;
 
         $type->save();
         $request->session()->flash('alert-success', 'Visitor Purpose Successfully updated');

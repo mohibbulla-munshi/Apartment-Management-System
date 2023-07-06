@@ -1,33 +1,36 @@
 @extends('user_dashboard.layout.master')
 @section('content')
+
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
-    <!-- Bill entry form -->
+    <!-- Parking Spot entry form -->
     <div class="card">
       <div class="card-header">
-        <h3>Update Paring Spot</h3>
+        <h3>Update Parking Spot</h3>
       </div>
+        
       <div class="card-body">
         <form method="POST" action="{{ route('parkingspot.update', ['parkingspot' => $parkingspot->id]) }}"
           class="row g-3 needs-validation" novalidate>
           @csrf
           @method('PUT')
-          <div class="col-md-6">
-            <label for="date" class="form-label">Spot Type :</label>
-            <input name="type" type="text" class="form-control" id="type" value="{{ $parkingspot->type }}" placeholder = "Spot Type">
+          
+        <div class="col-md-6">
+           <label for="date" class="form-label">Parking Spot :</label>
+            <input name="type" type="text" class="form-control" id="type" value="{{ $parkingspot->type }}" placeholder = "Parking Spot">
             <div class="invalid-feedback">
             </div>
-          </div>
+        </div>
 
-          <div class="col-md-6">
+        <div class="col-md-6">
             <label for="status" class="form-label">Status :</label>
             <select name="status" class="form-select" id="status" >
-              <option value="1" {{ $parkingspot->status == '1' ? 'selected' : '' }}>Active</option>
-              <option value="0" {{ $parkingspot->status == '0' ? 'selected' : '' }}>Inactive</option>
+                <option value="1" {{ $parkingspot->status == '1' ? 'selected' : '' }}>Active</option>
+                <option value="0" {{ $parkingspot->status == '0' ? 'selected' : '' }}>Inactive</option>
             </select>
             <div class="invalid-feedback">
             </div>
-          </div>
+        </div>
           
           </div>
           <div class="col-12">
@@ -38,8 +41,6 @@
       </div>
     </div>
   </div>
-</div>
-
 
 <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields

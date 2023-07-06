@@ -24,6 +24,58 @@
                         class="nav-icon"></span>Add Parking Spot</a></li>
             </ul>
         </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Spot Type</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/spottype') }}"><span class="nav-icon"></span>Spot
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/spottype/create') }}"><span
+                        class="nav-icon"></span>Add Spot Type</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Reservation</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/reserved') }}"><span class="nav-icon"></span>Reserved
+                    List</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/reserved/create') }}"><span
+                    class="nav-icon"></span>Add reserved</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Driver</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/driver') }}"><span class="nav-icon"></span>Driver
+                    List</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/driver/create') }}"><span
+                    class="nav-icon"></span>Add Driver</a>
+                </li>
+            </ul>
+        </li>
+        
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Vehicle</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/vehicle') }}"><span class="nav-icon"></span>Vehicle
+                    List</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/vehicle/create') }}"><span
+                    class="nav-icon"></span>Add Vehicle</a>
+                </li>
+            </ul>
+        </li>
         
         {{-- Font Desk --}}
         <li class="nav-title">Font Desk</li>
