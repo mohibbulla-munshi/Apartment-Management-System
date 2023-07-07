@@ -1,5 +1,6 @@
 @extends('user_dashboard.layout.master')
 @section('content')
+
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
         <!-- Own Working Space -->
@@ -9,6 +10,7 @@
                     <th>#SL</th>
                     <th>Visitor Purpose</th>
                     <th>Action</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,6 +18,7 @@
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$purpose->purpose}}</td>
+                    <td>{{$purpose->status == '1' ? 'Active' : 'Inactive' }}</td>
                     <td>
                         <div style="width:65%" class="row">
                             <div class="col-md-6">
@@ -26,7 +29,7 @@
                                 <form action="{{ route('purpose.destroy',  $purpose->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
+                                    <button class="btn btn btn-danger rounded-0" onclick="return confirm ('Are you sure?')" type="submit">Delete</button>
                                 </form>
                             </div>
                         </div>

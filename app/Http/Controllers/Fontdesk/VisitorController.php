@@ -36,6 +36,7 @@ class VisitorController extends Controller
         $visitor->user_type = $request->user_type;
         $visitor->visitor_id = $request->visitor_id;
         $visitor->note = $request->note;
+        $visitor->reference = $request->reference;
         $visitor->check_in = date("Y-m-d");
 
         $visitor->save();
@@ -46,9 +47,18 @@ class VisitorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        //
+        $id = $request->visitor_id;
+        $visitor = Visitor::find($id);
+        return view('fontdesk.visitor.get-single-visitor', compact('visitor'));
+    }
+    
+    public function check_out(Request $request)
+    {
+        $id = $request->visitor_id;
+        $visitor->check_out = date("Y-m-d");
+        return view('fontdesk.visitor.index');
     }
 
     /**
@@ -74,8 +84,8 @@ class VisitorController extends Controller
         $visitor->user_type = $request->user_type;
         $visitor->visitor_id = $request->visitor_id;
         $visitor->note = $request->note;
-        $visitor->check_out = date("Y-m-d");
-        //$visitor->status = $request->status;
+        //$visitor->check_out = date("Y-m-d");
+        $visitor->reference = $request->reference;
 
         $visitor->save();
         $request->session()->flash('alert-success', 'Visitor Successfully updated');

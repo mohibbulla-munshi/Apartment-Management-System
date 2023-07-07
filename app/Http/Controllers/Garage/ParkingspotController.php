@@ -19,7 +19,7 @@ class ParkingspotController extends Controller
      */
     public function create()
     {
-     
+
         return view('garage.parkingspot.create');
     }
 
@@ -79,4 +79,5 @@ class ParkingspotController extends Controller
         $request->session()->flash('alert-danger', 'Parking Spot Successfully Deleted');
         return redirect('garage/parkingspot');
     }
+
 }

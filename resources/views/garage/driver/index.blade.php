@@ -1,5 +1,6 @@
 @extends('user_dashboard.layout.master')
 @section('content')
+
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
         <!-- Own Working Space -->
@@ -8,31 +9,29 @@
                 <tr>
                     <th>#SL</th>
                     <th>Name</th>
-                    <th>Visitor Purpose</th>
-                    <th>Check In</th>
-                    <th>Check Out</th>
+                    <th>Licence</th>
+                    <th>Vehicle</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($visitors as $visitor)
+                @foreach ($drivers as $driver)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $visitor->name }}</td>
-                    <td>{{ $visitor->visitor_id }}</td>
-                    <td>{{ $visitor->check_in }}</td>
-                    <td>{{ $visitor->check_out  }} </td>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$driver->name}}</td>
+                    <td>{{$driver->licence}}</td>
+                    <td>{{$driver->vehicle}}</td>
                     <td>
                         <div style="width:65%" class="row">
+                             <div class="col-md-4">
+                                <a  onclick="get_driver_modal(<?php echo $driver->id; ?>);" class="btn btn-info rounded-0"  data-coreui-toggle="modal" data-coreui-target="#exampleModalScrollable"> View </a>
+                             </div>
                             <div class="col-md-4">
-                                <a  onclick="get_visitor_modal(<?php echo $visitor->id; ?>);" class="btn btn-info rounded-0"  data-coreui-toggle="modal" data-coreui-target="#exampleModalScrollable"> View </a>
+                                <a href="{{ url('garage/driver/'.$driver->id.'/edit') }}"
+                                    class="btn btn btn-success rounded-0" type="submit">Edit</a>
                             </div>
                             <div class="col-md-4">
-                                <a href="{{ url('fontdesk/visitor/'.$visitor->id.'/edit') }}" class="btn btn btn-success rounded-0"
-                                    type="submit">Edit</a>
-                            </div>
-                            <div class="col-md-4">
-                                <form action="{{ route('visitor.destroy',  $visitor->id) }}" method="POST">
+                                <form action="{{ route('driver.destroy',  $driver->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn btn-danger rounded-0" onclick="return confirm ('Are you sure?')" type="submit">Delete</button>
@@ -45,11 +44,10 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>#SL</th>
+                   <th>#SL</th>
                     <th>Name</th>
-                    <th>Visitor Purpose</th>
-                    <th>Check In</th>
-                    <th>Check Out</th>
+                    <th>Licence</th>
+                    <th>Vehicle</th>
                     <th>Action</th>
                 </tr>
             </tfoot>
@@ -66,9 +64,8 @@
             <h5 class="modal-title" id="exampleModalScrollableTitle">Detail Information</h5>
             <button class="btn-close" type="button" data-coreui-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body" id="fn_select_visitor">
-              
-          </div>
+            <div class="modal-body" id="fn_select_driver">
+            </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
           </div>
@@ -83,46 +80,26 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
 
+
 <script type="text/javascript">
 
- function get_visitor_modal(visitor_id){
+ function get_driver_modal(driver_id){
 
-    $('#fn_select_visitor').html('');
+    $('#fn_select_driver').html('');
     $.ajax({       
-        url: "{{url('fontdesk/visitor/show')}}",
+        url: "{{url('garage/driver/show')}}",
         type: "POST",
        data: {
-            visitor_id: visitor_id,
+            driver_id: driver_id,
             _token: '{{csrf_token()}}'
         },  
        success: function(response){                                                   
           if(response)
           {
-             $('#fn_select_visitor').html(response);
+             $('#fn_select_driver').html(response);
           }
        }
     });
  }
  
- function check_out(visitor_id){      
-           
-        $.ajax({       
-            type   : "POST",
-             url: "{{url('fontdesk/visitor/check-out')}}",
-             type: "POST",           
-                data: {
-                visitor_id: visitor_id,
-                _token: '{{csrf_token()}}'
-            }, 
-            success: function(response){  
-                if(response){
-                     toastr.success('update_success');  
-                      location.reload();
-                }else{
-                     toastr.error('update_failed');  
-                }                               
-            }
-        });  
-   }
-   
 </script>
