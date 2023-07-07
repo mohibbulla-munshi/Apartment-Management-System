@@ -21,7 +21,7 @@
                     <td>{{ $visitor->name }}</td>
                     <td>{{ $visitor->visitor_id }}</td>
                     <td>{{ $visitor->check_in }}</td>
-                    <td>{{ $visitor->check_out ? $visitor->check_out : '<a style="color:red;" href="javascript:void(0);" onclick="check_out('.$visitor->id.');">'.'check_out'.'</a>';  }} </td>
+                    <td>{{ $visitor->check_out  }} </td>
                     <td>
                         <div style="width:65%" class="row">
                             <div class="col-md-4">

@@ -43,7 +43,7 @@
           
             <div class="col-md-6">
                 <label for="visitor_id" class="form-label">Visitor Purpose :</label>
-                <select name="visitor_id" class="form-select" id="visitor" required>
+                <select name="visitor_id" class="form-select" id="visitor_id" required>
                     <option value = "0">--Select Purpose--</option>
                     @php foreach($purposes as $value){ @endphp
                        <option value="@php echo $value->purpose; @endphp" > @php echo $value->purpose; @endphp </option>

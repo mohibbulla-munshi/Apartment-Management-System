@@ -18,7 +18,7 @@
             <div class="col-md-6">
                 <label for="billMonth" class="form-label">Parking Spot :</label>
                 <select name="parking_id" class="form-select" id="parking_id" required>
-                    @php foreach($reserved as $key=>$value){ @endphp
+                    @php foreach($parkingspots as $key=>$value){ @endphp
                       <option value="@php echo $key; @endphp" @php if($reserved->parking_id == $key){ echo 'selected="selected"';} @endphp > @php echo $value->type; @endphp</option>
                     @php } @endphp
                 </select>
@@ -29,7 +29,7 @@
             <div class="col-md-6">
                 <label for="billMonth" class="form-label"> Spot Type :</label>
                 <select name="spot_id" class="form-select" id="spot_id" required>
-                    @php foreach($reserved as $key=>$value){ @endphp
+                    @php foreach($spottypes as $key=>$value){ @endphp
                         <option value="@php echo $key; @endphp" @php if($reserved->spot_id == $key){ echo 'selected="selected"';} @endphp > @php echo $value->type; @endphp</option>
                     @php } @endphp
                 </select>

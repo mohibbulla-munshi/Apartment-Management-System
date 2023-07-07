@@ -49,7 +49,7 @@ class ParkingspotController extends Controller
      */
     public function edit(string $id)
     {
-        $parkingspot = Parkingspot::orderBy('id', 'ASC')->get();
+        $parkingspot = Parkingspot::find($id);
         return view('garage.parkingspot.edit', compact('parkingspot'));
     }
 
