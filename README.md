@@ -1,18 +1,26 @@
-## About AMS
+ ## Apartment Management System
 
-Apartment Management System (AMS) is a comprehensive software solution designed to streamline the management of apartment buildings or complexes. The system includes a wide range of features to help property managers keep track of all aspects of their properties and ensure smooth operations.
+The Apartment Management System is a software application designed to streamline and automate various tasks related to managing apartments, tenants, owners, and related financial activities. It provides a comprehensive solution for apartment management companies, property owners, and residents to efficiently manage their operations.
 
-Key features of AMS include:
-- **Tenant and owner management:** Keep track of tenant and owner information, including contact details, lease agreements, and payment history.
-- **Rent and payment processing:** Easily manage rent payments and other charges, with options for online payments and automatic reminders.
-- **Maintenance tracking:** Schedule and track maintenance tasks, including regular inspections and repairs.
-- **Communication tools:** Communicate with tenants and owners through a built-in messaging system, with options for sending announcements and notifications.
+## Features
 
-With AMS, property managers can save time and effort while providing top-notch service to their tenants and owners.
-
-Apartment Management System - Laravel Project
-
-This is a web application for apartment management system built using Laravel framework. It provides a platform for apartment managers to manage their apartment units, tenants, and leases. It also allows tenants to login and view their lease information, submit maintenance requests and communicate with their apartment managers.
+- User Management: Create and manage user accounts for employees, managers, owners, and residents.
+- Profile Management: Maintain user profiles with personal information, contact details, and additional information.
+- Family Status: Record family member information for residents.
+- Building Management: Manage information about buildings, including names, addresses, types, units, and owners.
+- Flat Details: Maintain details of individual flats within a building, including size, residents, floor, rent, and owners.
+- Visitors: Track visitor details such as names, types, check-in/out times, status, references, and comments.
+- Income Management: Record and manage income details, including type, checking/deposit dates, status, references, and comments.
+- Owner Utility: Track utility expenses for owners, including water, electricity, gas, security bills, and rent amounts.
+- Rent Management: Monitor rent payments, including rent month/year, renter details, bills, payment status, and due dates.
+- Maintenance Cost: Record maintenance expenses, including dates, titles, costs, and details.
+- Fund Management: Track funds related to owners, including monthly selections, issue dates, total amounts, and purposes.
+- Bill Management: Manage bills with types, deposit dates, months, years, amounts, bank names, and additional details.
+- Notice Board: Publish notices for residents and employees.
+- Complain Management: Track and resolve complaints from residents.
+- Utilities: Manage utility details such as descriptions, types, costs, and statuses.
+- Tenant Interface: Provide a dedicated interface for tenants to access notice boards, payment histories, and lodge complaints.
+- Employee Interface: Offer employees features like notice boards, tenant search by name and phone number.
 
 ## Requirements
 
@@ -37,13 +45,6 @@ This is a web application for apartment management system built using Laravel fr
 
     To login as an administrator, use the credentials: admin@example.com and password.
     To login as a tenant, use the credentials of a tenant created during the seeding process.
-
-## Features
-
-    Dashboard for apartment managers to view tenant and lease information.
-    Tenants can login and view their lease information.
-    Tenants can submit maintenance requests.
-    Apartment managers can communicate with tenants through the application.
 
 ## Contributing
 

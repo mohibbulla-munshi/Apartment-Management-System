@@ -13,14 +13,21 @@ use App\Http\Controllers\Manager\BuildingDetailsController;
 use App\Http\Controllers\Fontdesk\PurposerController;
 use App\Http\Controllers\Fontdesk\VisitorController;
 use App\Http\Controllers\Garage\ParkingspotController;
+//<<<<<<< HEAD
 use App\Http\Controllers\Garage\SpottypeController;
 use App\Http\Controllers\Garage\ReservedController;
 use App\Http\Controllers\Garage\DriverController;
 use App\Http\Controllers\Garage\VehicleController;
+//=======
+use App\Http\Controllers\BuldingdetailsController;
+use App\Http\Controllers\MeetingController;
+use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\DesignationController;
+//>>>>>>> a8836afb47e5e7975659b011ff0367577622f3a3
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('Home');
-});
+}); */
 
 
 /**
@@ -67,10 +74,10 @@ Route::group(['prefix' => 'garage'], function () {
 });
 Route::post('/garage/vehicle/show',[VehicleController::class,'show']);
 //All Reports
-Route::group(['prefix' => 'report'], function () {
-    Route::resource('bill_report', ReportsBillController::class);
-});
-
+// Route::group(['prefix' => 'report'], function () {
+//     Route::resource('bill_report', ReportsBillController::class);
+// });
+//----------
 /* ------------------------------------------------------------ */
 
 
@@ -78,7 +85,7 @@ Route::group(['prefix' => 'report'], function () {
  * -----------------------Deahboard Route-------------
  */
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index']);
 
 /* -------------------------------------------------------------- */
 
@@ -88,7 +95,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
  */
 
 
-Route::get('/flat_list', [FlatDetailsController::class, 'index']);
+//Route::get('/flat_list', [FlatDetailsController::class, 'index']);
 // Route::get('/building_info', [BuildingDetailsController::class, 'index']);
 
 //User Profile
@@ -111,7 +118,14 @@ Route::get('/flat_list', [FlatDetailsController::class, 'index']);
 // });
 
 Route::resource('profile', ProfileController::class);
-Route::resource('building', BuildingDetailsController::class);
+// Route::resource('building',BuldingdetailsController::class);
+Route::resource('building',BuldingdetailsController::class);
+//Route::resource('building', 'App\Http\Controllers\BuldingdetailsController');
+
+Route::resource('flat', FlatDetailsController::class);
+Route::resource('meeting', MeetingController::class);
+Route::resource('complaint', ComplaintController::class);
+Route::resource('designation', DesignationController::class);
 
 /* -------------------------------------------------------------- */
 
