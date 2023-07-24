@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('complaints', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('user_id')->nullable(false);
             $table->string('category')->nullable(false);

@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('flat_details', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('user_id')->nullable(false);
             $table->string('flat_owner_id')->nullable(false);
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->string('flat_size')->nullable(true);
             $table->string('flat_details')->nullable(true);
             $table->text('additional_info')->nullable(true);
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }

@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reserveds', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('parking_id');
             $table->string('spot_id');
