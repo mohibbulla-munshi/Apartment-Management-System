@@ -11,6 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('maintenance_costs', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->date('date')->nullable(false);
             $table->string('month')->nullable(false);
@@ -18,6 +19,7 @@ return new class extends Migration {
             $table->string('maintenance_title', 100)->nullable(false);
             $table->decimal('amount')->nullable(false);
             $table->text('details')->nullable(true);
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }

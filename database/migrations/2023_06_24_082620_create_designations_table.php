@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('designations', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('user_id')->nullable(false);
             $table->string('role')->nullable(false);
             $table->string('description')->nullable(false);
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }

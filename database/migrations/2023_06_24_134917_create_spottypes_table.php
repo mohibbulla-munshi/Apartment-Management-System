@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('spottypes', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('type');
             $table->string('parking_id');

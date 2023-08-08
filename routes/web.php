@@ -23,6 +23,10 @@ use App\Http\Controllers\BuldingdetailsController;
 use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DesignationController;
+//=======setting
+use App\Http\Controllers\Setting\AboutController;
+use App\Http\Controllers\Setting\SettingController;
+
 //>>>>>>> a8836afb47e5e7975659b011ff0367577622f3a3
 
 /* Route::get('/', function () {
@@ -33,6 +37,7 @@ use App\Http\Controllers\DesignationController;
 /**
  * -----------------------All Finance Related Route-------------
  */
+
 //Bill
 Route::resource('bill', BillController::class);
 //Fund
@@ -52,6 +57,7 @@ Route::group(['prefix' => 'fontdesk'], function () {
 Route::group(['prefix' => 'fontdesk'], function () {
     Route::resource('visitor', VisitorController::class);
 });
+
 Route::post('/fontdesk/visitor/show',[VisitorController::class,'show']);
 Route::post('/fontdesk/visitor/check-out',[VisitorController::class,'check_out']);
 //All Garage
@@ -61,18 +67,30 @@ Route::group(['prefix' => 'garage'], function () {
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('spottype', SpottypeController::class);
 });
+
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('reserved', ReservedController::class);
 });
+
 Route::post('/garage/reserved/show',[ReservedController::class,'show']);
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('driver', DriverController::class);
 });
+
 Route::post('/garage/driver/show',[DriverController::class,'show']);
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('vehicle', VehicleController::class);
 });
+
 Route::post('/garage/vehicle/show',[VehicleController::class,'show']);
+
+//setting page
+Route::get('/about',[AboutController::class,'index']);
+Route::post('/about',[AboutController::class,'store']);
+Route::get('/setting',[SettingController::class,'index']);
+Route::post('/setting',[SettingController::class,'store']);
+
+
 //All Reports
 // Route::group(['prefix' => 'report'], function () {
 //     Route::resource('bill_report', ReportsBillController::class);

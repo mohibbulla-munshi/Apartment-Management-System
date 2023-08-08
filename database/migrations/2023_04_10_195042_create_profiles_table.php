@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('user_id')->nullable(false);
             $table->string('name')->nullable(false);
@@ -28,6 +29,7 @@ return new class extends Migration
             $table->string('status')->nullable(false);
             $table->string('image_path')->nullable(true);
             $table->text('additional_info')->nullable(true);
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }

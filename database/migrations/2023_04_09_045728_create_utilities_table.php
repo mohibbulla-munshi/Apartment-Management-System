@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('utilities', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('floor_no')->nullable(false);
             $table->string('unit_no')->nullable(false);
@@ -26,6 +27,7 @@ return new class extends Migration
             $table->decimal('total_rent')->nullable(false);
             $table->date('issue_date')->nullable(false);
             $table->decimal('other_bill');
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }
