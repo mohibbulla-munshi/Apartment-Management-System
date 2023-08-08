@@ -23,6 +23,7 @@ use App\Http\Controllers\BuldingdetailsController;
 use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DesignationController;
+//=======setting
 use App\Http\Controllers\Setting\AboutController;
 use App\Http\Controllers\Setting\SettingController;
 
@@ -36,6 +37,7 @@ use App\Http\Controllers\Setting\SettingController;
 /**
  * -----------------------All Finance Related Route-------------
  */
+
 //Bill
 Route::resource('bill', BillController::class);
 //Fund
