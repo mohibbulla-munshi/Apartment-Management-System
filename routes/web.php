@@ -55,6 +55,7 @@ Route::group(['prefix' => 'fontdesk'], function () {
 Route::group(['prefix' => 'fontdesk'], function () {
     Route::resource('visitor', VisitorController::class);
 });
+
 Route::post('/fontdesk/visitor/show',[VisitorController::class,'show']);
 Route::post('/fontdesk/visitor/check-out',[VisitorController::class,'check_out']);
 //All Garage
@@ -64,13 +65,16 @@ Route::group(['prefix' => 'garage'], function () {
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('spottype', SpottypeController::class);
 });
+
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('reserved', ReservedController::class);
 });
+
 Route::post('/garage/reserved/show',[ReservedController::class,'show']);
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('driver', DriverController::class);
 });
+
 Route::post('/garage/driver/show',[DriverController::class,'show']);
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('vehicle', VehicleController::class);
