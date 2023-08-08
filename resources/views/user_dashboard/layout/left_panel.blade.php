@@ -11,6 +11,21 @@
                 </svg>Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
         </li>
 
+        {{-- Setting --}}
+        <li class="nav-title">Setting</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Apartment Setting</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('setting') }}"><span class="nav-icon"></span>
+                   Setting</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('about') }}"><span
+                        class="nav-icon"></span>About Apartment</a>
+                </li>
+            </ul>
+        </li>
+        
         {{-- Garage --}}
         <li class="nav-title">Garage</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">

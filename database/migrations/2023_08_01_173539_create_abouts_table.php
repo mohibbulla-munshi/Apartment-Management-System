@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicles', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
+        Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('driver_id');
-            $table->string('number_plate')->nullable();
-            $table->string('engine_no');
-            $table->string('thises_no');
-            $table->string('model');
-            $table->string('coler');
+            $table->string('name');
+            $table->string('video')->nullable();
+            $table->string('description')->nullable();
+            $table->string('image')->nullable();
             $table->string('status')->default('1');
             $table->timestamps();
         });
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vehicles');
+        Schema::dropIfExists('abouts');
     }
 };

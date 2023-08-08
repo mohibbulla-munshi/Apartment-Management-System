@@ -11,6 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('bills', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('bill_type')->nullable(false);
             $table->date('bill_deposit_date')->nullable(false);
@@ -19,6 +20,7 @@ return new class extends Migration {
             $table->decimal('total_amount')->nullable(false);
             $table->string('deposit_bank_name', 100)->nullable(false);
             $table->text('details')->nullable(true);
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }

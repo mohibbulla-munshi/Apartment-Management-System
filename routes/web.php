@@ -23,6 +23,9 @@ use App\Http\Controllers\BuldingdetailsController;
 use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\Setting\AboutController;
+use App\Http\Controllers\Setting\SettingController;
+
 //>>>>>>> a8836afb47e5e7975659b011ff0367577622f3a3
 
 /* Route::get('/', function () {
@@ -72,7 +75,16 @@ Route::post('/garage/driver/show',[DriverController::class,'show']);
 Route::group(['prefix' => 'garage'], function () {
     Route::resource('vehicle', VehicleController::class);
 });
+
 Route::post('/garage/vehicle/show',[VehicleController::class,'show']);
+
+//setting page
+Route::get('/about',[AboutController::class,'index']);
+Route::post('/about',[AboutController::class,'store']);
+Route::get('/setting',[SettingController::class,'index']);
+Route::post('/setting',[SettingController::class,'store']);
+
+
 //All Reports
 // Route::group(['prefix' => 'report'], function () {
 //     Route::resource('bill_report', ReportsBillController::class);

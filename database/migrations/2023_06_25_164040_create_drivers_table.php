@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('drivers', function (Blueprint $table) {
+            $table->engine = 'MyISAM';
             $table->id();
             $table->string('name');
             $table->string('licence');
