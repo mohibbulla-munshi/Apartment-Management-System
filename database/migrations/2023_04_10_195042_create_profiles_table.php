@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string('nationality')->nullable(false);
             $table->string('gender')->nullable(false);
             $table->string('permanent_address')->nullable(false);
-            $table->string('status')->nullable(false);
             $table->string('image_path')->nullable(true);
             $table->text('additional_info')->nullable(true);
             $table->string('status')->default('1');

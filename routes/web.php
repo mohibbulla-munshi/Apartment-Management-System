@@ -1,38 +1,53 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Finance\BillController;
 use App\Http\Controllers\Finance\FundController;
 use App\Http\Controllers\Finance\MaintenanceController;
 use App\Http\Controllers\Finance\UtilityController;
 use App\Http\Controllers\Finance\RentController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Deshboard\DashboardController;
-use App\Http\Controllers\Manager\ProfileController;
 use App\Http\Controllers\Manager\FlatDetailsController;
 use App\Http\Controllers\Manager\BuildingDetailsController;
 use App\Http\Controllers\Fontdesk\PurposerController;
 use App\Http\Controllers\Fontdesk\VisitorController;
 use App\Http\Controllers\Garage\ParkingspotController;
-//<<<<<<< HEAD
 use App\Http\Controllers\Garage\SpottypeController;
 use App\Http\Controllers\Garage\ReservedController;
 use App\Http\Controllers\Garage\DriverController;
 use App\Http\Controllers\Garage\VehicleController;
-//=======
 use App\Http\Controllers\BuldingdetailsController;
 use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DesignationController;
-//=======setting
 use App\Http\Controllers\Setting\AboutController;
 use App\Http\Controllers\Setting\SettingController;
 
-//>>>>>>> a8836afb47e5e7975659b011ff0367577622f3a3
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
-/* Route::get('/', function () {
-    return view('Home');
-}); */
+Route::get('/', function () {
+    return view('welcome');
+});
 
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 /**
  * -----------------------All Finance Related Route-------------
@@ -103,7 +118,7 @@ Route::post('/setting',[SettingController::class,'store']);
  * -----------------------Deahboard Route-------------
  */
 
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');;
 
 /* -------------------------------------------------------------- */
 
@@ -135,7 +150,7 @@ Route::get('/', [DashboardController::class, 'index']);
 
 // });
 
-Route::resource('profile', ProfileController::class);
+// Route::resource('profile', ProfileController::class);
 // Route::resource('building',BuldingdetailsController::class);
 Route::resource('building',BuldingdetailsController::class);
 //Route::resource('building', 'App\Http\Controllers\BuldingdetailsController');
@@ -154,3 +169,21 @@ Route::get('employee', function () {
     return view('employee.index');
 });
 /* ------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+require __DIR__.'/auth.php';

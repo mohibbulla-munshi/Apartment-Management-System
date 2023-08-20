@@ -39,7 +39,6 @@
                         class="nav-icon"></span>Add Parking Spot</a></li>
             </ul>
         </li>
-<<<<<<< HEAD
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
@@ -92,10 +91,6 @@
                 </li>
             </ul>
         </li>
-        
-=======
-
->>>>>>> a8836afb47e5e7975659b011ff0367577622f3a3
         {{-- Font Desk --}}
         <li class="nav-title">Font Desk</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
