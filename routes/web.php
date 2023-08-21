@@ -50,6 +50,12 @@ Route::middleware('auth')->group(function () {
 });
 
 /**
+ * -----------------------Deahboard Route-------------
+ */
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');;
+
+/**
  * -----------------------All Finance Related Route-------------
  */
 
@@ -102,25 +108,8 @@ Route::post('/garage/vehicle/show',[VehicleController::class,'show']);
 //setting page
 Route::get('/about',[AboutController::class,'index']);
 Route::post('/about',[AboutController::class,'store']);
-Route::get('/setting',[SettingController::class,'index']);
+Route::get('/setting',[SettingController::class,'index'])->name('setting');
 Route::post('/setting',[SettingController::class,'store']);
-
-
-//All Reports
-// Route::group(['prefix' => 'report'], function () {
-//     Route::resource('bill_report', ReportsBillController::class);
-// });
-//----------
-/* ------------------------------------------------------------ */
-
-
-/**
- * -----------------------Deahboard Route-------------
- */
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');;
-
-/* -------------------------------------------------------------- */
 
 
 /**
