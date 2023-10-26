@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Visitor extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','phone','user_type','visitor_id','note','reference','check_in','check_out','status'];
+    protected $fillable = ['entry_date','name','phone','address','floor_no','unit_name','reference','note'];
 }
