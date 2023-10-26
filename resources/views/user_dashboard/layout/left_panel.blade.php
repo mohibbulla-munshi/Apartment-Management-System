@@ -20,9 +20,9 @@
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('setting') }}"><span class="nav-icon"></span>
-                   Setting</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('about') }}"><span
-                        class="nav-icon"></span>About Apartment</a>
+                        Setting</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('about') }}"><span class="nav-icon"></span>About
+                        Apartment</a>
                 </li>
             </ul>
         </li>
@@ -33,9 +33,26 @@
                 </svg>Floor Information
             </a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('floors') }}"><span class="nav-icon"></span>Floor List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('floors') }}"><span class="nav-icon"></span>Floor
+                        List</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('floors/create') }}"><span
-                        class="nav-icon"></span>Add Floor</a>
+                            class="nav-icon"></span>Add Floor</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-group">
+            <a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Unit Information
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('units') }}"><span class="nav-icon"></span>Unit
+                        List</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('units/create') }}"><span
+                            class="nav-icon"></span>Add
+                        Unit</a>
                 </li>
             </ul>
         </li>
@@ -47,10 +64,11 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Parking Spot</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('garage/parkingspot') }}"><span class="nav-icon"></span>Parking Spot
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/parkingspot') }}"><span
+                            class="nav-icon"></span>Parking Spot
                         List</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('garage/parkingspot/create') }}"><span
-                        class="nav-icon"></span>Add Parking Spot</a></li>
+                            class="nav-icon"></span>Add Parking Spot</a></li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -58,10 +76,11 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Spot Type</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('garage/spottype') }}"><span class="nav-icon"></span>Spot
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/spottype') }}"><span
+                            class="nav-icon"></span>Spot
                         List</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('garage/spottype/create') }}"><span
-                        class="nav-icon"></span>Add Spot Type</a></li>
+                            class="nav-icon"></span>Add Spot Type</a></li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -69,11 +88,12 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Reservation</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('garage/reserved') }}"><span class="nav-icon"></span>Reserved
-                    List</a>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/reserved') }}"><span
+                            class="nav-icon"></span>Reserved
+                        List</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('garage/reserved/create') }}"><span
-                    class="nav-icon"></span>Add reserved</a>
+                            class="nav-icon"></span>Add reserved</a>
                 </li>
             </ul>
         </li>
@@ -83,25 +103,27 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Driver</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('garage/driver') }}"><span class="nav-icon"></span>Driver
-                    List</a>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/driver') }}"><span
+                            class="nav-icon"></span>Driver
+                        List</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('garage/driver/create') }}"><span
-                    class="nav-icon"></span>Add Driver</a>
+                            class="nav-icon"></span>Add Driver</a>
                 </li>
             </ul>
         </li>
-        
+
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Vehicle</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('garage/vehicle') }}"><span class="nav-icon"></span>Vehicle
-                    List</a>
+                <li class="nav-item"><a class="nav-link" href="{{ url('garage/vehicle') }}"><span
+                            class="nav-icon"></span>Vehicle
+                        List</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('garage/vehicle/create') }}"><span
-                    class="nav-icon"></span>Add Vehicle</a>
+                            class="nav-icon"></span>Add Vehicle</a>
                 </li>
             </ul>
         </li>
@@ -112,7 +134,8 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Visitor Purpose</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/purpose') }}"><span class="nav-icon"></span>Purpose
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/purpose') }}"><span
+                            class="nav-icon"></span>Purpose
                         List</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/purpose/create') }}"><span
                             class="nav-icon"></span>Add Purpose</a></li>
@@ -123,7 +146,8 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Visitor</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span class="nav-icon"></span>Visitor
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span
+                            class="nav-icon"></span>Visitor
                         List</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}"><span
                             class="nav-icon"></span>Add Visitor</a></li>
@@ -202,8 +226,10 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Profile</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('profile') }}"><span class="nav-icon"></span>Profile List</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('profile/create') }}"><span class="nav-icon"></span>Add Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('profile') }}"><span
+                            class="nav-icon"></span>Profile List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('profile/create') }}"><span
+                            class="nav-icon"></span>Add Profile</a></li>
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
@@ -211,7 +237,8 @@
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
                 </svg>Building Profile</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('building') }}"><span class="nav-icon"></span>Building
+                <li class="nav-item"><a class="nav-link" href="{{ url('building') }}"><span
+                            class="nav-icon"></span>Building
                         Information</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('building/create') }}"><span
                             class="nav-icon"></span>Add Building Information</a></li>
@@ -229,38 +256,41 @@
             </ul>
         </li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-                <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
-            </svg>Designation</a>
-        <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="{{ url('designation') }}"><span class="nav-icon"></span>Designation
-                    List</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('designation/create') }}"><span
-                        class="nav-icon"></span>Add Designation</a></li>
-        </ul>
-    </li>
-    <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-        <svg class="nav-icon">
-            <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
-        </svg>Meeting</a>
-    <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="{{ url('meeting') }}"><span class="nav-icon"></span>Meeting
-                List</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url('meeting/create') }}"><span
-                    class="nav-icon"></span>Add Meeting</a></li>
-    </ul>
-</li>
-<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-    <svg class="nav-icon">
-        <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
-    </svg>Complaint</a>
-<ul class="nav-group-items">
-    <li class="nav-item"><a class="nav-link" href="{{ url('complaint') }}"><span class="nav-icon"></span>Complaint
-            List</a></li>
-    <li class="nav-item"><a class="nav-link" href="{{ url('complaint/create') }}"><span
-                class="nav-icon"></span>Add Complaint</a></li>
-</ul>
-</li>
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Designation</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('designation') }}"><span
+                            class="nav-icon"></span>Designation
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('designation/create') }}"><span
+                            class="nav-icon"></span>Add Designation</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Meeting</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('meeting') }}"><span
+                            class="nav-icon"></span>Meeting
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('meeting/create') }}"><span
+                            class="nav-icon"></span>Add Meeting</a></li>
+            </ul>
+        </li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Complaint</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('complaint') }}"><span
+                            class="nav-icon"></span>Complaint
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('complaint/create') }}"><span
+                            class="nav-icon"></span>Add Complaint</a></li>
+            </ul>
+        </li>
 
         {{-- Manager nav item end here --}}
 

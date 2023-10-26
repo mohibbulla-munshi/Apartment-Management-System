@@ -24,6 +24,11 @@ use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\Setting\AboutController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Floors\FloorController;
+use App\Http\Controllers\Units\UnitController;
+use App\Http\Controllers\AjaxController;
+use App\Models\Units\UnitModel;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -165,9 +170,18 @@ Route::get('employee', function () {
 Route::resource('floors', FloorController::class);
 
 /* ------------------------- */
+/* ------------Floor Route------------- */
+Route::resource('units', UnitController::class);
 
+/* ------------------------- */
 
-
+Route::get('/get/unit/{id}', function($id){
+    $units = DB::table('unit_models')
+            ->select('unit_name')
+            ->where('floor_id', $id)
+            ->get();
+    return response()->json($units);
+});
 
 
 

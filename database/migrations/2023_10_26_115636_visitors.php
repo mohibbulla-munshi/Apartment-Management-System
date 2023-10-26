@@ -12,16 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('visitors', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
             $table->id();
+            $table->date('entry_date');
             $table->string('name');
             $table->string('phone')->nullable();
-            $table->string('user_type')->nullable();
-            $table->string('visitor_id');
+            $table->string('address')->nullable();
+            $table->string('floor_no')->nullable();
+            $table->string('unit_name')->nullable();
+            $table->string('reference')->nullable();
             $table->string('note')->nullable();
-            $table->date('check_in')->nullable();
-            $table->date('check_out')->nullable();
-            $table->string('status')->default(1);
             $table->timestamps();
         });
     }

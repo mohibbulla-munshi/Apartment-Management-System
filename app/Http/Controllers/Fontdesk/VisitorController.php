@@ -23,8 +23,7 @@ class VisitorController extends Controller
     {
      
         $floors = FloorModel::all();
-        $purposes = Purpose::orderBy('id', 'ASC')->get();
-        return view('fontdesk.visitor.create',compact('purposes', 'floors'));
+        return view('fontdesk.visitor.create',compact('floors'));
     }
 
     /**
@@ -33,13 +32,14 @@ class VisitorController extends Controller
     public function store(Request $request)
     {
         $visitor = new Visitor;  
+        $visitor->entry_date = $request->entry_date;
         $visitor->name = $request->name;
         $visitor->phone = $request->phone;
-        $visitor->user_type = $request->user_type;
-        $visitor->visitor_id = $request->visitor_id;
-        $visitor->note = $request->note;
+        $visitor->address = $request->address;
+        $visitor->floor_no = $request->floor_no;
+        $visitor->unit_name = $request->unit_name;
         $visitor->reference = $request->reference;
-        $visitor->check_in = date("Y-m-d");
+        $visitor->note = $request->note;
 
         $visitor->save();
         $request->session()->flash('alert-success', 'Visitor Successfully added');
