@@ -12,22 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
             $table->id();
             $table->string('user_id')->nullable(false);
             $table->string('name')->nullable(false);
-            $table->string('email')->unique(true);
+            $table->string('email')->unique();
             $table->string('mobile_number')->nullable(false);
-            $table->string('additional_mobile_number')->nullable(true);
+            $table->string('additional_mobile_number')->nullable();
             $table->date('dob')->nullable(false);
             $table->string('designation')->nullable(false);
-            $table->string('nid')->nullable(true);
-            $table->string('passport')->nullable(true);
+            $table->string('nid')->nullable();
+            $table->string('passport')->nullable();
             $table->string('nationality')->nullable(false);
             $table->string('gender')->nullable(false);
             $table->string('permanent_address')->nullable(false);
-            $table->string('image_path')->nullable(true);
-            $table->text('additional_info')->nullable(true);
+            $table->string('image_path')->nullable();
+            $table->text('additional_info')->nullable();
             $table->string('status')->default('1');
             $table->timestamps();
         });

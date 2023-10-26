@@ -16,6 +16,12 @@
         <form method="POST" action="{{ route('visitor.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
 
+          <div class="col-md-6">
+                <label for="entry_date" class="form-label"> Entry Date :</label>
+                <input name="entry_date" type="date"  class="form-control" id="entry_date" placeholder ="Entry Date" required>
+                <div class="invalid-feedback">
+                </div>
+            </div>
             <div class="col-md-6">
                 <label for="name" class="form-label">Name :</label>
                 <input name="name" type="text"  class="form-control" id="name" placeholder ="Name" required>
@@ -29,24 +35,20 @@
                 <div class="invalid-feedback">
                 </div>
             </div>
-          
+
             <div class="col-md-6">
-                <label for="user_type" class="form-label">Meet User Type :</label>
-                <select name="user_type" class="form-select" id="user_type" required>
-                    <option selected disabled value="">--Select User--</option>
-                    <option value="amin">Amin</option>
-                    <option value="abir">Abir</option>
-                </select>
+                <label for="address" class="form-label">address :</label>
+                <input name="address" type="text"  class="form-control" id="address" placeholder ="Address">
                 <div class="invalid-feedback">
                 </div>
             </div>
           
             <div class="col-md-6">
-                <label for="visitor_id" class="form-label">Visitor Purpose :</label>
-                <select name="visitor_id" class="form-select" id="visitor_id" required>
-                    <option value = "0">--Select Purpose--</option>
-                    @php foreach($purposes as $value){ @endphp
-                       <option value="@php echo $value->purpose; @endphp" > @php echo $value->purpose; @endphp </option>
+                <label for="floor_no" class="form-label">Floor No :</label>
+                <select name="floor_no" class="form-select" id="floor_no" required>
+                    <option selected disabled value="">--Select Floor--</option>
+                    @php foreach($floors as $floor){ @endphp
+                       <option value="@php echo $floor->floor_name; @endphp" > @php echo $floor->floor_name; @endphp </option>
                     @php } @endphp
                 </select>
                 <div class="invalid-feedback">

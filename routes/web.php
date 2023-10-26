@@ -23,6 +23,7 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\Setting\AboutController;
 use App\Http\Controllers\Setting\SettingController;
+use App\Http\Controllers\Floors\FloorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -160,6 +161,10 @@ Route::get('employee', function () {
 /* ------------------------- */
 
 
+/* ------------Floor Route------------- */
+Route::resource('floors', FloorController::class);
+
+/* ------------------------- */
 
 
 

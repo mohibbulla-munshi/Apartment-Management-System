@@ -11,12 +11,13 @@
                 </svg>Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a>
         </li>
 
-        {{-- Setting --}}
-        <li class="nav-title">Setting</li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        <li class="nav-title">Apartment Setting</li>
+        <li class="nav-group">
+            <a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
                     <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
-                </svg>Apartment Setting</a>
+                </svg>Apartment Setting
+            </a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('setting') }}"><span class="nav-icon"></span>
                    Setting</a></li>
@@ -25,7 +26,20 @@
                 </li>
             </ul>
         </li>
-        
+        <li class="nav-group">
+            <a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Floor Information
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('floors') }}"><span class="nav-icon"></span>Floor List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('floors/create') }}"><span
+                        class="nav-icon"></span>Add Floor</a>
+                </li>
+            </ul>
+        </li>
+
         {{-- Garage --}}
         <li class="nav-title">Garage</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">

@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Fontdesk\Visitor;
 use App\Models\Fontdesk\Purpose;
+use App\Models\Floors\FloorModel;
 
 class VisitorController extends Controller
 {
     public function index()
     {
-        $visitors = Visitor::orderBy('id', 'DESC')->get();
+        $visitors = Visitor::orderBy('id', 'DESC')->paginate(100);        
         return view('fontdesk.visitor.index', compact('visitors'));
     }
 
@@ -21,8 +22,9 @@ class VisitorController extends Controller
     public function create()
     {
      
+        $floors = FloorModel::all();
         $purposes = Purpose::orderBy('id', 'ASC')->get();
-        return view('fontdesk.visitor.create',compact('purposes'));
+        return view('fontdesk.visitor.create',compact('purposes', 'floors'));
     }
 
     /**
