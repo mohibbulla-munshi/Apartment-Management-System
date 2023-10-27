@@ -57,6 +57,23 @@
             </ul>
         </li>
 
+        <li class="nav-group">
+            <a class="nav-link nav-group-toggle" href="#">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('themes/vendors/@coreui/icons/svg/free.svg#cil-money') }}"></use>
+                </svg>Owner Information
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('owners') }}"><span class="nav-icon"></span>Owner
+                        List</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('owners/create') }}"><span
+                            class="nav-icon"></span>Add
+                        Owner</a>
+                </li>
+            </ul>
+        </li>
+
         {{-- Garage --}}
         <li class="nav-title">Garage</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
