@@ -26,6 +26,7 @@ use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Floors\FloorController;
 use App\Http\Controllers\Units\UnitController;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\Owners\OwnerController;
 use App\Models\Units\UnitModel;
 
 
@@ -182,6 +183,11 @@ Route::get('/get/unit/{id}', function($id){
             ->get();
     return response()->json($units);
 });
+
+/* ------------Owner Route------------- */
+Route::resource('owners', OwnerController::class);
+
+/* ------------------------- */
 
 
 
