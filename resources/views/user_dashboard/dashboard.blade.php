@@ -18,108 +18,141 @@
 
         <!-- Card Grid -->
         <div class="row">
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-primary text-white">
-                    <a href="{{ url('profile') }}" class="text-white text-decoration-none">
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-building fa-2x rounded-circle" style="font-size: 40px"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Profile</h5>
-                            <p class="card-text">(Owner, Tenant, Employee, Manager)</p>
+                            <h5 class="card-title text-uppercase">Total Floor</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-info text-white">
-                    <a href="{{ url('building') }}" class="text-white text-decoration-none">
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-building-un fa-2x rounded-circle" style="font-size: 40px"></i>
                         <div class="card-body">
-                            <h5 class="card-title">House Info</h5>
-                            <p class="card-text">House details, area, and others</p>
+                            <h5 class="card-title text-uppercase">Total Unit</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-success text-white">
-                    <a href="{{ url('flat') }}" class="text-white text-decoration-none">
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-user fa-2x rounded-circle" style="font-size: 40px"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Unit Information</h5>
-                            <p class="card-text">Flat floor and other details</p>
+                            <h5 class="card-title text-uppercase">Total Owner</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-secondary text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">...</h5>
-                        <p class="card-text">.</p>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h5 class="card-title">Meeting Scheduling</h5>
-                        <p class="card-text">Meeting details</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-people-group fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Total Tenant</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h5 class="card-title">Notice and Complaint</h5>
-                        <p class="card-text">.</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-person-digging fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Total Employee</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-primary text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Visitor Info</h5>
-                        <p class="card-text">All users info</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-sitemap fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Total Committee</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h5 class="card-title">Car Parking</h5>
-                        <p class="card-text">House details, area, and others</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-money-check-dollar fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Total Rent</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-primary text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Maintenance Cost</h5>
-                        <p class="card-text">Flat floor and other details</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-screwdriver-wrench fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Total Maintenance</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-primary text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Utility Bill</h5>
-                        <p class="card-text">All users info</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-sack-dollar fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Total Fund</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h5 class="card-title">Others Profile</h5>
-                        <p class="card-text">House details, area, and others</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-money-bill-transfer fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Owner Utility</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card bg-primary text-white">
-                    <div class="card-body">
-                        <h5 class="card-title">Designation</h5>
-                        <p class="card-text">.</p>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-money-bill-1fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Employee Salary</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ url('profile') }}" class="text-decoration-none">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded text-center ">
+                        <i class="fa-solid fa-person-digging fa-2x rounded-circle" style="font-size: 40px"></i>
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase">Total Complain</h5>
+                            <span class="fw-bold text-primary" style="font-size: 22px">30</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+
         </div>
     </div>
 </div>
