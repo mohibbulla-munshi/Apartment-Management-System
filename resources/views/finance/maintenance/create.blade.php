@@ -3,16 +3,13 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- Bill entry form -->
-    <div class="card">
-      <div class="card-header">
-        <h3>Add New Maintenance Cost</h3>
-      </div>
+    <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
       <div class="card-body">
         <form method="POST" action="{{ route('maintenance.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
           <div class="col-md-6">
             <label for="date" class="form-label">Date :</label>
-            <input name="date" type="text" class="form-control" id="add_date" placeholder ="Select Date" required>
+            <input name="date" type="text" class="form-control" id="add_date" placeholder="Select Date" required>
             <div class="invalid-feedback">
               Please provide a valid date.
             </div>
@@ -95,7 +92,7 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
-    $('#add_date').datepicker();
+  $('#add_date').datepicker();
 </script>
 
 <script>

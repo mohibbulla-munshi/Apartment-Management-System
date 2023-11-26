@@ -7,22 +7,18 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- Visitor entry form -->
-    <div class="card">
-      <div class="card-header">
-        <h3>Add New Floor</h3>
-      </div>
-        
-        <div class="card-body">
+    <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
+      <div class="card-body">
         <form method="POST" action="{{ route('floors.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
-            <div class="col-md-6">
-                <label for="floor_name" class="form-label">Floor Name :</label>
-                <input name="floor_name" type="text"  class="form-control" id="floor_name" placeholder ="Floor Name" required>
-                <div class="invalid-feedback">
-                </div>
+          <div class="col-md-6">
+            <label for="floor_name" class="form-label">Floor Name :</label>
+            <input name="floor_name" type="text" class="form-control" id="floor_name" placeholder="Floor Name" required>
+            <div class="invalid-feedback">
             </div>
+          </div>
 
-          
+
           <div class="col-12">
             <button class="btn btn-primary" type="submit">Save Information</button>
           </div>
