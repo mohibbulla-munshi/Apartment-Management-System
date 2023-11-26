@@ -3,10 +3,7 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!--  Fund Entry Form  -->
-    <div class="card">
-      <div class="card-header">
-        <h3>Add New Fund</h3>
-      </div>
+    <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
       <div class="card-body">
         <form method="POST" action="{{ route('fund.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
@@ -66,7 +63,7 @@
           </div>
           <div class="col-md-6">
             <label for="issueDate" class="form-label">Issue Date :</label>
-            <input type="text" class="form-control" id="add_issueDate" name="date" placeholder ="Select Date" required>
+            <input type="text" class="form-control" id="add_issueDate" name="date" placeholder="Select Date" required>
             <div class="invalid-feedback">
               Please provide a valid Month.
             </div>
@@ -100,7 +97,7 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
-    $('#add_issueDate').datepicker();
+  $('#add_issueDate').datepicker();
 </script>
 
 <script>

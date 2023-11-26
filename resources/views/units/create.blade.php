@@ -7,11 +7,7 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- Visitor entry form -->
-    <div class="card">
-      <div class="card-header">
-        <h3>Add New Unit</h3>
-      </div>
-
+    <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
       <div class="card-body">
         <form method="POST" action="{{ route('units.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
