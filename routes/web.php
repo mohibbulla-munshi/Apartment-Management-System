@@ -28,6 +28,7 @@ use App\Http\Controllers\Units\UnitController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Owners\OwnerController;
 use App\Models\Units\UnitModel;
+use App\Http\Controllers\Employees\EmployeeController;
 
 
 
@@ -118,10 +119,7 @@ Route::resource('designation', DesignationController::class);
 
 
 /* ------------Employee Route------------- */
-Route::get('employee', function () {
-    return view('employee.index');
-});
-/* ------------------------- */
+Route::resource('employees', EmployeeController::class);
 
 
 /* ------------Floor Route------------- */

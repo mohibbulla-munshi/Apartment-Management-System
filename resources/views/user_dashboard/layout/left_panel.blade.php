@@ -83,11 +83,11 @@
                 <i class="fa-solid fa-person-digging" style="margin-right: 15px;"></i>Employee
             </a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('owners') }}"><span
+                <li class="nav-item"><a class="nav-link" href="{{ url('employees') }}"><span
                             class="nav-icon"></span>Employee
                         List</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('owners/create') }}"><span
+                <li class="nav-item"><a class="nav-link" href="{{ url('employees/create') }}"><span
                             class="nav-icon"></span>Add
                         Employee</a>
                 </li>
