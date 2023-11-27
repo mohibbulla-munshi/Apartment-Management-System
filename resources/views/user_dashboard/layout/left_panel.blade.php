@@ -9,10 +9,10 @@
                     class="badge badge-sm bg-info ms-auto">NEW</span></a>
         </li>
 
-
+        <li class="nav-title">All Informations</li>
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-building" style="margin-right: 15px;"></i>Floor Information
+                <i class="fa-solid fa-building" style="margin-right: 15px;"></i>Floor
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('floors') }}"><span class="nav-icon"></span>Floor
@@ -24,7 +24,7 @@
         </li>
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-building-un" style="margin-right: 15px;"></i>Unit Information
+                <i class="fa-solid fa-building-un" style="margin-right: 15px;"></i>Unit
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('units') }}"><span class="nav-icon"></span>Unit
@@ -39,7 +39,7 @@
 
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-user" style="margin-right: 15px;"></i>Owner Information
+                <i class="fa-solid fa-user" style="margin-right: 15px;"></i>Owner
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('owners') }}"><span class="nav-icon"></span>Owner
@@ -54,7 +54,7 @@
 
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-people-group" style="margin-right: 15px;"></i>Tenant Information
+                <i class="fa-solid fa-people-group" style="margin-right: 15px;"></i>Tenant
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('owners') }}"><span class="nav-icon"></span>Tenant
@@ -67,9 +67,20 @@
             </ul>
         </li>
 
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+                <i class="fa-solid fa-sitemap" style="margin-right: 15px;"></i>Committe </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance') }}"><span
+                            class="nav-icon"></span>Committe
+                        List</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance/create') }}"><span
+                            class="nav-icon"></span>Add Committe Mamber</a></li>
+            </ul>
+        </li>
+
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-person-digging" style="margin-right: 15px;"></i>Employee Information
+                <i class="fa-solid fa-person-digging" style="margin-right: 15px;"></i>Employee
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('owners') }}"><span
@@ -83,6 +94,7 @@
             </ul>
         </li>
 
+        <li class="nav-title">Finance & Collection</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <i class="fa-solid fa-sitemap" style="margin-right: 15px;"></i>Rent Collection</a>
             <ul class="nav-group-items">
@@ -115,15 +127,6 @@
             </ul>
         </li>
 
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-sitemap" style="margin-right: 15px;"></i>Management Committe</a>
-            <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance') }}"><span
-                            class="nav-icon"></span>Management Committe List</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance/create') }}"><span
-                            class="nav-icon"></span>Add New Management Committe</a></li>
-            </ul>
-        </li>
 
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <i class="fa-solid fa-sack-dollar" style="margin-right: 15px;"></i>Apartment Fund</a>
@@ -146,7 +149,7 @@
             </ul>
         </li>
 
-
+        <li class="nav-title">Others</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <i class="fa-solid fa-comment-dots" style="margin-right: 15px;"></i>Complaint</a>
             <ul class="nav-group-items">
@@ -193,7 +196,7 @@
         </li>
 
         {{-- Report & Setting nav item start here --}}
-        <li class="nav-title">Report</li>
+        <li class="nav-title">Report & Setting</li>
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">

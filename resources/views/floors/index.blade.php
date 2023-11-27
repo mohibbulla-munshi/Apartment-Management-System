@@ -3,8 +3,12 @@
 
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
+        <!-- Breadcrumbs -->
+        <span>
+            {{ Breadcrumbs::render('floors') }}
+        </span>
         <!-- Own Working Space -->
-        <table class="table table-hover">
+        <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
             <thead>
                 <tr>
                     <th>Floor No</th>

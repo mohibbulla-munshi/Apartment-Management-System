@@ -6,11 +6,13 @@
 
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
+    <!-- Breadcrumbs -->
+    <span>
+      {{ Breadcrumbs::render('addBill') }}
+    </span>
     <!-- Bill entry form -->
-    <div class="card">
-      <div class="card-header">
-        <h3>Add New Bill</h3>
-      </div>
+    <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
+
       <div class="card-body">
         <form method="POST" action="{{ route('bill.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf
@@ -28,7 +30,8 @@
           </div>
           <div class="col-md-6">
             <label for="bilDepositDate" class="form-label">Bill Deposit Date :</label>
-            <input name="bill_deposit_date" type="text"  class="form-control" id="add_bilDepositDate" placeholder ="Select Date" required>
+            <input name="bill_deposit_date" type="text" class="form-control" id="add_bilDepositDate"
+              placeholder="Select Date" required>
             <div class="invalid-feedback">
               Please provide a valid Month.
             </div>
@@ -36,16 +39,16 @@
           <div class="col-md-6">
             <label for="billMonth" class="form-label">Bill Month :</label>
             <select name="bill_month" class="form-select" id="bill_month" required>
-            @php $months = get_month(); @endphp
-            @php foreach($months as $key=>$value){ @endphp
-                    <option value="@php echo $key; @endphp" > @php echo $value; @endphp </option>
+              @php $months = get_month(); @endphp
+              @php foreach($months as $key=>$value){ @endphp
+              <option value="@php echo $key; @endphp"> @php echo $value; @endphp </option>
               @php } @endphp
             </select>
             <div class="invalid-feedback">
               Please select a valid type.
             </div>
           </div>
-          
+
           <div class="col-md-6">
             <label for="billYear" class="form-label">Bill Year :</label>
             <select name="bill_year" class="form-select" id="billYear" required>
@@ -103,7 +106,7 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
-    $('#add_bilDepositDate').datepicker();
+  $('#add_bilDepositDate').datepicker();
 </script>
 
 <script>

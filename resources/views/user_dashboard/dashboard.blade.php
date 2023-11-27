@@ -4,18 +4,9 @@
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
         <!-- Breadcrumbs -->
-        @section('breadcrumbs')
-        <div class="container-fluid">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb bg-transparent border-bottom mb-4">
-                    <li class="breadcrumb-item">
-                        {{ Breadcrumbs::render('dashboard') }}
-                    </li>
-                </ol>
-            </nav>
-        </div>
-        @endsection
-
+        <span>
+            {{ Breadcrumbs::render('dashboard') }}
+        </span>
         <!-- Card Grid -->
         <div class="row">
             <div class="col-md-4 col-lg-4">

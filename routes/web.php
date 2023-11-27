@@ -31,24 +31,10 @@ use App\Models\Units\UnitModel;
 
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -119,44 +105,15 @@ Route::get('/setting',[SettingController::class,'index'])->name('setting');
 Route::post('/setting',[SettingController::class,'store']);
 
 
-/**
- * -----------------------Manager Route-------------
- */
 
 
-//Route::get('/flat_list', [FlatDetailsController::class, 'index']);
-// Route::get('/building_info', [BuildingDetailsController::class, 'index']);
-
-//User Profile
-// Route::resource('profile', ProfileController::class);
-//Building Details
-// Route::resource('building', BuildingDetailsController::class);
-
-
-
-// Route::group(['prefix' => "manager" ], function () {
-
-//     Route::group(['prefix' => "profile" ], function () {
-
-//         Route::get('/', [ProfileController::class, 'index']);
-//         Route::get('/create', [ProfileController::class, 'create'])->name("profile.create");
-//         Route::post('/', [ProfileController::class, 'store'])->name("profile.store");
-
-//     });
-
-// });
-
-// Route::resource('profile', ProfileController::class);
-// Route::resource('building',BuldingdetailsController::class);
 Route::resource('building',BuldingdetailsController::class);
-//Route::resource('building', 'App\Http\Controllers\BuldingdetailsController');
 
 Route::resource('flat', FlatDetailsController::class);
 Route::resource('meeting', MeetingController::class);
 Route::resource('complaint', ComplaintController::class);
 Route::resource('designation', DesignationController::class);
 
-/* -------------------------------------------------------------- */
 
 
 
