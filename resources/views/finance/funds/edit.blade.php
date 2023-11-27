@@ -3,7 +3,7 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- fund entry form -->
-    <div class="card">
+    <div class="card ">
       <div class="card-header">
         <h3>Update Fund</h3>
       </div>

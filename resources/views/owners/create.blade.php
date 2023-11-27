@@ -7,6 +7,10 @@
 
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
+    <!-- Breadcrumbs -->
+    <span>
+      {{ Breadcrumbs::render('addowners') }}
+    </span>
     <!-- Visitor entry form -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
 

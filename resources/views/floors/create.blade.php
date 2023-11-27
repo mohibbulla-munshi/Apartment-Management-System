@@ -7,7 +7,13 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- Visitor entry form -->
+    <!-- Breadcrumbs -->
+    <span>
+      {{ Breadcrumbs::render('addFloors') }}
+    </span>
+
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
+      <!-- Breadcrumbs -->
       <div class="card-body">
         <form method="POST" action="{{ route('floors.store') }}" class="row g-3 needs-validation" novalidate>
           @csrf

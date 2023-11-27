@@ -2,8 +2,12 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
+        <!-- Breadcrumbs -->
+        <span>
+            {{ Breadcrumbs::render('rent') }}
+        </span>
         <!-- Own Working Space -->
-        <table id="example" class="table table-striped" style="width:98%">
+        <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:98%">
             <thead>
                 <tr>
                     <th>#Invoice</th>
@@ -21,7 +25,7 @@
                     <td>{{ $rent->renter_name }}</td>
                     <td>{{ $rent->floor_no }}</td>
                     <td>{{ $rent->unit_no }}</td>
-                    <td>{{ $rent->total_rent }}</td>    
+                    <td>{{ $rent->total_rent }}</td>
                     <td>
                         <div style="width:65%" class="row">
                             <div class="col-md-6">

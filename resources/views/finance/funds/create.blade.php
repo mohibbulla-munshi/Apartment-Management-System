@@ -2,6 +2,10 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
+    <!-- Breadcrumbs -->
+    <span>
+      {{ Breadcrumbs::render('addFund') }}
+    </span>
     <!--  Fund Entry Form  -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
       <div class="card-body">

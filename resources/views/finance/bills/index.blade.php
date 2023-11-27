@@ -2,8 +2,12 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
+        <!-- Breadcrumbs -->
+        <span>
+            {{ Breadcrumbs::render('bill') }}
+        </span>
         <!-- Own Working Space -->
-        <table id="example" class="table table-striped" style="width:98%">
+        <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:98%">
             <thead>
                 <tr>
                     <th>Bill Type</th>
@@ -25,19 +29,14 @@
                     <td> <i class="fa-solid fa-bangladeshi-taka-sign"></i> {{ $bill->total_amount }}</td>
                     <td>{{ $bill->deposit_bank_name }}</td>
                     <td>
-                        <div style="width:65%" class="row">
-                            <div class="col-md-6">
-                                <a href="{{ url('bill/'.$bill->id.'/edit') }}" class="btn btn btn-success rounded-0"
-                                    type="submit">Edit</a>
-                            </div>
-                            <div class="col-md-6">
-                                <form action="{{ route('bill.destroy',  $bill->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
-                                </form>
-                            </div>
-                        </div>
+                        <a href="{{ url('bill/'.$bill->id.'/edit') }}" class="btn btn btn-success rounded-0 float-end"
+                            type="submit"><i class="fas fa-edit"></i></a>
+                        <form action="{{ route('bill.destroy',  $bill->id) }}" method="POST" class="float-end">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn btn-danger rounded-0" type="submit"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
