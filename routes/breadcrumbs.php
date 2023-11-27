@@ -87,6 +87,16 @@ Breadcrumbs::for('addEmployees', function ($trail) {
     $trail->push('Add New Employees', url('employees/create'));
 });
 
+// Tenants
+Breadcrumbs::for('tenants', function ($trail) {
+    $trail->push('Tenants List', url('tenants'));
+});
+
+Breadcrumbs::for('addTenants', function ($trail) {
+    $trail->push('Add New Tenants', url('tenants/create'));
+});
+
+
 
 
 
