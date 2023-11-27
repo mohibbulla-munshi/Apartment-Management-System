@@ -29,8 +29,7 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Owners\OwnerController;
 use App\Models\Units\UnitModel;
 use App\Http\Controllers\Employees\EmployeeController;
-
-
+use App\Http\Controllers\Reports\TenantController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -119,8 +118,10 @@ Route::resource('designation', DesignationController::class);
 
 
 /* ------------Employee Route------------- */
-Route::resource('employees', EmployeeController::class);
+Route::resource('tenants', TenantController::class);
 
+/* ------------Employee Route------------- */
+Route::resource('employees', EmployeeController::class);
 
 /* ------------Floor Route------------- */
 Route::resource('floors', FloorController::class);

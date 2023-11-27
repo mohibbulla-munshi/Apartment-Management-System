@@ -57,10 +57,11 @@
                 <i class="fa-solid fa-people-group" style="margin-right: 15px;"></i>Tenant
             </a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('owners') }}"><span class="nav-icon"></span>Tenant
+                <li class="nav-item"><a class="nav-link" href="{{ url('tenants') }}"><span
+                            class="nav-icon"></span>Tenant
                         List</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('owners/create') }}"><span
+                <li class="nav-item"><a class="nav-link" href="{{ url('tenants/create') }}"><span
                             class="nav-icon"></span>Add
                         Tenant</a>
                 </li>

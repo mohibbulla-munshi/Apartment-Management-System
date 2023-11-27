@@ -14,7 +14,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        return view('Employees.index', compact('employees'));
+        return view('employees.index', compact('employees'));
     }
 
     /**
@@ -22,7 +22,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('Employees.create');
+        return view('employees.create');
     }
 
     /**
@@ -30,6 +30,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        
         // Validate the incoming request data
         $request->validate([
             'name' => 'required|string',
