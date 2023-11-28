@@ -2,9 +2,12 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
+        <!-- Breadcrumbs -->
+        <span>
+        {{ Breadcrumbs::render('meetings') }}
+        </span>
         <!-- Own Working Space -->
-        <table id="example" class="table table-striped" style="width:98%">
-            <a href="{{ route('meeting.create') }}" class="btn btn-sm btn-danger">Add</a>
+        <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:100%">
             <thead>
                 <tr>
                     <th>user_id</th>
@@ -25,20 +28,13 @@
                         <td>{{ $item-> attachment }}</td>
 
                         <td>
-                            <div style="width:65%" class="row">
-                                <div class="col-md-6">
-                                    <a href="{{url('meeting/'.$item->id.'/edit')}}" class="btn btn btn-success rounded-0" type="submit">Edit</a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="{{ url('meeting/'.$item->id) }}">
-                                    <form method="POST" action="{{ url('meeting/'.$item->id) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
-                                    </form>
-                                    </a>
-                                </div>
-                            </div>
+                                <a href="{{url('meeting/'.$item->id.'/edit')}}" class="btn btn btn-success rounded-0 float-end" type="submit">Edit</a>
+                  
+                                <form method="POST" action="{{ url('meeting/'.$item->id) }}" class="float-end">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn btn-danger rounded-0" type="submit"><i class="fa fa-trash"></i></button>
+                                </form> 
                         </td>
                     </tr>
                     @endforeach

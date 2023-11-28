@@ -164,7 +164,7 @@
         </li>
 
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-people-group" style="margin-right: 15px;"></i>Visitor</a>
+            <i class="fa-solid fa-people-group" style="margin-right: 15px;"></i>Visitor</a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span
                             class="nav-icon"></span>Visitor
@@ -175,13 +175,13 @@
         </li>
 
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-handshake" style="margin-right: 15px;"></i>Metting</a>
+                <i class="fa-solid fa-handshake" style="margin-right: 15px;"></i>Meeting</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span
-                            class="nav-icon"></span>Metting
+                <li class="nav-item"><a class="nav-link" href="{{ url('meeting') }}"><span
+                            class="nav-icon"></span>Meeting
                         List</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}"><span
-                            class="nav-icon"></span>Add Metting</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('meeting/create') }}"><span
+                            class="nav-icon"></span>Add Meeting</a></li>
             </ul>
         </li>
 

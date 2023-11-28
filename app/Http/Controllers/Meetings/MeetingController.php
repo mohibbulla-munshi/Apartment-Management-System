@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Meetings;
 
-use App\Models\Meeting\Meeting;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Meeting\Meeting;
 
 class MeetingController extends Controller
 {
@@ -30,9 +31,35 @@ class MeetingController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Meeting::create($data);
-        return redirect('/meeting')->with('massage', 'Data added successfully');
+        // Validate the form data
+        $validatedData = $request->validate([
+            'user_id' => 'required|string',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'meeting_time' => 'required|string',
+        ]);
+
+        // Handle file upload
+        // $attachmentPath = null;
+
+        // if ($request->hasFile('attachment')) {
+        //     $attachmentPath = $request->file('attachment')->store('meeting_attachments', 'public');
+        // }
+
+        // Create a new meeting instance
+        $meeting = new Meeting([
+            'user_id' => $validatedData['user_id'],
+            'title' => $validatedData['title'],
+            'description' => $validatedData['description'],
+            'meeting_time' => $validatedData['meeting_time'],
+        ]);
+
+        // Save the meeting to the database
+        $meeting->save();
+
+        // Redirect to a success page or do something else
+        $request->session()->flash('alert-success', 'Meeting Successfully added');
+        return redirect('meeting');
     }
 
     /**
@@ -77,4 +104,5 @@ class MeetingController extends Controller
         $meeting->delete();
         return redirect('/meeting')->with('massage', 'Data Update successfully');
     }
+
 }

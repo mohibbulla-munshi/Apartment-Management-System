@@ -13,7 +13,6 @@ class Meeting extends Model
          'title',
          'description',
          'meeting_time',
-         'attachment',
      ];
 
 }
