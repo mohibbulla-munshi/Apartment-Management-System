@@ -12,13 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('complaints', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
             $table->id();
             $table->string('user_id')->nullable(false);
-            $table->string('category')->nullable(false);
+            $table->string('title');
             $table->string('problem_detail')->nullable(false);
-            $table->string('date')->nullable(false);
-            $table->string('status')->nullable(false);
+            $table->date('date')->nullable(false);
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@
     </span>
 
     <!-- Owner and Owner Table -->
-    <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:98%">
+    <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:100%">
       <thead>
         <tr>
           <th>Image</th>

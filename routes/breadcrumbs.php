@@ -107,6 +107,15 @@ Breadcrumbs::for('addOwner', function ($trail) {
     $trail->push('Add New Owner', url('owners/create'));
 });
 
+// Owners
+Breadcrumbs::for('complaints', function ($trail) {
+    $trail->push('Complaint List', url('complaints'));
+});
+
+Breadcrumbs::for('addComplaint', function ($trail) {
+    $trail->push('Add New Complaint', url('complaints/create'));
+});
+
 
 
 
