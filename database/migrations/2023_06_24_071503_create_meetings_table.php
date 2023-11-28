@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title')->nullable(false);
             $table->string('description')->nullable(false);
             $table->string('meeting_time')->nullable(false);
-            $table->string('attachment')->nullable(false);
+            $table->string('attachment')->nullable(true);
             $table->string('status')->default(1);
             $table->timestamps();
         });

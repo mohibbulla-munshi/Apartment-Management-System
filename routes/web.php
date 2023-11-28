@@ -18,7 +18,7 @@ use App\Http\Controllers\Garage\ReservedController;
 use App\Http\Controllers\Garage\DriverController;
 use App\Http\Controllers\Garage\VehicleController;
 use App\Http\Controllers\BuldingdetailsController;
-use App\Http\Controllers\MeetingController;
+use App\Http\Controllers\Meetings\MeetingController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\Setting\AboutController;
 use App\Http\Controllers\Setting\SettingController;
