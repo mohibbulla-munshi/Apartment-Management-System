@@ -1,7 +1,8 @@
 <?php
-
+use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
 // Dashboard
+
 Breadcrumbs::for('dashboard', function ($trail) {
     $trail->push('Dashboard', route('dashboard'));
 });
@@ -95,6 +96,17 @@ Breadcrumbs::for('tenants', function ($trail) {
 Breadcrumbs::for('addTenants', function ($trail) {
     $trail->push('Add New Tenants', url('tenants/create'));
 });
+
+// Committees
+Breadcrumbs::for('committees', function ($trail) {
+    $trail->push('Committee Member List', url('committees'));
+});
+
+Breadcrumbs::for('addCommitteeMember', function ($trail) {
+    $trail->push('Add New Committee Member', url('committees/create'));
+});
+
+
 
 
 

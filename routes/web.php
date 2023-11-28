@@ -26,6 +26,7 @@ use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Floors\FloorController;
 use App\Http\Controllers\Units\UnitController;
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\Committees\CommitteeController;
 use App\Http\Controllers\Owners\OwnerController;
 use App\Models\Units\UnitModel;
 use App\Http\Controllers\Employees\EmployeeController;
@@ -122,6 +123,9 @@ Route::resource('tenants', TenantController::class);
 
 /* ------------Employee Route------------- */
 Route::resource('employees', EmployeeController::class);
+
+/* ------------Committe Route------------- */
+Route::resource('committees', CommitteeController::class);
 
 /* ------------Floor Route------------- */
 Route::resource('floors', FloorController::class);
