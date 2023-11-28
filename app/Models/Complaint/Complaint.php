@@ -10,10 +10,10 @@ class Complaint extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-         'category',
-         'problem_detail',
-         'date',
-         'status',
+        'title',
+        'problem_detail',
+        'date',
+        'status',
      ];
 
 }

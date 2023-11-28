@@ -2,51 +2,53 @@
 @section('content')
 <div class="body flex-grow-1 px-3">
     <div class="container-lg">
+        <span>
+            {{ Breadcrumbs::render('complaints') }}
+        </span>
+
         <!-- Own Working Space -->
-        <table id="example" class="table table-striped" style="width:98%">
-            <a href="{{ route('complaint.create') }}" class="btn btn-sm btn-danger">Add</a>
+        <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:100%">
             <thead>
+
                 <tr>
-                    <th>user_id</th>
-                    <th>category</th>
-                    <th>problem_detail</th>
-                    <th>date</th>
-                    <th>status</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Assigned Complaint</th>
                     <th>action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($data as $item)
-                    <tr>
-                        <td>{{ $item-> user_id }}</td>
-                        <td>{{ $item-> category }}</td>
-                        <td>{{ $item-> problem_detail }}</td>
-                        <td>{{ $item-> date }}</td>
-                        <td>{{ $item-> status }}</td>
-
-                        <td>
-                            <div style="width:65%" class="row">
-                                <div class="col-md-6">
-                                    <a href="{{url('complaint/'.$item->id.'/edit')}}" class="btn btn btn-success rounded-0" type="submit">Edit</a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="{{ url('complaint/'.$item->id) }}">
-                                    <form method="POST" action="{{ url('complaint/'.$item->id) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
-                                    </form>
-                                    </a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
+                @foreach ($complaints as $complaint)
+                <tr>
+                    <td>{{ $complaint->title }}</td>
+                    <td>{{ \Carbon\Carbon::parse($complaint->date)->format('F j, Y') }}</td>
+                    <td>{{ $complaint->status }}</td>
+                    <td>Jon Do</td>
+                    <td>
+                        <a href="{{url('complaint/'.$complaint->id.'/edit')}}"
+                            class="btn btn btn-success rounded-0 float-end" type="submit"><i class="fa fa-edit"></i></a>
+                        <form method="POST" action="{{ url('complaint/'.$complaint->id) }}" class="float-end">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn btn-danger rounded-0" type="submit"><i
+                                    class="fa fa-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
             <tfoot>
-
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Assigned Complaint</th>
+                    <th>action</th>
+                </tr>
             </tfoot>
         </table>
+
     </div>
 </div>
 
