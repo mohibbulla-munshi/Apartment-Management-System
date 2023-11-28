@@ -71,10 +71,10 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <i class="fa-solid fa-sitemap" style="margin-right: 15px;"></i>Committe </a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance') }}"><span
+                <li class="nav-item"><a class="nav-link" href="{{ url('committees') }}"><span
                             class="nav-icon"></span>Committe
                         List</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('maintenance/create') }}"><span
+                <li class="nav-item"><a class="nav-link" href="{{ url('committees/create') }}"><span
                             class="nav-icon"></span>Add Committe Mamber</a></li>
             </ul>
         </li>
