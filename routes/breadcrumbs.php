@@ -25,14 +25,6 @@ Breadcrumbs::for('addunits', function ($trail) {
     $trail->push('Add New Unit', url('units/create'));
 });
 
-// Floors
-Breadcrumbs::for('owners', function ($trail) {
-    $trail->push('Unit List', url('owners'));
-});
-
-Breadcrumbs::for('addowners', function ($trail) {
-    $trail->push('Add New Owner', url('owners/create'));
-});
 
 // Rents
 Breadcrumbs::for('rent', function ($trail) {
@@ -104,6 +96,15 @@ Breadcrumbs::for('committees', function ($trail) {
 
 Breadcrumbs::for('addCommitteeMember', function ($trail) {
     $trail->push('Add New Committee Member', url('committees/create'));
+});
+
+// Owners
+Breadcrumbs::for('owners', function ($trail) {
+    $trail->push('Committee Member List', url('owners'));
+});
+
+Breadcrumbs::for('addOwner', function ($trail) {
+    $trail->push('Add New Owner', url('owners/create'));
 });
 
 

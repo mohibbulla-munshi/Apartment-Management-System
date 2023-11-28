@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('permanent_address');
             $table->string('nid');
             $table->string('owner_unit_no');
-            $table->string('owner_image');
+            $table->string('owner_image')->nullable();
             $table->timestamps();
         });
     }

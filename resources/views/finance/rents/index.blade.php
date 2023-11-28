@@ -7,7 +7,7 @@
             {{ Breadcrumbs::render('rent') }}
         </span>
         <!-- Own Working Space -->
-        <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:98%">
+        <table id="example" class="table table-striped shadow p-3 mb-5 bg-body rounded" style="width:100%">
             <thead>
                 <tr>
                     <th>#Invoice</th>
@@ -27,19 +27,16 @@
                     <td>{{ $rent->unit_no }}</td>
                     <td>{{ $rent->total_rent }}</td>
                     <td>
-                        <div style="width:65%" class="row">
-                            <div class="col-md-6">
-                                <a href="{{ url('rent/'.$rent->id.'/edit') }}" class="btn btn btn-success rounded-0"
-                                    type="submit">Edit</a>
-                            </div>
-                            <div class="col-md-6">
-                                <form action="{{ route('rent.destroy',  $rent->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn btn-danger rounded-0" type="submit">Delete</button>
-                                </form>
-                            </div>
-                        </div>
+                        <a href="{{ url('rent/'.$rent->id.'/edit') }}" class="btn btn btn-success rounded-0 float-end"
+                            type="submit"><i class="fas fa-edit"></i></a>
+                        <form action="{{ route('rent.destroy',  $rent->id) }}" method="POST" class="float-end">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn btn-danger rounded-0" type="submit"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </form>
+                        <a href="{{ url('rent/'.$rent->id.'/edit') }}" class="btn btn btn-success rounded-0 float-end"
+                            type="submit"><i class="fas fa-eye"></i></a>
                     </td>
                 </tr>
                 @endforeach
