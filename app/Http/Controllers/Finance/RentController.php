@@ -30,33 +30,32 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
-        $rent = new Rent;
+        // Validate the form data
+        $validatedData = $request->validate([
+            'floor_no' => 'required|string',
+            'unit_no' => 'required|string',
+            'rent_month' => 'required|string',
+            'rent_year' => 'required|string',
+            'renter_name' => 'required|string|max:100',
+            'rent' => 'required|numeric',
+            'water_bill' => 'required|numeric',
+            'electric_bill' => 'required|numeric',
+            'gas_bill' => 'required|numeric',
+            'security_bill' => 'required|numeric',
+            'utility_bill' => 'required|numeric',
+            'other_bill' => 'nullable|numeric',
+            'total_rent' => 'required|numeric',
+            'issue_date' => 'required|date',
+            'bill_paid_date' => 'required|date',
+            'bill_status' => 'required|string|max:50',
+            'status' => 'nullable|string',
+        ]);
 
-        $rent->floor_no = $request->floor_no;
-        $rent->unit_no = $request->unit_no;
-        $rent->rent_month = $request->rent_month;
-        $rent->rent_year = $request->rent_year;
-        $rent->renter_name = $request->renter_name;
-        $rent->rent = $request->rent;
+        // Store the rent record in the database
+        Rent::create($validatedData);
 
-        $rent->water_bill = $request->water_bill;
-        $rent->electric_bill = $request->electric_bill;
-        $rent->gas_bill = $request->gas_bill;
-        $rent->security_bill = $request->security_bill;
-        $rent->utility_bill = $request->utility_bill;
-
-        
-        $date = str_replace('/', '-', $request->issue_date);
-        $rent->issue_date = date("Y-m-d", strtotime($date));
-        $date = str_replace('/', '-', $request->bill_paid_date);
-        $rent->bill_paid_date = date("Y-m-d", strtotime($date));
-        
-        $rent->other_bill = $request->other_bill;
-        $rent->total_rent = $request->total_rent;
-        $rent->bill_status = $request->bill_status;
-
-        $rent->save();
-        $request->session()->flash('alert-success', 'Rent Successfully added');
+        // Redirect to a success page or do something else
+        $request->session()->flash('alert-success', 'Rent Record Successfully added');
         return redirect('rent');
     }
 

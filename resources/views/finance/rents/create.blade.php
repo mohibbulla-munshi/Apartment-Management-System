@@ -72,21 +72,22 @@
           </div>
           <div class="col-md-6">
             <label for="rent" class="form-label">Rent :</label>
-            <input type="text" class="form-control" name="rent" id="rent" value="" required>
+            <input type="number" class="form-control" name="rent" id="rent" value="" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="waterBill" class="form-label">Water Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name="water_bill" id="waterBill" value="" required>
+            <input type="number" class="form-control fn_add_claculate" name="water_bill" id="waterBill" value=""
+              required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="electricBill" class="form-label">Electric Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name="electric_bill" id="electricBill" value=""
+            <input type="number" class="form-control fn_add_claculate" name="electric_bill" id="electricBill" value=""
               required>
             <div class="valid-feedback">
               Looks good!
@@ -94,14 +95,14 @@
           </div>
           <div class="col-md-6">
             <label for="gasBill" class="form-label">Gas Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name="gas_bill" id="gasBill" value="" required>
+            <input type="number" class="form-control fn_add_claculate" name="gas_bill" id="gasBill" value="" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="SecurityBill" class="form-label">Security Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name="security_bill" id="SecurityBill" value=""
+            <input type="number" class="form-control fn_add_claculate" name="security_bill" id="SecurityBill" value=""
               required>
             <div class="valid-feedback">
               Looks good!
@@ -109,7 +110,7 @@
           </div>
           <div class="col-md-6">
             <label for="utilityBill" class="form-label">Utility Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name="utility_bill" id="utilityBill" value=""
+            <input type="number" class="form-control fn_add_claculate" name="utility_bill" id="utilityBill" value=""
               required>
             <div class="valid-feedback">
               Looks good!
@@ -117,14 +118,14 @@
           </div>
           <div class="col-md-6">
             <label for="otherBill" class="form-label">Other Bill :</label>
-            <input type="text" class="form-control fn_add_claculate" name="other_bill" id="otherBill" value="">
+            <input type="number" class="form-control fn_add_claculate" name="other_bill" id="otherBill" value="">
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-6">
             <label for="totalRent" class="form-label">Total Rent :</label>
-            <input type="text" class="form-control fn_add_claculate total_rent" name="total_rent" id="totalRent"
+            <input type="number" class="form-control fn_add_claculate total_rent" name="total_rent" id="totalRent"
               value="" required>
             <div class="valid-feedback">
               Looks good!
@@ -132,7 +133,7 @@
           </div>
           <div class="col-md-6">
             <label for="issueDate" class="form-label">Issue Date :</label>
-            <input type="text" class="form-control" name="issue_date" id="add_issueDate" placeholder="Select Date"
+            <input type="date" class="form-control" name="issue_date" id="add_issueDate" placeholder="Select Date"
               required>
             <div class="invalid-feedback">
               Please provide a valid Date.
@@ -140,7 +141,7 @@
           </div>
           <div class="col-md-6">
             <label for="billPainDate" class="form-label">Bill Paid Date :</label>
-            <input type="text" class="form-control" name="bill_paid_date" id="add_billPainDate"
+            <input type="date" class="form-control" name="bill_paid_date" id="add_billPainDate"
               placeholder="Select Date" required>
             <div class="invalid-feedback">
               Please provide a valid Date.
@@ -171,10 +172,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-<script type="text/javascript">
-  $('#add_issueDate').datepicker();
-  $('#add_billPainDate').datepicker();
-</script>
+
 
 <script type="text/javascript">
 

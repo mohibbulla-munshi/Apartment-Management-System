@@ -42,7 +42,7 @@ class MaintenanceController extends Controller
         $MaintenanceCost->details = $request->details;
         
         $MaintenanceCost->save();
-        event(new MaintenanceCostNotification($request->amount));
+        //event(new MaintenanceCostNotification($request->amount));
         $request->session()->flash('alert-success', 'Maintenance Cost Successfully Added');
         return redirect('maintenance');
 

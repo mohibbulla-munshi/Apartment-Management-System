@@ -32,12 +32,12 @@
           <td>
             <a href="{{ url('committees/'.$committee->id.'/edit') }}" class="btn btn btn-success rounded-0 float-end"
               type="submit"><i class="fas fa-edit"></i>
-              <!-- Font Awesome Edit Icon --></a>
+            </a>
             <form action="{{ route('committees.destroy', $committee->id) }}" class="float-end" method="POST">
               @csrf
               @method('DELETE')
               <button class="btn btn btn-danger rounded-0" type="submit"><i class="fas fa-trash-alt"></i>
-                <!-- Font Awesome Delete Icon --></button>
+              </button>
             </form>
           </td>
         </tr>

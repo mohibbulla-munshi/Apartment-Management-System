@@ -11,7 +11,6 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('rents', function (Blueprint $table) {
-            $table->engine = 'MyISAM';
             $table->id();
             $table->string('floor_no')->nullable(false);
             $table->string('unit_no')->nullable(false);

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Units\UnitModel;
 use App\Models\Owners\OwnerModel;
+use Illuminate\Support\Facades\Hash;
 
 class OwnerController extends Controller
 {
@@ -14,7 +15,8 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        return view('owners.index');
+        $owners = OwnerModel::all();
+        return view('owners.index', compact('owners'));
     }
 
     /**
@@ -32,19 +34,35 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
-        $Owner = new OwnerModel;
-        
-        $Owner->owner_name = $request->owner_name;
-        $Owner->email = $request->email;
-        $Owner->contact_no = $request->contact_no;
-        $Owner->password = $request->password;
-        $Owner->present_address = $request->present_address;
-        $Owner->permanent_address = $request->permanent_address;
-        $Owner->nid = $request->nid;
-        $Owner->owner_unit_no = implode(',', $request->input('owner_unit_no'));
-        $Owner->owner_image = $request->owner_image;
+        // Validate the form data
+        $validatedData = $request->validate([
+            'owner_name' => 'required|string',
+            'email' => 'required|email|unique:owner_models',
+            'contact_no' => 'required|string',
+            'password' => 'required|string|min:8',
+            'present_address' => 'required|string',
+            'permanent_address' => 'required|string',
+            'nid' => 'required|numeric',
+            'owner_unit_no' => 'required|array',
+        ]);
 
-        $Owner->save();
+        // Handle file upload if an owner image is provided
+        //$imagePath = null;
+
+        // if ($request->hasFile('owner_image')) {
+        //     $imagePath = $request->file('owner_image')->store('owner_images', 'public');
+        // }
+
+        // Hash the password before storing it
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        // Convert owner_unit_no array to a string
+        $ownerUnitNo = implode(',', $validatedData['owner_unit_no']);
+
+        // Store the owner in the database
+        OwnerModel::create(array_merge($validatedData, ['owner_unit_no' => $ownerUnitNo]));
+
+        // Redirect to a success page or do something else
         $request->session()->flash('alert-success', 'Owner Successfully added');
         return redirect('owners');
     }

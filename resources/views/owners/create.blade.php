@@ -9,7 +9,7 @@
   <div class="container-lg">
     <!-- Breadcrumbs -->
     <span>
-      {{ Breadcrumbs::render('addowners') }}
+      {{ Breadcrumbs::render('addOwner') }}
     </span>
     <!-- Visitor entry form -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
@@ -74,7 +74,7 @@
             <div class="border p-2">
               @foreach($floorUnits as $floorUnit)
               <input type="checkbox" id="owner_unit_no" name="owner_unit_no[]" value="{{$floorUnit->unit_name}}">
-              <label for="owner_unit_no"> Flat {{$floorUnit->unit_name}} ({{ $floorUnit->floor_name }})</label><br>
+              <label for="owner_unit_no"> {{$floorUnit->unit_name}}</label><br>
               @endforeach
               <div class="invalid-feedback">
               </div>
