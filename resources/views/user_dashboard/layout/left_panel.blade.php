@@ -164,7 +164,7 @@
         </li>
 
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <i class="fa-solid fa-people-group" style="margin-right: 15px;"></i>Visitor</a>
+                <i class="fa-solid fa-people-group" style="margin-right: 15px;"></i>Visitor</a>
             <ul class="nav-group-items">
                 <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span
                             class="nav-icon"></span>Visitor
@@ -188,11 +188,12 @@
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
                 <i class="fa-solid fa-comments" style="margin-right: 15px;"></i>Notice Board</a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span
-                            class="nav-icon"></span>Notice Board
-                        List</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}"><span
-                            class="nav-icon"></span>Add Notice Board</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('notice/tenant/create') }}"><span
+                            class="nav-icon"></span>Tenant Notice Board</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('notice/employee/create') }}"><span
+                            class="nav-icon"></span>Employee Notice Board</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('notice/owner/create') }}"><span
+                            class="nav-icon"></span>Owner Notice Board</a></li>
             </ul>
         </li>
 

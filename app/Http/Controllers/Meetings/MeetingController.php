@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Meetings;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Meeting\Meeting;
+use Illuminate\Support\Facades\Auth;
 
 class MeetingController extends Controller
 {
@@ -13,8 +14,8 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        $data= Meeting::all();
-        return view('meeting.index', compact('data'));
+        $meetings= Meeting::all();
+        return view('meeting.index', compact('meetings'));
 
     }
 
@@ -33,10 +34,10 @@ class MeetingController extends Controller
     {
         // Validate the form data
         $validatedData = $request->validate([
-            'user_id' => 'required|string',
             'title' => 'required|string',
             'description' => 'required|string',
-            'meeting_time' => 'required|string',
+            'meeting_date' => 'required|string',
+            'time' => 'required|string',
         ]);
 
         // Handle file upload
@@ -48,10 +49,11 @@ class MeetingController extends Controller
 
         // Create a new meeting instance
         $meeting = new Meeting([
-            'user_id' => $validatedData['user_id'],
+            'user_id' => auth()->id(),            
             'title' => $validatedData['title'],
             'description' => $validatedData['description'],
-            'meeting_time' => $validatedData['meeting_time'],
+            'meeting_date' => $validatedData['meeting_date'],
+            'time' => $validatedData['time'],
         ]);
 
         // Save the meeting to the database
