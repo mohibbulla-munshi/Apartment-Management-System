@@ -13,17 +13,9 @@
           @csrf
 
           <div class="col-md-6">
-            <label for="user_id" class="form-label">User ID</label>
-            <input name="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror" id="user_id" value="{{ old('user_id') }}" required>
-            @error('user_id')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-            @enderror
-          </div>
-          <div class="col-md-6">
             <label for="title" class="form-label">Title :</label>
-            <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') }}" required>
+            <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title"
+              value="{{ old('title') }}" required>
             @error('title')
             <div class="invalid-feedback">
               {{ $message }}
@@ -33,7 +25,8 @@
 
           <div class="col-md-6">
             <label for="description" class="form-label">Description :</label>
-            <input name="description" type="text" class="form-control @error('description') is-invalid @enderror" id="description" value="{{ old('description') }}" required>
+            <textarea name="description" id="description"
+              class="form-control @error('description') is-invalid @enderror" cols="30" rows="2" required></textarea>
             @error('description')
             <div class="invalid-feedback">
               {{ $message }}
@@ -41,8 +34,20 @@
             @enderror
           </div>
           <div class="col-md-6">
-            <label for="meeting_time" class="form-label">Meeting Time :</label>
-            <input name="meeting_time" type="text" class="form-control @error('meeting_time') is-invalid @enderror" id="meeting_time" value="{{ old('meeting_time') }}" required>
+            <label for="meeting_date" class="form-label">Meeting Date :</label>
+            <input name="meeting_date" type="date" class="form-control @error('meeting_date') is-invalid @enderror"
+              id="meeting_date" value="{{ old('meeting_date') }}" required>
+            @error('meeting_time')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
+          </div>
+
+          <div class="col-md-6">
+            <label for="time" class="form-label">Meeting Time :</label>
+            <input name="time" type="time" class="form-control @error('time') is-invalid @enderror" id="time"
+              value="{{ old('time') }}" required>
             @error('meeting_time')
             <div class="invalid-feedback">
               {{ $message }}
@@ -52,7 +57,8 @@
 
           <div class="col-md-6">
             <label for="attachment" class="form-label">Attachment:</label>
-            <input name="attachment" type="file" class="form-control @error('attachment') is-invalid @enderror" id="attachment" value="{{ old('attachment') }}" required>
+            <input name="attachment" type="file" class="form-control @error('attachment') is-invalid @enderror"
+              id="attachment" value="{{ old('attachment') }}" required>
             @error('attachment')
             <div class="invalid-feedback">
               {{ $message }}

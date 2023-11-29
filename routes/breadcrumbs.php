@@ -125,6 +125,34 @@ Breadcrumbs::for('addMeeting', function ($trail) {
     $trail->push('Add New Meeting', url('meeting/create'));
 });
 
+// Tenant Notice
+Breadcrumbs::for('tenantNotice', function ($trail) {
+    $trail->push('Tenant Notic List', url('notice/tenant'));
+});
+
+Breadcrumbs::for('addTenantNotice', function ($trail) {
+    $trail->push('Add New Tenant Notice', url('notice/tenant/create'));
+});
+
+// Owner Notice
+Breadcrumbs::for('ownerNotice', function ($trail) {
+    $trail->push('Owner Notic List', url('notice/owner'));
+});
+
+Breadcrumbs::for('addOwnerNotice', function ($trail) {
+    $trail->push('Add New Owner Notice', url('notice/owner/create'));
+});
+
+// Owner Notice
+Breadcrumbs::for('employeeNotice', function ($trail) {
+    $trail->push('Employee Notic List', url('notice/employee'));
+});
+
+Breadcrumbs::for('addEmployeeNotice', function ($trail) {
+    $trail->push('Add New Employee Notice', url('notice/employee/create'));
+});
+
+
 
 
 
