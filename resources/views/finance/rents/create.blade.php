@@ -125,8 +125,7 @@
           </div>
           <div class="col-md-6">
             <label for="totalRent" class="form-label">Total Rent :</label>
-            <input type="number" class="form-control fn_add_claculate total_rent" name="total_rent" id="totalRent"
-              value="" required>
+            <input type="number" class="form-control total_rent" name="total_rent" id="totalRent" value="" required>
             <div class="valid-feedback">
               Looks good!
             </div>

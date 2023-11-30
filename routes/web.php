@@ -30,10 +30,13 @@ use App\Http\Controllers\Complaints\ComplaintController;
 use App\Http\Controllers\Owners\OwnerController;
 use App\Models\Units\UnitModel;
 use App\Http\Controllers\Employees\EmployeeController;
+use App\Http\Controllers\Employees\Leave\EmployeeLeaveController;
+use App\Http\Controllers\Employees\Salaries\EmployeeSalaryController;
 use App\Http\Controllers\Notice\EmployeeNoticeController;
 use App\Http\Controllers\Notice\OwnerNoticeController;
 use App\Http\Controllers\Notice\TenantNoticeController;
 use App\Http\Controllers\Reports\TenantController;
+use App\Http\Controllers\Employees\EmployeeAjaxController;
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
@@ -64,6 +67,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('designation', DesignationController::class);
     Route::resource('tenants', TenantController::class);
     Route::resource('employees', EmployeeController::class);
+    Route::resource('employee_salaries', EmployeeSalaryController::class);
+    Route::get('/employee/{employeeName}', [EmployeeAjaxController::class,'getEmployeeDetails']);
+    Route::resource('employee_leaves', EmployeeLeaveController::class);
     Route::resource('committees', CommitteeController::class);
     Route::resource('floors', FloorController::class);
     Route::resource('units', UnitController::class);

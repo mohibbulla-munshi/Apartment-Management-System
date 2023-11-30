@@ -92,6 +92,14 @@
                             class="nav-icon"></span>Add
                         Employee</a>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('employee_salaries/create') }}"><span
+                            class="nav-icon"></span>
+                        Employee Salary</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('employee_leaves') }}"><span
+                            class="nav-icon"></span>
+                        Leave Request</a>
+                </li>
             </ul>
         </li>
 
