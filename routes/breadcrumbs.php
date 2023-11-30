@@ -152,6 +152,15 @@ Breadcrumbs::for('addEmployeeNotice', function ($trail) {
     $trail->push('Add New Employee Notice', url('notice/employee/create'));
 });
 
+// Employee Salary
+Breadcrumbs::for('employeeSalary', function ($trail) {
+    $trail->push('Employee Salary List', url('employee_salaries'));
+});
+
+Breadcrumbs::for('addEmployeeSalary', function ($trail) {
+    $trail->push('Add New Employee Salary', url('employee_salaries/create'));
+});
+
 
 
 
