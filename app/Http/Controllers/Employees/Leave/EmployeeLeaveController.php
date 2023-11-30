@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Employees\Leave;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Employees\Employee;
 
 class EmployeeLeaveController extends Controller
 {
@@ -12,7 +13,8 @@ class EmployeeLeaveController extends Controller
      */
     public function index()
     {
-        //
+        $employeeLeaves = Employee::all();
+        return view('employees.leave_applications.index', compact('employeeLeaves'));
     }
 
     /**
