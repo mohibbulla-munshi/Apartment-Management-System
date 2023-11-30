@@ -161,6 +161,16 @@ Breadcrumbs::for('addEmployeeSalary', function ($trail) {
     $trail->push('Add New Employee Salary', url('employee_salaries/create'));
 });
 
+// Employee Salary
+Breadcrumbs::for('employeeLeaveRequest', function ($trail) {
+    $trail->push('Employee Leave Request List', url('employee_salaries'));
+});
+
+Breadcrumbs::for('addEmployeeLeaveRequest', function ($trail) {
+    $trail->push('Add New Employee Salary', url('employee_salaries/create'));
+});
+
+
 
 
 
