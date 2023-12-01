@@ -170,6 +170,15 @@ Breadcrumbs::for('addEmployeeLeaveRequest', function ($trail) {
     $trail->push('Add New Employee Salary', url('employee_salaries/create'));
 });
 
+// Admin Setup
+Breadcrumbs::for('adminSetupList', function ($trail) {
+    $trail->push('Admin List', url('settings/admin_setup'));
+});
+
+Breadcrumbs::for('AddAdminSetup', function ($trail) {
+    $trail->push('Add New Admin', url('settings/admin_setup/create'));
+});
+
 
 
 

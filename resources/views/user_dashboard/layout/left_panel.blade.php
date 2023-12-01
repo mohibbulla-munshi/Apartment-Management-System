@@ -204,9 +204,56 @@
                             class="nav-icon"></span>Owner Notice Board</a></li>
             </ul>
         </li>
+        
 
         {{-- Report & Setting nav item start here --}}
+
         <li class="nav-title">Report & Setting</li>
+        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+            <i class="fa-solid fa-cog " style="margin-right: 15px;"></i>Setting</a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link" href="{{ route('admin_setup.create') }}"><span
+                            class="nav-icon"></span>Admin Setup</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Add Building</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Building List</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Bill Type Setup</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Utility Bill Setup</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Management Member Type</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Month Setup</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Year Setup</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>Currency Setup</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                    <span class="nav-icon">
+                    </span>System Setup</a>
+                </li>
+                            
+            </ul>
+        </li>
+
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <svg class="nav-icon">
@@ -245,16 +292,7 @@
             </ul>
         </li>
 
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                <i class="fa-solid fa-building" style="margin-right: 15px;"></i>Setting</a>
-            <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor') }}"><span
-                            class="nav-icon"></span>Notice Board
-                        List</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}"><span
-                            class="nav-icon"></span>Add Notice Board</a></li>
-            </ul>
-        </li>
+        
         {{-- Report & Setting nav item end here --}}
     </ul>
 </div>
