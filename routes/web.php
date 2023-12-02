@@ -39,6 +39,7 @@ use App\Http\Controllers\Reports\TenantController;
 use App\Http\Controllers\Employees\EmployeeAjaxController;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Settings\AdminSetupController;
+use App\Http\Controllers\Settings\BuildingController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -122,6 +123,7 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'settings'], function () {
         Route::resource('admin_setup', AdminSetupController::class);
+        Route::resource('buildings', BuildingController::class);
     });
     
 
