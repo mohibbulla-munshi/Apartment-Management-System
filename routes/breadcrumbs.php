@@ -181,14 +181,10 @@ Breadcrumbs::for('AddAdminSetup', function ($trail) {
 
 
 
-
-
-
-
-
-
-
-//Setting
-Breadcrumbs::for('setting', function ($trail) {
-    $trail->push('Apartment Setting', route('setting'));
+//Building 
+Breadcrumbs::for('building', function ($trail) {
+    $trail->push('Building List', route('setting'));
+});
+Breadcrumbs::for('addBuilding', function ($trail) {
+    $trail->push('Add Building', route('setting'));
 });
