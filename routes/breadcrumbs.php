@@ -183,8 +183,49 @@ Breadcrumbs::for('AddAdminSetup', function ($trail) {
 
 //Building 
 Breadcrumbs::for('building', function ($trail) {
-    $trail->push('Building List', route('setting'));
+    $trail->push('Building List', url('settings/buildings'));
 });
 Breadcrumbs::for('addBuilding', function ($trail) {
-    $trail->push('Add Building', route('setting'));
+    $trail->push('Add Building', url('settings/buildings/create'));
 });
+
+//Bill Type 
+Breadcrumbs::for('BillTypes', function ($trail) {
+    $trail->push('Bill Type List', url('bill_type_setup'));
+});
+Breadcrumbs::for('addBillType', function ($trail) {
+    $trail->push('Add Bill Type', url('settings/bill_type_setup/create'));
+});
+
+//Utility Bill Setup 
+Breadcrumbs::for('utilityBillSetupList', function ($trail) {
+    $trail->push('Utility Bill Type List', url('settings/utility_bill_setup'));
+});
+Breadcrumbs::for('utilityBillSetup', function ($trail) {
+    $trail->push('Add Utility Bill Type', url('settings/utility_bill_setup/create'));
+});
+
+//Member Type Setup 
+Breadcrumbs::for('addMemberType', function ($trail) {
+    $trail->push('Member Type List', url('settings/member_type_setup'));
+});
+Breadcrumbs::for('MemberTypes', function ($trail) {
+    $trail->push('Add Memebre Type', url('settings/member_type_setup/create'));
+});
+
+//Month Setup 
+Breadcrumbs::for('Months', function ($trail) {
+    $trail->push('Member List', url('settings/month_setup'));
+});
+Breadcrumbs::for('addMonth', function ($trail) {
+    $trail->push('Add Month Name', url('settings/month_setup/create'));
+});
+
+//Year Setup 
+Breadcrumbs::for('Years', function ($trail) {
+    $trail->push('Year List', url('settings/year_setup'));
+});
+Breadcrumbs::for('addYear', function ($trail) {
+    $trail->push('Add New Year', url('settings/year_setup/create'));
+});
+
