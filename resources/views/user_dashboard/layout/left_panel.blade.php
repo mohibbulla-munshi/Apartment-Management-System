@@ -216,29 +216,25 @@
                             class="nav-icon"></span>Admin Setup</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('buildings.create') }}">
                         <span class="nav-icon">
-                        </span>Add Building</a>
+                        </span>Building Setup</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('buildings') }}">
-                        <span class="nav-icon">
-                        </span>Building List</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                <li class="nav-item"><a class="nav-link" href="{{ route('bill_type_setup.create') }}">
                         <span class="nav-icon">
                         </span>Bill Type Setup</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                <li class="nav-item"><a class="nav-link" href="{{ route('utility_bill_setup.create') }}">
                         <span class="nav-icon">
                         </span>Utility Bill Setup</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                <li class="nav-item"><a class="nav-link" href="{{ route('member_type_setup.create') }}">
                         <span class="nav-icon">
                         </span>Management Member Type</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                <li class="nav-item"><a class="nav-link" href="{{ route('month_setup.create') }}">
                         <span class="nav-icon">
                         </span>Month Setup</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('fontdesk/visitor/create') }}">
+                <li class="nav-item"><a class="nav-link" href="{{ route('year_setup.create') }}">
                         <span class="nav-icon">
                         </span>Year Setup</a>
                 </li>

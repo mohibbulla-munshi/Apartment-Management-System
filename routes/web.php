@@ -9,7 +9,6 @@ use App\Http\Controllers\Finance\UtilityController;
 use App\Http\Controllers\Finance\RentController;
 use App\Http\Controllers\Deshboard\DashboardController;
 use App\Http\Controllers\Manager\FlatDetailsController;
-use App\Http\Controllers\Manager\BuildingDetailsController;
 use App\Http\Controllers\Fontdesk\PurposerController;
 use App\Http\Controllers\Fontdesk\VisitorController;
 use App\Http\Controllers\Garage\ParkingspotController;
@@ -24,11 +23,9 @@ use App\Http\Controllers\Setting\AboutController;
 use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Floors\FloorController;
 use App\Http\Controllers\Units\UnitController;
-use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Committees\CommitteeController;
 use App\Http\Controllers\Complaints\ComplaintController;
 use App\Http\Controllers\Owners\OwnerController;
-use App\Models\Units\UnitModel;
 use App\Http\Controllers\Employees\EmployeeController;
 use App\Http\Controllers\Employees\Leave\EmployeeLeaveController;
 use App\Http\Controllers\Employees\Salaries\EmployeeSalaryController;
@@ -39,7 +36,12 @@ use App\Http\Controllers\Reports\TenantController;
 use App\Http\Controllers\Employees\EmployeeAjaxController;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Settings\AdminSetupController;
+use App\Http\Controllers\Settings\BillTypeSetupController;
 use App\Http\Controllers\Settings\BuildingController;
+use App\Http\Controllers\Settings\MemberTypeSetupController;
+use App\Http\Controllers\Settings\MonthSetupController;
+use App\Http\Controllers\settings\UtilityBillSetupController;
+use App\Http\Controllers\Settings\YearSetupController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -124,6 +126,11 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'settings'], function () {
         Route::resource('admin_setup', AdminSetupController::class);
         Route::resource('buildings', BuildingController::class);
+        Route::resource('bill_type_setup', BillTypeSetupController::class);
+        Route::resource('utility_bill_setup', UtilityBillSetupController::class);
+        Route::resource('member_type_setup', MemberTypeSetupController::class);
+        Route::resource('month_setup', MonthSetupController::class);
+        Route::resource('year_setup', YearSetupController::class);
     });
     
 
