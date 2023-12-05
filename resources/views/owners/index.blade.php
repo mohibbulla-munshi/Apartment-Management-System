@@ -24,7 +24,7 @@
         @foreach ($owners as $owner)
         <tr>
           <td>
-            <!-- Add image display logic here -->
+              <img src="{{ asset('storage') .'/'. $owner->owner_image }}" alt="" style="width: 50px; height: 50px; border-radius: 50%;">    
           </td>
           <td>
             {{ $owner->owner_name }}

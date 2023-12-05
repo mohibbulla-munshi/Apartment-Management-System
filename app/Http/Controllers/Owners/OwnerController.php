@@ -44,23 +44,30 @@ class OwnerController extends Controller
             'permanent_address' => 'required|string',
             'nid' => 'required|numeric',
             'owner_unit_no' => 'required|array',
+            'owner_image' => 'required|image'
         ]);
 
-        // Handle file upload if an owner image is provided
-        //$imagePath = null;
-
-        // if ($request->hasFile('owner_image')) {
-        //     $imagePath = $request->file('owner_image')->store('owner_images', 'public');
-        // }
-
+        //Handle file upload if an owner image is provided
+        $path = $request->file('owner_image')->store('owner_images', 'public');
+        
         // Hash the password before storing it
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        $HashPassword = Hash::make($request['password']);
 
         // Convert owner_unit_no array to a string
-        $ownerUnitNo = implode(',', $validatedData['owner_unit_no']);
+        $ownerUnitNo = implode(',', $request['owner_unit_no']);
 
         // Store the owner in the database
-        OwnerModel::create(array_merge($validatedData, ['owner_unit_no' => $ownerUnitNo]));
+        OwnerModel::create([
+            'owner_name'        => $request->owner_name,
+            'email'             => $request->email,
+            'contact_no'        => $request->contact_no,
+            'password'          => $HashPassword,
+            'present_address'   => $request->present_address,
+            'permanent_address' => $request->permanent_address,
+            'nid'               => $request->nid,
+            'owner_unit_no'     => $ownerUnitNo,
+            'owner_image'       => $path,
+        ]);
 
         // Redirect to a success page or do something else
         $request->session()->flash('alert-success', 'Owner Successfully added');

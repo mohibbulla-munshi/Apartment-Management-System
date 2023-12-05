@@ -13,9 +13,17 @@
     </span>
     <!-- Visitor entry form -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
-
+      @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+      @endif
       <div class="card-body">
-        <form method="POST" action="{{ route('owners.store') }}" class="row g-3 needs-validation" novalidate>
+        <form method="POST" action="{{ route('owners.store') }}" class="row g-3 needs-validation" novalidate enctype="multipart/form-data">
           @csrf
 
           <div class="col-md-6">
