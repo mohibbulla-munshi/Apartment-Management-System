@@ -32,7 +32,7 @@ use App\Http\Controllers\Employees\Salaries\EmployeeSalaryController;
 use App\Http\Controllers\Notice\EmployeeNoticeController;
 use App\Http\Controllers\Notice\OwnerNoticeController;
 use App\Http\Controllers\Notice\TenantNoticeController;
-use App\Http\Controllers\Reports\TenantController;
+use App\Http\Controllers\Tenants\TenantController;
 use App\Http\Controllers\Employees\EmployeeAjaxController;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Settings\AdminSetupController;

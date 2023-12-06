@@ -25,9 +25,10 @@
         @foreach ($tenants as $tenant)
         <tr>
           <td>
-            <img src="{{ asset('storage/tenant_photos' . $tenant->tenant_photo) }}" alt="{{ $tenant->name }}"
+            <img src="{{ asset('storage') .'/' . $tenant->tenant_photo}}" alt="{{ $tenant->name }}"
               style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
           </td>
+          
           <td>{{ $tenant->name }}</td>
           <td>{{ $tenant->contact }}</td>
           <td>{{ $tenant->available_unit_no }}</td>

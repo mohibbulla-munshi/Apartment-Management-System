@@ -8,6 +8,15 @@
     </span>
     <!-- Tenant Entry Form -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
+      @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+      @endif
       <div class="card-body">
         <form method="POST" action="{{ route('tenants.store') }}" class="row g-3 needs-validation"
           enctype="multipart/form-data" novalidate>
