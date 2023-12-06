@@ -23,7 +23,9 @@
       <tbody>
         @foreach ($employees as $employee)
         <tr>
-          <td><!-- Add image display logic here --></td>
+          <td>
+            <img src="{{ asset('storage') .'/'. $employee->employee_photo }}" alt="{{ $employee->employee_photo }}" style="width: 50px; height: 50px; border-radius: 50%;">
+          </td>
           <td>{{ $employee->name }}</td>
           <td>{{ $employee->email }}</td>
           <td>{{ $employee->contact }}</td>

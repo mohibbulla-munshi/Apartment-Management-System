@@ -37,16 +37,17 @@ class AdminSetupController extends Controller
             'email' => 'required|email|unique:admin_setups,email',
             'contact_no' => 'required|string',
             'password' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
             // Add validation rules for other fields as needed
         ]);
-    
+        
+        
         // Hash the password
         $hashedPassword = Hash::make($request->input('password'));
     
         // Handle file upload (if using storage)
         if ($request->hasFile('photo')) {
-            $path = $request->file('photo')->store('admin_setup', 'public');
-            $request->merge(['photo' => $path]);
+            $path = $request->file('photo')->store('admin_photos', 'public');
         }
     
         // Create new admin with hashed password
@@ -55,6 +56,7 @@ class AdminSetupController extends Controller
             'email' => $request->input('email'),
             'contact_no' => $request->input('contact_no'),
             'password' => $hashedPassword,
+            'photo'     => $path
             // Add other fields as needed
         ]);
     

@@ -8,8 +8,13 @@
     </span>
     <!-- Employee Entry Form -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
+      @error('name')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+      @enderror
       <div class="card-body">
-        <form method="POST" action="{{ route('employees.store') }}" class="row g-3 needs-validation" novalidate>
+        <form method="POST" action="{{ route('employees.store') }}" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
           @csrf
           <div class="col-md-6">
             <label for="name" class="form-label">Name :</label>
