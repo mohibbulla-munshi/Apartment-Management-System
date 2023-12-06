@@ -47,16 +47,14 @@ class TenantController extends Controller
             'rent_month' => 'required|string',
             'rent_year' => 'required|string',
             'status' => 'required|string',
-            'tenant_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'tenant_photo' => 'required',
         ]);
 
 
             // Handle file upload if a tenant photo is provided
-            $photoPath = null;
 
-            if ($request->hasFile('tenant_photo')) {
-                $photoPath = $request->file('tenant_photo')->store('tenant_photos', 'public');
-            }
+            $photoPath = $request->file('tenant_photo')->store('tenant_photos', 'public');
+            
 
             // Hash the password before storing it
             $validatedData['password'] = Hash::make($validatedData['password']);

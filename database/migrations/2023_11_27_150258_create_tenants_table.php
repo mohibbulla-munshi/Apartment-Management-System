@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('rent_month');
             $table->string('rent_year');
             $table->string('status');
-            $table->string('tenant_photo')->nullable(); // Assuming the tenant photo is stored as a file path
+            $table->string('tenant_photo');
             $table->timestamps();
         });
     }
