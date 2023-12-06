@@ -44,7 +44,7 @@ class CommitteeController extends Controller
                 'joining_date' => 'required|date',
                 'ending_date' => 'nullable|date',
                 'status' => 'required|string',
-                'committee_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'committee_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
             // Handle file upload if a committee photo is provided
@@ -58,7 +58,20 @@ class CommitteeController extends Controller
             $validatedData['password'] = Hash::make($validatedData['password']);
 
             // Store the management committee in the database
-            $managementCommittee = Committee::create($validatedData + ['committee_photo' => $photoPath]);
+            Committee::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->name,
+                'phone' => $request->phone,
+                'present_address' => $request->present_address,
+                'permanent_address' => $request->permanent_address,
+                'nid' => $request->nid,
+                'designation' => $request->designation,
+                'joining_date' => $request->joining_date,
+                'ending_date' => $request->ending_date,
+                'status' => $request->status,
+                'committee_photo' => $photoPath,
+            ]);
 
             // Redirect to a success page or do something else
             $request->session()->flash('alert-success', 'Management Committee Member Successfully added');

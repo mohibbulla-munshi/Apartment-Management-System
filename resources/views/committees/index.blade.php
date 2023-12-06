@@ -23,7 +23,9 @@
       <tbody>
         @foreach ($committees as $committee)
         <tr>
-          <td><!-- Add image display logic here --></td>
+          <td>
+            <img src="{{ asset('storage') .'/'. $committee->committee_photo }}" alt="{{ $committee->committee_photo }}" style="width: 50px; height: 50px; border-radius: 50%;">
+          </td>
           <td>{{ $committee->name }}</td>
           <td>{{ $committee->email }}</td>
           <td>{{ $committee->contact }}</td>

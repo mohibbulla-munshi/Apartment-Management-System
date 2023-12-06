@@ -8,11 +8,15 @@
     </span>
     <!-- Management Committee Entry Form -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
-      @error('name')
-      <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-      </span>
-      @enderror
+      @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+      @endif
 
       <div class="card-body">
         <form method="POST" action="{{ route('committees.store') }}" class="row g-3 needs-validation"

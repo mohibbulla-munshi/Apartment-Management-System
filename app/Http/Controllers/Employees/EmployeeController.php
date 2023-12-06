@@ -49,12 +49,9 @@ class EmployeeController extends Controller
         ]);
 
         // Handle file upload if an employee photo is provided
+        $employeeImage = null;
         if ($request->hasFile('employee_photo')) {
-            $file = $request->file('employee_photo');
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->storeAs('employee_photos', $fileName, 'public');
-        } else {
-            $fileName = null;
+            $employeeImage = $request->file('employee_photo')->store('employee_photos', 'public');
         }
 
         // Create a new employee record
@@ -71,7 +68,7 @@ class EmployeeController extends Controller
             'ending_date' => $request->input('ending_date'),
             'salary' => $request->input('salary'),
             'status' => $request->input('status'),
-            'employee_photo' => $fileName,
+            'employee_photo' => $employeeImage,
         ]);
 
         // Redirect to the index or show page, or return a response as needed
