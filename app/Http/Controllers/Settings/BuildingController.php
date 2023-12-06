@@ -39,7 +39,6 @@ class BuildingController extends Controller
             'moderator_mobile' => 'nullable|string',
             'construction_year' => 'required|integer',
             'address' => 'required|string',
-            'building_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required|in:enable,disable',
             'company_name' => 'nullable|string',
             'company_phone' => 'nullable|string',
@@ -48,12 +47,24 @@ class BuildingController extends Controller
         ]);
 
         // Handle file upload if an image is provided
-        if ($request->hasFile('building_image')) {
-            $imagePath = $request->file('building_image')->store('building_images', 'public');
-            $validatedData['building_image'] = $imagePath;
-        }
-
-        Building::create($validatedData);
+        $imagePath = $request->file('building_image')->store('building_images', 'public');
+        
+        Building::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'contact_no' => $request->contact_no,
+            'security_guard_mobile' => $request->security_guard_mobile,
+            'secretary_mobile' => $request->secretary_mobile,
+            'moderator_mobile' => $request->moderator_mobile,
+            'construction_year' => $request->construction_year,
+            'address' => $request->address,
+            'building_image' => $imagePath,
+            'status' => $request->status,
+            'company_name' => $request->company_name,
+            'company_phone' => $request->company_phone,
+            'company_address' => $request->company_address,
+            'apartment_rules' => $request->apartment_rules,
+        ]);
         
         $request->session()->flash('alert-success', 'Building Successfully added');
         return redirect()->back();
