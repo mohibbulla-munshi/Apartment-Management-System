@@ -19,8 +19,6 @@ use App\Http\Controllers\Garage\VehicleController;
 use App\Http\Controllers\BuldingdetailsController;
 use App\Http\Controllers\Meetings\MeetingController;
 use App\Http\Controllers\DesignationController;
-use App\Http\Controllers\Setting\AboutController;
-use App\Http\Controllers\Setting\SettingController;
 use App\Http\Controllers\Floors\FloorController;
 use App\Http\Controllers\Units\UnitController;
 use App\Http\Controllers\Committees\CommitteeController;
@@ -85,44 +83,6 @@ Route::middleware('auth')->group(function () {
         Route::resource('employee', EmployeeNoticeController::class);
         Route::resource('owner', OwnerNoticeController::class);
     });
-    Route::group(['prefix' => 'fontdesk'], function () {
-        Route::resource('purpose', PurposerController::class);
-    });
-    Route::group(['prefix' => 'fontdesk'], function () {
-        Route::resource('visitor', VisitorController::class);
-    });
-    Route::post('/fontdesk/visitor/show',[VisitorController::class,'show']);
-    Route::post('/fontdesk/visitor/check-out',[VisitorController::class,'check_out']);
-    Route::group(['prefix' => 'garage'], function () {
-        Route::resource('parkingspot', ParkingspotController::class);
-    });
-    Route::group(['prefix' => 'garage'], function () {
-        Route::resource('spottype', SpottypeController::class);
-    });
-    Route::group(['prefix' => 'garage'], function () {
-        Route::resource('reserved', ReservedController::class);
-    });
-    Route::post('/garage/reserved/show',[ReservedController::class,'show']);
-    Route::group(['prefix' => 'garage'], function () {
-        Route::resource('driver', DriverController::class);
-    });
-    Route::post('/garage/driver/show',[DriverController::class,'show']);
-    Route::group(['prefix' => 'garage'], function () {
-        Route::resource('vehicle', VehicleController::class);
-    });
-    Route::post('/garage/vehicle/show',[VehicleController::class,'show']);
-    Route::get('/about',[AboutController::class,'index']);
-    Route::post('/about',[AboutController::class,'store']);
-    Route::get('/setting',[SettingController::class,'index'])->name('setting');
-    Route::post('/setting',[SettingController::class,'store']);
-    Route::get('/get/unit/{id}', function($id){
-        $units = DB::table('unit_models')
-                ->select('unit_name')
-                ->where('floor_id', $id)
-                ->get();
-        return response()->json($units);
-    });
-
     Route::group(['prefix' => 'settings'], function () {
         Route::resource('admin_setup', AdminSetupController::class);
         Route::resource('buildings', BuildingController::class);
@@ -132,6 +92,45 @@ Route::middleware('auth')->group(function () {
         Route::resource('month_setup', MonthSetupController::class);
         Route::resource('year_setup', YearSetupController::class);
     });
+    // Route::group(['prefix' => 'fontdesk'], function () {
+    //     Route::resource('purpose', PurposerController::class);
+    // });
+    // Route::group(['prefix' => 'fontdesk'], function () {
+    //     Route::resource('visitor', VisitorController::class);
+    // });
+    // Route::post('/fontdesk/visitor/show',[VisitorController::class,'show']);
+    // Route::post('/fontdesk/visitor/check-out',[VisitorController::class,'check_out']);
+    // Route::group(['prefix' => 'garage'], function () {
+    //     Route::resource('parkingspot', ParkingspotController::class);
+    // });
+    // Route::group(['prefix' => 'garage'], function () {
+    //     Route::resource('spottype', SpottypeController::class);
+    // });
+    // Route::group(['prefix' => 'garage'], function () {
+    //     Route::resource('reserved', ReservedController::class);
+    // });
+    // Route::post('/garage/reserved/show',[ReservedController::class,'show']);
+    // Route::group(['prefix' => 'garage'], function () {
+    //     Route::resource('driver', DriverController::class);
+    // });
+    // Route::post('/garage/driver/show',[DriverController::class,'show']);
+    // Route::group(['prefix' => 'garage'], function () {
+    //     Route::resource('vehicle', VehicleController::class);
+    // });
+    // Route::post('/garage/vehicle/show',[VehicleController::class,'show']);
+    // Route::get('/about',[AboutController::class,'index']);
+    // Route::post('/about',[AboutController::class,'store']);
+    // Route::get('/setting',[SettingController::class,'index'])->name('setting');
+    // Route::post('/setting',[SettingController::class,'store']);
+    // Route::get('/get/unit/{id}', function($id){
+    //     $units = DB::table('unit_models')
+    //             ->select('unit_name')
+    //             ->where('floor_id', $id)
+    //             ->get();
+    //     return response()->json($units);
+    // });
+
+    
     
 
 });
