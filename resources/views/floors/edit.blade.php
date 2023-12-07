@@ -7,36 +7,32 @@
 <div class="body flex-grow-1 px-3">
   <div class="container-lg">
     <!-- Breadcrumbs -->
-    <span>
-      {{ Breadcrumbs::render('addunits') }}
-    </span>
-    <!-- Unit entry form -->
+   
+    <!-- Visitor entry form -->
     <div class="card shadow p-3 mb-5 bg-body rounded" style="border:none;">
       <div class="card-body">
-        <form method="POST" action="{{ route('units.store') }}" class="row g-3 needs-validation" novalidate>
+        <h3 class="card-title text-center text-uppercase mb-4" style="color: #3498db;">Edit Floor</h3>
+        <form method="POST" action="{{ route('floors.update', ['floor' => $floor->id]) }}" class="row g-3 needs-validation" novalidate>
           @csrf
+          @method('PUT')
           <div class="col-md-6">
-            <label for="floor_name" class="form-label">Floor No :</label>
-            <select name="floor_name" class="form-select" id="floor_name" required>
-              <option selected disabled value="">--Select Floor--</option>
-              @foreach($floors as $floor)
-              <option value="{{ $floor->floor_name }}"> {{ $floor->floor_name }} </option>
-              @endforeach
-            </select>
-            <div class="invalid-feedback">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="unit_name" class="form-label">Unit No :</label>
-            <input name="unit_name" type="text" class="form-control" id="unit_name" placeholder="Unit Name" required>
+            <label for="floor_name" class="form-label">Floor Name :</label>
+            <input name="floor_name" type="text" class="form-control" id="floor_name" placeholder="floor Name" value="{{ $floor->floor_name }}" required>
             <div class="invalid-feedback">
             </div>
           </div>
 
 
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">Save Information</button>
-          </div>
+            <div class="col-12 mt-3">
+                <button style="margin-left: 3px" class="btn btn-primary rounded-0 float-end" type="submit">
+                    <i class="fas fa-refresh"></i> Update
+                </button>
+                <a href="{{ url('floors') }}" class="btn btn-primary rounded-0 float-end">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+            </div>
+        
+        
         </form>
       </div>
     </div>

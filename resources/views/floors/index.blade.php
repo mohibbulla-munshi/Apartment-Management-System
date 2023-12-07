@@ -20,17 +20,22 @@
                 <tr>
                     <td>{{$floor->floor_name}}</td>
                     <td>
-                        <a href="#" class="btn btn-success rounded-0 float-end" type="submit">
-                            <i class="fas fa-edit"></i> <!-- Font Awesome Edit Icon -->
-                        </a>
-                        <form action="#" method="POST" class="float-end">
+                        <form action="{{ route('floors.destroy', ['floor' => $floor->id]) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger rounded-0" onclick="return confirm ('Are you sure?')"
-                                type="submit">
-                                <i class="fas fa-trash-alt"></i> <!-- Font Awesome Delete Icon -->
+                            <button class="btn btn-danger rounded-0 float-end" onclick="return confirm ('Are you sure?')"
+                              type="submit">
+                              <i class="fas fa-trash-alt"></i>
                             </button>
-                        </form>
+                          </form>
+              
+                          <a href="{{ route('floors.edit', ['floor' => $floor->id]) }}" class="btn btn-success rounded-0 float-end" type="submit">
+                            <i class="fas fa-edit"></i>
+                          </a>
+              
+                          <a href="{{ route('floors.show', ['floor' => $floor->id]) }}" class="btn btn-primary rounded-0 float-end">
+                            <i class="fas fa-eye"></i>
+                          </a>    
                     </td>
                 </tr>
                 @endforeach

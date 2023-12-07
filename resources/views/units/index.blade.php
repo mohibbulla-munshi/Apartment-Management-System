@@ -23,7 +23,7 @@
           <td>{{$floorUnit->unit_name}}</td>
           <td>
           
-            <form action="#" method="POST">
+            <form action="{{ route('units.destroy', ['unit' => $floorUnit->id]) }}" method="POST">
               @csrf
               @method('DELETE')
               <button class="btn btn-danger rounded-0 float-end" onclick="return confirm ('Are you sure?')"

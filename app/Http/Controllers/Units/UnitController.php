@@ -65,7 +65,7 @@ class UnitController extends Controller
     public function show(string $id)
     {
         $unit = UnitModel::find($id);
-        return view('units.view', compact('unit'));
+        return view('units.show', compact('unit'));
     }
 
     /**
@@ -126,9 +126,21 @@ class UnitController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
-        //
+        $unit = UnitModel::find($id);
+
+        if (!$unit) {
+            // Handle the case where the unit is not found
+            abort(404);
+        }
+
+        // Delete the unit
+        $unit->delete();
+
+        $request->session()->flash('alert-danger', 'Unit successfully Delete');
+        return redirect()->back();
+
     }
     
 }
