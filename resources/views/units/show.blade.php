@@ -16,19 +16,6 @@
 
 
                 <!-- Action Buttons -->
-                <form action="#" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger rounded-0 float-end" onclick="return confirm ('Are you sure?')"
-                      type="submit">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </form>
-      
-                  <a href="{{ route('units.edit', ['unit' => $unit->id]) }}" class="btn btn-success rounded-0 float-end" type="submit">
-                    <i class="fas fa-edit"></i>
-                  </a>
-      
                   <a href="{{ url('units') }}" class="btn btn-primary rounded-0 float-end">
                     <i class="fas fa-arrow-left"></i>
                   </a>
