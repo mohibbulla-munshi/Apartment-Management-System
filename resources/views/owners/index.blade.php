@@ -13,9 +13,7 @@
         <tr>
           <th>Image</th>
           <th>Owner Name</th>
-          <th>Email</th>
           <th>Contact</th>
-          <th>Present Address</th>
           <th>Owner Unit</th>
           <th>Action</th>
         </tr>
@@ -30,44 +28,34 @@
             {{ $owner->owner_name }}
           </td>
           <td>
-            {{ $owner->email }}
-          </td>
-          <td>
             {{ $owner->contact_no }}
-          </td>
-          <td>
-            {{ $owner->present_address }}
           </td>
           <td>
             {{ $owner->owner_unit_no }}
           </td>
           <td>
-            <a href="{{ url('owners/'.$owner->id.'/edit') }}" class="btn btn-success rounded-0 float-end" type="submit">
-              <i class="fas fa-edit"></i>
-            </a>
-            <form action="{{ route('owners.destroy', $owner->id) }}" class="float-end" method="POST">
+            <form action="{{ route('owners.destroy', ['owner' => $owner->id]) }}" method="POST">
               @csrf
               @method('DELETE')
-              <button class="btn btn-danger rounded-0" type="submit">
+              <button class="btn btn-danger rounded-0 float-end" onclick="return confirm ('Are you sure?')"
+                type="submit">
                 <i class="fas fa-trash-alt"></i>
               </button>
             </form>
+
+            <a href="{{ route('owners.edit', ['owner' => $owner->id]) }}" class="btn btn-success rounded-0 float-end" type="submit">
+              <i class="fas fa-edit"></i>
+            </a>
+
+            <a href="{{ route('owners.show', ['owner' => $owner->id]) }}" class="btn btn-primary rounded-0 float-end">
+              <i class="fas fa-eye"></i>
+            </a>    
           </td>
         </tr>
         @endforeach
 
       </tbody>
-      <tfoot>
-        <tr>
-          <th>Image</th>
-          <th>Owner Name</th>
-          <th>Email</th>
-          <th>Contact</th>
-          <th>Present Address</th>
-          <th>Owner Unit</th>
-          <th>Action</th>
-        </tr>
-      </tfoot>
+      
     </table>
   </div>
 </div>
