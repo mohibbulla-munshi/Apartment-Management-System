@@ -9,13 +9,6 @@ use App\Http\Controllers\Finance\UtilityController;
 use App\Http\Controllers\Finance\RentController;
 use App\Http\Controllers\Deshboard\DashboardController;
 use App\Http\Controllers\Manager\FlatDetailsController;
-use App\Http\Controllers\Fontdesk\PurposerController;
-use App\Http\Controllers\Fontdesk\VisitorController;
-use App\Http\Controllers\Garage\ParkingspotController;
-use App\Http\Controllers\Garage\SpottypeController;
-use App\Http\Controllers\Garage\ReservedController;
-use App\Http\Controllers\Garage\DriverController;
-use App\Http\Controllers\Garage\VehicleController;
 use App\Http\Controllers\BuldingdetailsController;
 use App\Http\Controllers\Meetings\MeetingController;
 use App\Http\Controllers\DesignationController;
@@ -32,7 +25,6 @@ use App\Http\Controllers\Notice\OwnerNoticeController;
 use App\Http\Controllers\Notice\TenantNoticeController;
 use App\Http\Controllers\Tenants\TenantController;
 use App\Http\Controllers\Employees\EmployeeAjaxController;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Settings\AdminSetupController;
 use App\Http\Controllers\Settings\BillTypeSetupController;
 use App\Http\Controllers\Settings\BuildingController;
@@ -92,45 +84,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('month_setup', MonthSetupController::class);
         Route::resource('year_setup', YearSetupController::class);
     });
-    // Route::group(['prefix' => 'fontdesk'], function () {
-    //     Route::resource('purpose', PurposerController::class);
-    // });
-    // Route::group(['prefix' => 'fontdesk'], function () {
-    //     Route::resource('visitor', VisitorController::class);
-    // });
-    // Route::post('/fontdesk/visitor/show',[VisitorController::class,'show']);
-    // Route::post('/fontdesk/visitor/check-out',[VisitorController::class,'check_out']);
-    // Route::group(['prefix' => 'garage'], function () {
-    //     Route::resource('parkingspot', ParkingspotController::class);
-    // });
-    // Route::group(['prefix' => 'garage'], function () {
-    //     Route::resource('spottype', SpottypeController::class);
-    // });
-    // Route::group(['prefix' => 'garage'], function () {
-    //     Route::resource('reserved', ReservedController::class);
-    // });
-    // Route::post('/garage/reserved/show',[ReservedController::class,'show']);
-    // Route::group(['prefix' => 'garage'], function () {
-    //     Route::resource('driver', DriverController::class);
-    // });
-    // Route::post('/garage/driver/show',[DriverController::class,'show']);
-    // Route::group(['prefix' => 'garage'], function () {
-    //     Route::resource('vehicle', VehicleController::class);
-    // });
-    // Route::post('/garage/vehicle/show',[VehicleController::class,'show']);
-    // Route::get('/about',[AboutController::class,'index']);
-    // Route::post('/about',[AboutController::class,'store']);
-    // Route::get('/setting',[SettingController::class,'index'])->name('setting');
-    // Route::post('/setting',[SettingController::class,'store']);
-    // Route::get('/get/unit/{id}', function($id){
-    //     $units = DB::table('unit_models')
-    //             ->select('unit_name')
-    //             ->where('floor_id', $id)
-    //             ->get();
-    //     return response()->json($units);
-    // });
-
     
+
     
 
 });
