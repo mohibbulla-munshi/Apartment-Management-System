@@ -9,7 +9,9 @@
         "davejamesmiller/laravel-breadcrumbs": "5.x",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
+        "laravel/pulse": "^1.0@beta",
         "laravel/sanctum": "^3.2",
+        "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.8"
     },
     "require-dev": {
@@ -70,6 +72,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "beta",
     "prefer-stable": true
 }
